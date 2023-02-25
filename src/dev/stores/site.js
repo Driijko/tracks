@@ -4,7 +4,7 @@ import { writable, get } from "svelte/store";
 // SITE SETTINGS --------------------------------------
 const pageExitDuration = 1000;
 const resizeDelay = 2000;
-const startingPageName = "splash";
+const startingPageName = "opening-prompt";
 const uarr1Res = [9, 16];
 const uarr2Res = [16, 9];
 
@@ -113,3 +113,14 @@ function createBackgroundAudio() {
 
 export const backgroundAudio = createBackgroundAudio();
 
+function createFullscreenMenuOpen() {
+  const {subscribe, set} = writable(false);
+  return {
+    subscribe,
+    toggleFullscreenMenu: boolean => {
+      set(boolean);
+    },
+  }
+}
+
+export const fullscreenMenuOpen = createFullscreenMenuOpen();

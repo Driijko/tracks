@@ -5,17 +5,10 @@
   import { fly } from 'svelte/transition';
   import { gsap } from "gsap";
   import fullscreen from "../helpers/fullscreen.js";
-  import { backgroundAudio, pageExit } from "../stores/site.js";
-
-  // LOCAL STATE ---------------------------------------
-  let menuState = {
-    open: false,
-    iconPresentation: "default",
-    currentTab: "settings",
-  }
-  const animationDuration = 0.5;
+  import { backgroundAudio, pageExit, fullscreenMenuOpen } from "../stores/site.js";
 
   // ANIMATION -----------------------------------------
+  let animationDuration = 0.5;
   let tl;
   onMount(()=> {
     tl = gsap.timeline({paused: true});
@@ -56,10 +49,37 @@
       height: "50px",
       top: "89%",
       left: "84%",
-    }, 0)
+    }, 0);
+
+    if ($fullscreenMenuOpen) {
+      animationDuration = 0;
+      tl.play();
+      animationDuration = 0.5;
+    }
   });
 
+  // LOCAL STATE ---------------------------------------
+  let menuState;
+  if ($fullscreenMenuOpen) {
+    menuState = {
+      open: true,
+      iconPresentation: "splash",
+      currentTab: "settings",
+    }
+  } else {
+    menuState = {
+      open: false,
+      iconPresentation: "default",
+      currentTab: "settings",
+    }
+  }
+
   // EVENT HANDLERS ------------------------------------
+  $: if (menuState.currentTab === "settings" && menuState.open === true) {
+    fullscreenMenuOpen.toggleFullscreenMenu(true);
+  } else {
+    fullscreenMenuOpen.toggleFullscreenMenu(false);
+  }
   function handleMenuButtonClick() {
     if (menuState.open) {
       tl.reverse();
