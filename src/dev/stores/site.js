@@ -4,7 +4,7 @@ import { writable, get } from "svelte/store";
 // SITE SETTINGS --------------------------------------
 const pageExitDuration = 1000;
 const resizeDelay = 2000;
-const startingPageName = "opening-prompt";
+const startingPageName = "splash";
 const uarr1Res = [9, 16];
 const uarr2Res = [16, 9];
 
@@ -32,11 +32,7 @@ export function pageExit(destinationPageName, onNewPage) {
   }, pageExitDuration);
 };
 
-// SETUP ----------------------------------------------------------
-export function setUp() {
-
-  // CSS Variables
-  document.documentElement.style.setProperty("--page-exit-duration", `${pageExitDuration}ms`);
+function layout() {
   document.documentElement.style.setProperty("--viewport-height", `${window.innerHeight}px`);
   const viewportRes = window.innerWidth/window.innerHeight;
   document.documentElement.style.setProperty("--uarr1-aspect-ratio",
@@ -57,7 +53,15 @@ export function setUp() {
   document.documentElement.style.setProperty("--uarr2-height",
     viewportRes < uarr2Res[0] / uarr2Res[1] ? "auto" : "var(--viewport-height)"
   );
-  
+}
+
+// SETUP ----------------------------------------------------------
+export function setUp() {
+
+  // CSS Variables
+  document.documentElement.style.setProperty("--page-exit-duration", `${pageExitDuration}ms`);
+
+  layout();
 
   // RESIZE
   let resizeReady = false;
@@ -65,7 +69,7 @@ export function setUp() {
     if (resizeReady === false) {
       resizeReady = true;
       const timerId = setTimeout(()=> {
-        document.documentElement.style.setProperty("--viewport-height", `${window.innerHeight}px`);
+        layout();
         resetCount.updateResetCount();
         clearTimeout(timerId);
         resizeReady = false;

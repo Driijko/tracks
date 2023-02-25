@@ -1,0 +1,258 @@
+<!-- SCRIPTS ////////////////////////////////////////////////////// -->
+<script>
+  // IMPORTS --------------------------------------------
+  import { onMount } from "svelte";
+  import { fly } from 'svelte/transition';
+  import { gsap } from "gsap";
+  import fullscreen from "../helpers/fullscreen.js";
+  import { backgroundAudio, pageExit } from "../stores/site.js";
+
+  // LOCAL STATE ---------------------------------------
+  let menuState = {
+    open: false,
+    iconPresentation: "default",
+    currentTab: "settings",
+  }
+  const animationDuration = 0.5;
+
+  // ANIMATION -----------------------------------------
+  let tl;
+  onMount(()=> {
+    tl = gsap.timeline({paused: true});
+    tl.to(["#line1", "#line2"], {
+      duration: animationDuration,
+      strokeWidth: "15",
+      attr: {
+        x1: "20",
+        y1: "20",
+        x2: "80",
+        y2: "80",
+      },
+      ease: "linear"
+    }, 0);
+    tl.to(["#line3","#line4"],  {
+      duration: animationDuration,
+      strokeWidth: "15",
+      attr: {
+        x1: "20",
+        y1: "80",
+        x2: "80",
+        y2: "20",
+      },
+      ease: "linear"
+    }, 0);
+    tl.to("#menu", {
+      duration: animationDuration,
+      left: 0,
+      top: 0,
+      width: "100%",
+      height: window.innerHeight,
+      ease: "linear"
+    },0);
+    tl.to("#menu-button", {
+      duration: animationDuration,
+      ease: "linear",
+      width: "50px",
+      height: "50px",
+      top: "89%",
+      left: "84%",
+    }, 0)
+  });
+
+  // EVENT HANDLERS ------------------------------------
+  function handleMenuButtonClick() {
+    if (menuState.open) {
+      tl.reverse();
+    } else {
+      tl.play();
+    }
+    menuState.open = !menuState.open;
+  }
+  function toggleFullscreen(e) {
+    fullscreen(e.target.checked);
+  }
+  function toggleBackgroundAudio(e) {
+    backgroundAudio.pause(!e.target.checked)
+  }
+</script>
+
+<!-- MARKUP ////////////////////////////////////////////////////// -->
+<dialog id="menu" open 
+  class:splash={menuState.iconPresentation === "splash"}
+>
+  <button id="menu-button" type="button" on:click={handleMenuButtonClick}>
+    <svg id="menu-icon" viewBox="0 0 100 100">
+      <line id="line1" x1="10" y1="10" x2="90" y2="10" stroke-linecap="round" stroke="black" stroke-width="20" />
+      <line id="line2" x1="10" y1="50" x2="90" y2="50" stroke-linecap="round" stroke="black" stroke-width="20" />
+      <line id="line3" x1="10" y1="50" x2="90" y2="50" stroke-linecap="round" stroke="black" stroke-width="20" />
+      <line id="line4" x1="10" y1="90" x2="90" y2="90" stroke-linecap="round" stroke="black" stroke-width="20" />
+    </svg>
+  </button>
+
+  {#if menuState.open}
+    <div id="open-menu" transition:fly="{{ x: 200, duration: 1000 }}">
+      <h1>H1</h1>
+      {#if menuState.currentTab === "navigation"}
+        <nav class="tab" transition:fly="{{ x: 200, duration: 1000 }}">
+          <ul>
+            <li>
+              <a href={null} 
+                on:click|preventDefault={()=> pageExit("page1")}
+              >Page 1</a>
+            </li>
+            <li>
+              <a href={null} 
+                on:click|preventDefault={()=> pageExit("page2")}
+              >Page 2</a>
+            </li>
+            <li>
+              <a href={null} 
+                on:click|preventDefault={()=> pageExit("page3")}
+              >Page 3</a>
+            </li>
+          </ul>
+        </nav>
+      {:else if menuState.currentTab === "settings"}
+        <section class="tab" transition:fly="{{ x: 200, duration: 1000 }}">
+          <div>
+            <label for="fullscreen" >Enter/Exit Fullscreen</label>
+            <input id="fullscreen" type="checkbox"
+              on:click={toggleFullscreen}
+              checked={!window.screenTop && !window.screenY}
+             />
+          </div>
+          <div>
+            <label for="audio">Turn Audio On/Off</label>
+            <input id="audio" type="checkbox"
+              on:click={toggleBackgroundAudio}
+              checked={$backgroundAudio.paused === false}
+            />
+          </div>
+          {#if !($backgroundAudio.paused)}
+            <label for="volume">Adjust volume to your preference:</label>
+            <input type="range" min="0.0" max="1.0" step="0.01" 
+              bind:value={$backgroundAudio.volume}
+            />
+          {/if}
+        </section>
+      {/if}
+  
+      <ul id="menu-tabs">
+        <li>
+          <button type="button"
+            class:selected={menuState.currentTab === "navigation"}
+            on:click={()=> menuState.currentTab = "navigation"}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <title>navigation</title>
+              <path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm306.7 69.1L162.4 380.6c-19.4 7.5-38.5-11.6-31-31l55.5-144.3c3.3-8.5 9.9-15.1 18.4-18.4l144.3-55.5c19.4-7.5 38.5 11.6 31 31L325.1 306.7c-3.2 8.5-9.9 15.1-18.4 18.4zM288 256a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"/>
+              </svg>
+          </button>
+        </li>
+        <li>
+          <button type="button"
+            class:selected={menuState.currentTab === "settings"}
+            on:click={()=> menuState.currentTab = "settings"}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <title>settings</title>
+              <path d="M481.9 166.6c3.2 8.7 .5 18.4-6.4 24.6l-30.9 28.1c-7.7 7.1-11.4 17.5-10.9 27.9c.1 2.9 .2 5.8 .2 8.8s-.1 5.9-.2 8.8c-.5 10.5 3.1 20.9 10.9 27.9l30.9 28.1c6.9 6.2 9.6 15.9 6.4 24.6c-4.4 11.9-9.7 23.3-15.8 34.3l-4.7 8.1c-6.6 11-14 21.4-22.1 31.2c-5.9 7.2-15.7 9.6-24.5 6.8l-39.7-12.6c-10-3.2-20.8-1.1-29.7 4.6c-4.9 3.1-9.9 6.1-15.1 8.7c-9.3 4.8-16.5 13.2-18.8 23.4l-8.9 40.7c-2 9.1-9 16.3-18.2 17.8c-13.8 2.3-28 3.5-42.5 3.5s-28.7-1.2-42.5-3.5c-9.2-1.5-16.2-8.7-18.2-17.8l-8.9-40.7c-2.2-10.2-9.5-18.6-18.8-23.4c-5.2-2.7-10.2-5.6-15.1-8.7c-8.8-5.7-19.7-7.8-29.7-4.6L69.1 425.9c-8.8 2.8-18.6 .3-24.5-6.8c-8.1-9.8-15.5-20.2-22.1-31.2l-4.7-8.1c-6.1-11-11.4-22.4-15.8-34.3c-3.2-8.7-.5-18.4 6.4-24.6l30.9-28.1c7.7-7.1 11.4-17.5 10.9-27.9c-.1-2.9-.2-5.8-.2-8.8s.1-5.9 .2-8.8c.5-10.5-3.1-20.9-10.9-27.9L8.4 191.2c-6.9-6.2-9.6-15.9-6.4-24.6c4.4-11.9 9.7-23.3 15.8-34.3l4.7-8.1c6.6-11 14-21.4 22.1-31.2c5.9-7.2 15.7-9.6 24.5-6.8l39.7 12.6c10 3.2 20.8 1.1 29.7-4.6c4.9-3.1 9.9-6.1 15.1-8.7c9.3-4.8 16.5-13.2 18.8-23.4l8.9-40.7c2-9.1 9-16.3 18.2-17.8C213.3 1.2 227.5 0 242 0s28.7 1.2 42.5 3.5c9.2 1.5 16.2 8.7 18.2 17.8l8.9 40.7c2.2 10.2 9.4 18.6 18.8 23.4c5.2 2.7 10.2 5.6 15.1 8.7c8.8 5.7 19.7 7.7 29.7 4.6l39.7-12.6c8.8-2.8 18.6-.3 24.5 6.8c8.1 9.8 15.5 20.2 22.1 31.2l4.7 8.1c6.1 11 11.4 22.4 15.8 34.3zM242 336a80 80 0 1 0 0-160 80 80 0 1 0 0 160z"/>
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+  {/if}
+</dialog>
+
+<!-- STYLE /////////////////////////////////////////////////// -->
+<style>
+  dialog {
+    overflow: hidden;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background: pink;
+  }
+  @media screen and (orientation: portrait) {
+    dialog {
+      top: 92%;
+      left: 42%;
+    }
+  }
+  @media screen and (orientation: landscape) {
+    dialog {
+      top: 0%;
+      left: 97%;
+    }
+  }
+  dialog.splash {
+    left: 40%;
+    top: 75%;
+    width: 60px;
+    height: 60px;
+  }
+  #menu-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+  }
+  #menu-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  #open-menu {
+    height: 100%;
+  }
+  h1 {
+    border: 4px solid green;
+    height: 10%;
+  }
+  .tab {
+    position: absolute;
+    top: 10%;
+    height: 79%;
+    width: 100%;
+    border: 4px solid red;
+  }
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+  #menu-tabs {
+    position: absolute;
+    display: flex;
+    justify-content: space-evenly;
+    width: 84%;
+    height: 11%;
+    bottom: 0%;
+    border: 4px solid red;
+  }
+  #menu-tabs li {
+    border: 1px solid blue;
+    height: 100%;
+    width: 20%;
+  }
+  #menu-tabs li button {
+    border: 1px solid blue;
+    height: 100%;
+    width: 100%;
+  }
+  #menu-tabs li button.selected {
+    background-color: yellow;
+  }
+  #menu-tabs li button svg {
+    width: 100%;
+    height: 100%;
+  }
+</style>
