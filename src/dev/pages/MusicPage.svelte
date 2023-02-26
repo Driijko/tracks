@@ -5,21 +5,22 @@
   import { currentPage, pageExit } from "../stores/site.js";
 
   // ELEMENT/COMPONENT REFERENCES ------------------------------
-  let splash;
+  let musicPage;
 
   // LIFECYCLE ------------------------------------------------
   onMount(()=> {
-    currentPage.set(splash);
+    currentPage.set(musicPage);
   });
 
 </script>
 
-<main bind:this={splash} class="page vp">
+<main bind:this={musicPage} class="page">
   
 </main>
 
 <style>
   main {
     border: 4px solid red;
+    background-color: cyan;
   }
 </style>

@@ -22,6 +22,7 @@
   })
 </script>
 
+<!-- MARKUP /////////////////////////////////////////////////////// -->
 <main bind:this={openingPrompt} class="page">
   <div>
     <p>Welcome to Tracks by Dreeko.</p>

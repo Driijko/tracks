@@ -5,7 +5,7 @@
   import { fly } from 'svelte/transition';
   import { gsap } from "gsap";
   import fullscreen from "../helpers/fullscreen.js";
-  import { backgroundAudio, pageExit, fullscreenMenuOpen } from "../stores/site.js";
+  import { backgroundAudio, pageExit, fullscreenMenuOpen, currentPageName }    from "../stores/site.js";
 
   // ANIMATION -----------------------------------------
   let animationDuration = 0.5;
@@ -42,14 +42,29 @@
       height: window.innerHeight,
       ease: "linear"
     },0);
-    tl.to("#menu-button", {
-      duration: animationDuration,
-      ease: "linear",
-      width: "50px",
-      height: "50px",
-      top: "89%",
-      left: "84%",
-    }, 0);
+    if (window.innerHeight >= window.innerWidth) {
+      tl.to("#menu-button", {
+        duration: animationDuration,
+        ease: "linear",
+        width: "50px",
+        height: "50px",
+        top: "89%",
+        left: "84%",
+      }, 0);
+      tl.to("#menu-icon", {
+        width: "100%",
+      }, 0);
+    } else {
+      tl.to("#menu-button", {
+        duration: animationDuration,
+        ease: "linear",
+        left: "95%",
+        top: "0%",
+        width: "5%",
+        height: "10%"
+      }, 0);
+    }
+
 
     if ($fullscreenMenuOpen) {
       animationDuration = 0;
@@ -63,15 +78,18 @@
   if ($fullscreenMenuOpen) {
     menuState = {
       open: true,
-      iconPresentation: "splash",
       currentTab: "settings",
     }
   } else {
     menuState = {
       open: false,
-      iconPresentation: "default",
-      currentTab: "settings",
+      currentTab: "navigation",
     }
+  }
+  if ($currentPageName === "splash") {
+    menuState.iconPresentation = "splash";
+  } else {
+    menuState.iconPresentation = "default";
   }
 
   // EVENT HANDLERS ------------------------------------
@@ -189,21 +207,29 @@
 <style>
   dialog {
     overflow: hidden;
-    position: relative;
-    width: 40px;
-    height: 40px;
+    position: absolute;
     background: pink;
   }
   @media screen and (orientation: portrait) {
     dialog {
-      top: 92%;
-      left: 42%;
+      width: 100%;
+      height: 8%;
+      left: 0;
+      bottom: 0%;
+    }
+    #menu-icon {
+      width: 9%;
     }
   }
   @media screen and (orientation: landscape) {
     dialog {
+      width: 6%;
+      height: 10%;
       top: 0%;
-      left: 97%;
+      left: 94%;
+    }
+    #menu-icon {
+      width: 50%;
     }
   }
   dialog.splash {
@@ -218,14 +244,15 @@
     left: 0;
     width: 100%;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: 1px solid black;
   }
   #menu-icon {
-    position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    height: 90%;
   }
   #open-menu {
     height: 100%;
