@@ -47,13 +47,13 @@
 
 
 <style>
-  /* div.uarr-container {
+  div.uarr-container {
     position: relative;
-    border: 4px solid red;
-  } */
+    background-color: var(--color1);
+  }
   div.uarr {
     position: relative;
-    border: 4px solid green;
+    background-color: var(--color2);
   }
 </style>
 

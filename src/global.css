@@ -139,7 +139,7 @@ svg {
   width: 1rem;
 }
 
-/* CSS TOOLS ///////////////////////////////////////////////////////////////// */
+/* CSS TOOLS //////////////////////////////////////////////////////// */
 .regular-scroll {
   height: var(--viewport-height);
   overflow-y: scroll;
@@ -259,6 +259,7 @@ svg {
   width: 1rem;
 }
 
+/* PORTRAIT/LANDSCAPE //////////////////// */
 @media only screen and (orientation: landscape) {
   .portrait {
     display: none;
@@ -267,10 +268,50 @@ svg {
   .cruncher {
     height: var(--viewport-height);
   }
+
+  .content-container {
+    height: 100%;
+    position: relative;
+  }
 }
 
 @media only screen and (orientation: portrait) {
   .landscape {
     display: none;
   }
+
+  .content-container {
+    height: 92%;
+    position: relative;
+  }
+}
+
+/* COLORS ////////////////////////////////////////////////////// */
+:root {
+  --color1: hsl(340, 100%, 10%);
+  --color2: hsl(340, 100%, 50%);
+  --color3: hsl(345, 100%, 50%);
+  --color4: hsl(350, 100%, 50%);
+}
+
+/* LINES & RECTS /////////////////////////////////////////////////// */
+.line {
+  stroke-width: 20;
+  stroke: var(--color1);
+}
+
+.color1 {
+  fill: var(--color1);
+}
+
+.color2 {
+  fill: var(--color2);
+}
+
+.color3 {
+  fill: var(--color3);
+}
+
+.color4 {
+  fill: var(--color4);
 }

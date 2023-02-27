@@ -117,10 +117,10 @@
 >
   <button id="menu-button" type="button" on:click={handleMenuButtonClick}>
     <svg id="menu-icon" viewBox="0 0 100 100">
-      <line id="line1" x1="10" y1="10" x2="90" y2="10" stroke-linecap="round" stroke="black" stroke-width="20" />
-      <line id="line2" x1="10" y1="50" x2="90" y2="50" stroke-linecap="round" stroke="black" stroke-width="20" />
-      <line id="line3" x1="10" y1="50" x2="90" y2="50" stroke-linecap="round" stroke="black" stroke-width="20" />
-      <line id="line4" x1="10" y1="90" x2="90" y2="90" stroke-linecap="round" stroke="black" stroke-width="20" />
+      <line id="line1" x1="10" y1="10" x2="90" y2="10" stroke-linecap="round"  stroke-width="20" />
+      <line id="line2" x1="10" y1="50" x2="90" y2="50" stroke-linecap="round"  stroke-width="20" />
+      <line id="line3" x1="10" y1="50" x2="90" y2="50" stroke-linecap="round"  stroke-width="20" />
+      <line id="line4" x1="10" y1="90" x2="90" y2="90" stroke-linecap="round"  stroke-width="20" />
     </svg>
   </button>
 
@@ -210,16 +210,17 @@
   #menu-button {
     position: absolute;
     top: 0;
-    left: 0;
+    left: 0%;
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid black;
+    background-color: var(--color1);
   }
   #menu-icon {
     height: 90%;
+    stroke: var(--color4);
   }
   #open-menu {
     height: 100%;
@@ -272,10 +273,11 @@
   /* PORTRAIT ------------------- */
   @media screen and (orientation: portrait) {
     dialog {
-      width: 100%;
+      width: 100.1%;
       height: 8%;
-      left: 0;
+      left: -0.1%;
       bottom: 0%;
+      background-color: var(--color1);
     }
     #menu-icon {
       width: 9%;
