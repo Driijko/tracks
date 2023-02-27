@@ -14,12 +14,16 @@
 
 </script>
 
-<main bind:this={splash} class="page vp">
+<!-- MARKUP /////////////////////////////////////////////////////// -->
+<main bind:this={splash} class="page">
   
 </main>
 
+<!-- STYLES ////////////////////////////////////////////////////// -->
 <style>
   main {
-    border: 4px solid red;
+    background-color: red;
+    width: 100%;
+    height: 100%;
   }
 </style>

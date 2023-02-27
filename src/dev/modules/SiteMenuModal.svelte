@@ -1,5 +1,6 @@
 <!-- SCRIPTS ////////////////////////////////////////////////////// -->
 <script>
+
   // IMPORTS --------------------------------------------
   import { onMount } from "svelte";
   import { fly } from 'svelte/transition';
@@ -39,15 +40,15 @@
       left: 0,
       top: 0,
       width: "100%",
-      height: window.innerHeight,
+      height: "100%",
       ease: "linear"
     },0);
     if (window.innerHeight >= window.innerWidth) {
       tl.to("#menu-button", {
         duration: animationDuration,
         ease: "linear",
-        width: "50px",
-        height: "50px",
+        width: "16%",
+        height: "11%",
         top: "89%",
         left: "84%",
       }, 0);
@@ -86,14 +87,9 @@
       currentTab: "navigation",
     }
   }
-  if ($currentPageName === "splash") {
-    menuState.iconPresentation = "splash";
-  } else {
-    menuState.iconPresentation = "default";
-  }
 
   // EVENT HANDLERS ------------------------------------
-  $: if (menuState.currentTab === "settings" && menuState.open === true) {
+  $: if (menuState.open === true && menuState.currentTab === "settings") {
     fullscreenMenuOpen.toggleFullscreenMenu(true);
   } else {
     fullscreenMenuOpen.toggleFullscreenMenu(false);
@@ -112,11 +108,12 @@
   function toggleBackgroundAudio(e) {
     backgroundAudio.pause(!e.target.checked)
   }
+
 </script>
 
 <!-- MARKUP ////////////////////////////////////////////////////// -->
 <dialog id="menu" open 
-  class:splash={menuState.iconPresentation === "splash"}
+  class:splash={$currentPageName === "splash"}
 >
   <button id="menu-button" type="button" on:click={handleMenuButtonClick}>
     <svg id="menu-icon" viewBox="0 0 100 100">
@@ -210,34 +207,6 @@
     position: absolute;
     background: pink;
   }
-  @media screen and (orientation: portrait) {
-    dialog {
-      width: 100%;
-      height: 8%;
-      left: 0;
-      bottom: 0%;
-    }
-    #menu-icon {
-      width: 9%;
-    }
-  }
-  @media screen and (orientation: landscape) {
-    dialog {
-      width: 6%;
-      height: 10%;
-      top: 0%;
-      left: 94%;
-    }
-    #menu-icon {
-      width: 50%;
-    }
-  }
-  dialog.splash {
-    left: 40%;
-    top: 75%;
-    width: 60px;
-    height: 60px;
-  }
   #menu-button {
     position: absolute;
     top: 0;
@@ -250,8 +219,6 @@
     border: 1px solid black;
   }
   #menu-icon {
-    top: 0;
-    left: 0;
     height: 90%;
   }
   #open-menu {
@@ -301,5 +268,50 @@
   #menu-tabs li button svg {
     width: 100%;
     height: 100%;
+  }
+  /* PORTRAIT ------------------- */
+  @media screen and (orientation: portrait) {
+    dialog {
+      width: 100%;
+      height: 8%;
+      left: 0;
+      bottom: 0%;
+    }
+    #menu-icon {
+      width: 9%;
+    }
+    dialog.splash {
+      width: 33%;
+      height: 15%;
+      left: 33%;
+      top: 75%;
+    }
+    dialog.splash #menu-icon {
+      width: 60%;
+    }
+    #menu-tabs {
+      width: 84%;
+    }
+  }
+  /* LANDSCAPE ------------------- */
+  @media screen and (orientation: landscape) {
+    dialog {
+      width: 6%;
+      height: 10%;
+      top: 0%;
+      left: 94%;
+    }
+    dialog.splash {
+      width: 8%;
+      height: 13%;
+      top: 75%;
+      left: 47%;
+    }
+    #menu-icon {
+      width: 50%;
+    }
+    #menu-tabs {
+      width: 100%;
+    }
   }
 </style>
