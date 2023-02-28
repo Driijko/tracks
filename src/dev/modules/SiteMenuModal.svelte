@@ -155,8 +155,6 @@
               on:click={toggleFullscreen}
               checked={document.fullscreenElement}
              />
-             <!-- checked={!window.screenTop && !window.screenY} -->
-
           </div>
           <div>
             <label for="audio">Turn Audio On/Off</label>
