@@ -31,6 +31,10 @@
       attr:{y1: 100, y2: 1500}},1.7);
     tl.to("#p1-r1", {duration: 3, ease:"power1.inOut", attr:{x:750, width: 150}},0);
     tl.to(["#p1-r2", "#p1-r3"], {duration: 4, ease:"power1.inOut", opacity:0.5},0);
+    tl.to("#p1-p1", {duration: 2, ease:"power1.inOut", 
+    letterSpacing: "0rem", wordSpacing: "1rem"}, 2);
+    tl.to("#p1-p1", {duration: 3, ease:"power1.inOut", 
+    transform: "rotateY(0deg)"}, 1);
   })
 </script>
 
@@ -52,8 +56,8 @@
     <line id="p1-l5" class="accent-line" x1="850" y1="800" x2="850" y2="800" />
   </svg>
   <div class="foreground">
-    <p id="p1-p1">Welcome to Tracks by Dreeko.</p>
-    <div>
+    <p id="p1-p1">Welcome to<br/> Tracks by Dreeko.</p>
+    <!-- <div>
       <p>For the best experience, the following settings are recommended:</p>
       <div>
         <label for="fullscreen-option">Fullscreen</label>
@@ -73,7 +77,7 @@
     </div>
     <a href={null} 
       on:click|preventDefault={()=> pageExit("splash")} 
-    >Ready</a>
+    >Ready</a> -->
   </div>
 </main>
 
@@ -90,7 +94,12 @@
     #p1-p1 {
       left: 13%;
       top: 40%;
-      font-size: calc(var(--uarr-width)/18);
+      font-size: calc(var(--uarr-width)/15);
+      letter-spacing: -1.5rem;
+      word-spacing: -1.5rem;
+      transform: rotateY(90deg);
+      /* width: 1%; */
+      /* overflow: hidden; */
     }
   }
 

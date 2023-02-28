@@ -309,6 +309,13 @@ svg {
   --color5: hsl(50, 100%, 70%);
 }
 
+/* FONTS ///////////////////////////////////////////////////////// */
+:root {
+  font-family: "Quicksand", sans-serif;
+  color: var(--color1);
+  font-weight: 600;
+}
+
 /* LINES & RECTS /////////////////////////////////////////////////// */
 .line {
   stroke-width: 20;
