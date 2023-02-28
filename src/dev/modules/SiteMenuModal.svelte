@@ -153,8 +153,10 @@
             <label for="fullscreen" >Enter/Exit Fullscreen</label>
             <input id="fullscreen" type="checkbox"
               on:click={toggleFullscreen}
-              checked={!window.screenTop && !window.screenY}
+              checked={document.fullscreenElement}
              />
+             <!-- checked={!window.screenTop && !window.screenY} -->
+
           </div>
           <div>
             <label for="audio">Turn Audio On/Off</label>

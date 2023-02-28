@@ -6,6 +6,7 @@
   import OpeningPrompt from "./pages/OpeningPrompt.svelte";
   import Splash from "./pages/Splash.svelte";
   import MusicPage from "./pages/MusicPage.svelte";
+  import LoadingPage from "./pages/LoadingPage.svelte";
 
   // RUN SCRIPTS ---------------------------------------------------------
   setUp();
@@ -23,7 +24,9 @@
 
 <div class="uarr-container">
   <div class="uarr">
-    {#if $currentPageName === "opening-prompt"}
+    {#if $currentPageName === "loading-page"}
+      <LoadingPage />
+    {:else if $currentPageName === "opening-prompt"}
       {#key $resetCount}
         <OpeningPrompt />
       {/key}
@@ -37,7 +40,8 @@
       {/key}
     {/if}
   
-    {#if $currentPageName !== "opening-prompt"}
+    {#if $currentPageName !== "loading-page" 
+    && $currentPageName !== "opening-prompt"}
       {#key $resetCount}
         <SiteMenuModal />
       {/key}
