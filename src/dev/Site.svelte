@@ -22,32 +22,26 @@
   bind:volume={$backgroundAudio.volume}
 ></audio>
 
+{#key resetCount}
 <div class="uarr-container">
   <div class="uarr">
     {#if $currentPageName === "loading-page"}
       <LoadingPage />
     {:else if $currentPageName === "opening-prompt"}
-      {#key $resetCount}
-        <OpeningPrompt />
-      {/key}
+      <OpeningPrompt />
     {:else if $currentPageName === "splash"}
-      {#key $resetCount}
-        <Splash />
-      {/key}
+      <Splash />
     {:else if $currentPageName === "music-page"}
-      {#key $resetCount}
-        <MusicPage />
-      {/key}
+      <MusicPage />
     {/if}
   
     {#if $currentPageName !== "loading-page" 
     && $currentPageName !== "opening-prompt"}
-      {#key $resetCount}
-        <SiteMenuModal />
-      {/key}
+      <SiteMenuModal />
     {/if}
   </div>
 </div>
+{/key}
 
 
 <style>

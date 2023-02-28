@@ -2,8 +2,6 @@
 <script>
   // IMPORT---------------------------------------------------
   import { onMount } from "svelte";
-  import { gsap } from "gsap";
-  import svgViewBox from "../helpers/svgViewBox.js";
   import { currentPage, pageExit } from "../stores/site.js";
 
   // ELEMENT/COMPONENT REFERENCES ------------------------------
@@ -12,9 +10,6 @@
   // LIFECYCLE ------------------------------------------------
   onMount(()=> {
     currentPage.set(musicPage);
-
-
-
   });
 
 </script>

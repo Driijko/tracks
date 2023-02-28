@@ -32,6 +32,7 @@ export function pageExit(destinationPageName, onNewPage) {
   }, pageExitDuration);
 };
 
+// LAYOUT --------------------------------------------------------------
 function layout() {
   document.documentElement.style.setProperty("--viewport-height", `${window.innerHeight}px`);
   const viewportRes = window.innerWidth/window.innerHeight;
@@ -53,6 +54,15 @@ function layout() {
   document.documentElement.style.setProperty("--uarr2-height",
     viewportRes < uarr2Res[0] / uarr2Res[1] ? "auto" : "var(--viewport-height)"
   );
+  if (viewportRes <= 1) {
+    if (viewportRes > (uarr1Res[0]/uarr1Res[1])) {
+      document.documentElement.style.setProperty("--uarr-width",
+        `${window.innerHeight * (uarr1Res[0]/uarr1Res[1])}px`
+      );
+    } else {
+      document.documentElement.style.setProperty("--uarr-width", "100vw");
+    }
+  }
 }
 
 // SETUP ----------------------------------------------------------
@@ -113,6 +123,7 @@ function createBackgroundAudio() {
 
 export const backgroundAudio = createBackgroundAudio();
 
+// FULLSCREEN MENU OPEN -------------------------------------------------
 function createFullscreenMenuOpen() {
   const {subscribe, set} = writable(false);
   return {

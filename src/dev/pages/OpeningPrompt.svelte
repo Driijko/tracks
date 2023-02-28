@@ -52,7 +52,7 @@
     <line id="p1-l5" class="accent-line" x1="850" y1="800" x2="850" y2="800" />
   </svg>
   <div class="foreground">
-    <p>Welcome to Tracks by Dreeko.</p>
+    <p id="p1-p1">Welcome to Tracks by Dreeko.</p>
     <div>
       <p>For the best experience, the following settings are recommended:</p>
       <div>
@@ -83,4 +83,15 @@
     width: 100%;
     height: 100%;
   }
+  .foreground > * {
+    position: absolute;
+  }
+  @media screen and (orientation: portrait) {
+    #p1-p1 {
+      left: 13%;
+      top: 40%;
+      font-size: calc(var(--uarr-width)/18);
+    }
+  }
+
 </style>
