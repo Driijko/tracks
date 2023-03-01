@@ -2,7 +2,6 @@
 import { writable, get } from "svelte/store";
 
 // SITE SETTINGS --------------------------------------
-const pageExitDuration = 6000;
 const resizeDelay = 2000;
 const startingPageName = "opening-prompt";
 const uarr1Res = [9, 16];
@@ -21,16 +20,7 @@ function createResetCount() {
 export const resetCount = createResetCount();
 
 // CURRENT PAGE --------------------------------------------------------
-export const currentPage = writable(null);
 export const currentPageName = writable(startingPageName);
-// export function pageExit(destinationPageName, onNewPage) {
-//   get(currentPage).style.opacity = 0;
-//   const timerId = setTimeout(()=> {
-//     clearTimeout(timerId);
-//     currentPageName.set(destinationPageName);
-//     if(onNewPage) onNewPage();
-//   }, pageExitDuration);
-// };
 export function pageExit(destinationPageName, duration) {
   const timerId = setTimeout(()=> {
     clearTimeout(timerId);
@@ -71,11 +61,19 @@ function layout() {
   }
 }
 
+function checkOrientation() {
+  if (window.innerWidth <= window.innerHeight) {
+    return "portrait";
+  } else {
+    return "landscape";
+  }
+}
+
+export const orientation = writable(checkOrientation());
+
+
 // SETUP ----------------------------------------------------------
 export function setUp() {
-
-  // CSS Variables
-  document.documentElement.style.setProperty("--page-exit-duration", `${pageExitDuration}ms`);
 
   layout();
 
@@ -86,6 +84,7 @@ export function setUp() {
       resizeReady = true;
       const timerId = setTimeout(()=> {
         layout();
+        orientation.set(checkOrientation());
         resetCount.updateResetCount();
         clearTimeout(timerId);
         resizeReady = false;

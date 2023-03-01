@@ -4,14 +4,13 @@
   import { onMount } from "svelte";
 
   // IMPORT STORES --------------------------------------------------
-  import { currentPage, pageExit } from "../stores/site.js";
+  import { pageExit } from "../stores/site.js";
 
   // ELEMENT / COMPONENT REFERENCES -------------------------------
   let loadingScreen;
 
   // LIFECYCLE --------------------------------------------------
   onMount(()=> {
-    currentPage.set(loadingScreen);
     window.addEventListener("load", ()=> pageExit("music-page"));
     return ()=> {
       window.removeEventListener("load", ()=> pageExit("music-page"));
@@ -20,7 +19,7 @@
 </script>
 
 <!-- MARKUP /////////////////////////////////////////////////////////// -->
-<div bind:this={loadingScreen} id="loading-screen" class="page">
+<div id="loading-screen" class="page">
   <div class="animation"></div>
   <div class="animation"></div>
   <p>Loading...</p>

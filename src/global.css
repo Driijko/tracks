@@ -187,10 +187,6 @@ svg {
   height: 100%;
 }
 
-.page {
-  transition: opacity var(--page-exit-duration) ease-out;
-}
-
 /* UARR /////////////////////////// */
 .vp {
   width: 100vw;

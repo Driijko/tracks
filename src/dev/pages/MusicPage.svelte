@@ -1,20 +1,15 @@
 <!-- SCRIPTS //////////////////////////////////////////////// -->
 <script>
   // IMPORT---------------------------------------------------
-  import { onMount } from "svelte";
-  import { currentPage, pageExit } from "../stores/site.js";
 
-  // ELEMENT/COMPONENT REFERENCES ------------------------------
-  let musicPage;
+  import { pageExit } from "../stores/site.js";
 
-  // LIFECYCLE ------------------------------------------------
-  onMount(()=> {
-    currentPage.set(musicPage);
-  });
+
+
 
 </script>
 
-<main bind:this={musicPage} class="page">
+<main class="page">
   <div class="content-container">
 
   </div>

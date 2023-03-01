@@ -1,21 +1,13 @@
 <!-- SCRIPTS //////////////////////////////////////////////// -->
 <script>
   // IMPORT---------------------------------------------------
-  import { onMount } from "svelte";
-  import { currentPage, pageExit } from "../stores/site.js";
+  import { pageExit } from "../stores/site.js";
 
-  // ELEMENT/COMPONENT REFERENCES ------------------------------
-  let splash;
-
-  // LIFECYCLE ------------------------------------------------
-  onMount(()=> {
-    currentPage.set(splash);
-  });
 
 </script>
 
 <!-- MARKUP /////////////////////////////////////////////////////// -->
-<main bind:this={splash} class="page">
+<main>
   
 </main>
 
