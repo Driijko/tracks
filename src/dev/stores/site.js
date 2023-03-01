@@ -2,7 +2,7 @@
 import { writable, get } from "svelte/store";
 
 // SITE SETTINGS --------------------------------------
-const pageExitDuration = 1000;
+const pageExitDuration = 6000;
 const resizeDelay = 2000;
 const startingPageName = "opening-prompt";
 const uarr1Res = [9, 16];
@@ -23,13 +23,19 @@ export const resetCount = createResetCount();
 // CURRENT PAGE --------------------------------------------------------
 export const currentPage = writable(null);
 export const currentPageName = writable(startingPageName);
-export function pageExit(destinationPageName, onNewPage) {
-  get(currentPage).style.opacity = 0;
+// export function pageExit(destinationPageName, onNewPage) {
+//   get(currentPage).style.opacity = 0;
+//   const timerId = setTimeout(()=> {
+//     clearTimeout(timerId);
+//     currentPageName.set(destinationPageName);
+//     if(onNewPage) onNewPage();
+//   }, pageExitDuration);
+// };
+export function pageExit(destinationPageName, duration) {
   const timerId = setTimeout(()=> {
     clearTimeout(timerId);
     currentPageName.set(destinationPageName);
-    if(onNewPage) onNewPage();
-  }, pageExitDuration);
+  }, duration);
 };
 
 // LAYOUT --------------------------------------------------------------
