@@ -112,9 +112,9 @@
     border: calc(var(--uarr-width)/100) solid var(--color1);
   }
   #p1p :global(input[type="range"]::-moz-range-track) {
-    background: var(--color1-1);
     height: 30%;
-    border-radius: calc(var(--uarr-width)/50);
+    border-radius: calc(var(--uarr-width)/10);
+    border: calc(var(--uarr-width)/100) solid var(--color1);
   }
   #p1p :global(input[type="range"]::-webkit-slider-thumb) {
     margin-top: -4.5%; 
@@ -122,6 +122,13 @@
     border-radius: calc(var(--uarr-width)/10);
     height: 300%;
     width: 13%;    
+  }
+  #p1p :global(input[type="range"]::-moz-range-thumb) {
+    margin-top: -4.5%; 
+    border: calc(var(--uarr-width)/100) solid var(--color1);
+    border-radius: calc(var(--uarr-width)/10);
+    height: 40%;
+    width: 10%;   
   }
   #p1p :global(#p1-p3) {
     top: 75%;

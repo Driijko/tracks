@@ -82,9 +82,15 @@
   input[type="range"]::-webkit-slider-runnable-track {
     background: var(--color1-1);
   }
+  input[type="range"]::-moz-range-track { 
+    background: var(--color1-1);
+  }
   input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
+    background-color: var(--color5); 
+  }
+  input[type="range"]::-moz-range-thumb {
     background-color: var(--color5); 
   }
   .fade {

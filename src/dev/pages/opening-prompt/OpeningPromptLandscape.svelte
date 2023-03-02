@@ -139,7 +139,7 @@
     pointer-events: initial;
   }
   #p1l :global(input[type="range"]::-moz-range-track) {
-    height: 30%;
+    height: 10%;
     border-radius: calc(var(--uarr-width)/50);
     border: calc(var(--uarr-width)/150) solid var(--color1);
     pointer-events: initial;
@@ -151,6 +151,13 @@
     height: 250%;
     width: 18%;  
     pointer-events:initial;
+  }
+  #p1l :global(input[type="range"]::-moz-range-thumb) {
+    margin-top: -4.5%; 
+    border: calc(var(--uarr-width)/200) solid var(--color1);
+    border-radius: calc(var(--uarr-width)/10);
+    height: 25%;
+    width: 10%;   
   }
   #p1l :global(#p1-p3) {
     position: absolute;
