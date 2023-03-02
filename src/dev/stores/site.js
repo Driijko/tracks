@@ -3,7 +3,7 @@ import { writable, get } from "svelte/store";
 
 // SITE SETTINGS --------------------------------------
 const resizeDelay = 2000;
-const startingPageName = "opening-prompt";
+const startingPageName = "splash";
 const uarr1Res = [9, 16];
 const uarr2Res = [16, 9];
 
@@ -107,7 +107,6 @@ function createBackgroundAudio() {
     trackPath: "./assets/audio/opening-prompt.mp3",
     volume: 0,
     paused: true,
-    loop: true,
   });
 
   return {

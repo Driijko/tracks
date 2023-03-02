@@ -5,7 +5,7 @@
   import { gsap } from "gsap";
   import SiteMenuModal from "./modules/SiteMenuModal.svelte";
   import OpeningPrompt from "./pages/opening-prompt/OpeningPrompt.svelte";
-  import Splash from "./pages/Splash.svelte";
+  import Splash from "./pages/splash/Splash.svelte";
   import MusicPage from "./pages/MusicPage.svelte";
   import LoadingPage from "./pages/LoadingPage.svelte";
 

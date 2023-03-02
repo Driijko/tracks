@@ -2,13 +2,13 @@
 <script>
   // IMPORTS ------------------------------------------------------
   import { orientation } from "../../stores/site.js"; 
-  import OpeningPromptPortrait from "./OpeningPromptPortrait.svelte";
-  import OpeningPromptLandscape from "./OpeningPromptLandscape.svelte";
+  import SplashPortrait from "./SplashPortrait.svelte";
+  import SplashLandscape from "./SplashLandscape.svelte";
 </script>
 
 <!-- MARKUP /////////////////////////////////////////////////////// -->
 {#if $orientation === "portrait"}
-  <OpeningPromptPortrait />
+  <SplashPortrait />
 {:else}
- <OpeningPromptLandscape />
+ <SplashLandscape />
 {/if}
