@@ -26,7 +26,7 @@
 </script>
 
 <div class="foreground">
-  <p id="p1-p1">Welcome to<br/> Tracks by Dreeko.</p>
+  <p id="p1-p1">Welcome to<br class="portrait"/> Tracks by Dreeko.</p>
   <div id="p1-d1">
     <p id="p1-p2">For the best experience,<br/> the following settings<br/> are recommended:</p>
     <div id="prompt-option-1" class="prompt-option">
@@ -46,7 +46,7 @@
           />
         </div>
       {/if}
-      <p id="p1-p3">You can change<br/> these settings later<br/> in the menu.</p>
+      <p id="p1-p3">You can change<br class="portrait"/> these <br class="landscape"/> settings later<br class="portrait"/> in the menu.</p>
     </div>
   </div>
   <a id="p1-link1" class="interface-style-1" href={null} 

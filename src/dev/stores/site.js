@@ -58,6 +58,14 @@ function layout() {
     } else {
       document.documentElement.style.setProperty("--uarr-width", "100vw");
     }
+  } else {
+    if (viewportRes > (uarr2Res[0]/uarr2Res[1])) {
+      document.documentElement.style.setProperty("--uarr-width",
+        `${window.innerHeight * (uarr2Res[0]/uarr2Res[1])}px`
+      );
+    } else {
+      document.documentElement.style.setProperty("--uarr-width", "100vw");
+    }
   }
 }
 

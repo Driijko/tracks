@@ -307,6 +307,7 @@ svg {
   --color3: hsl(345, 100%, 50%);
   --color4: hsl(350, 100%, 50%);
   --color5: hsl(50, 100%, 70%);
+  --color5: hsl(50, 100%, 70%);
   --color5-1: hsl(50, 100%, 20%);
 }
 
@@ -324,9 +325,17 @@ svg {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 4%;
   border-radius: 3%;
-  border: calc(var(--uarr-width)/200) solid var(--color2-2);
+  transition-property: background-color, color;
+  transition-timing-function: ease-out;
+  transition-duration: 1s;
+}
+
+@media (hover: hover) {
+  .interface-style-1:hover, .interface-style-1:focus {
+    color: var(--color2);
+    background-color: var(--color1);
+  }
 }
 
 /* LINES & RECTS /////////////////////////////////////////////////// */
@@ -340,18 +349,27 @@ svg {
   stroke: var(--color5);
 }
 
+.small-accent-line {
+  stroke-width: 5;
+  stroke: var(--color5);
+}
+
 .color1 {
   fill: var(--color1);
+  stroke: var(--color1);
 }
 
 .color2 {
   fill: var(--color2);
+  stroke: var(--color2);
 }
 
 .color3 {
   fill: var(--color3);
+  stroke: var(--color3);
 }
 
 .color4 {
   fill: var(--color4);
+  stroke: var(--color4);
 }

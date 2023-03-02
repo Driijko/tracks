@@ -24,7 +24,7 @@
       tl.set(".prompt-option", {transform: "scaleX(1)"}, 2.5);
       tl.from(".prompt-option", {duration: 1.5, transform: "scaleX(0)"}, 2.5);
       tl.from("#p1-link1", {duration: 2, opacity: 0}, 4);
-  })
+  });
 </script>
 
 <!-- MARKUP /////////////////////////////////////////////////////// -->
@@ -123,5 +123,7 @@
     top: 84.5%;
     left: 55.5%;
     font-size: calc(var(--uarr-width)/17);
+    padding: 4%;
+    border: calc(var(--uarr-width)/200) solid var(--color2-2);
   }
 </style>
