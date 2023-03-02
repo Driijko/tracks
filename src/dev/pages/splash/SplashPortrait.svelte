@@ -41,6 +41,11 @@
     width: 100%;
     height: 100%;
   }
+  #p2p :global(h1) {
+    position: absolute;
+    width: 100%;
+    top: 15%;
+  }
   #p2p :global(#p2-span1) {
     font-size: calc(var(--uarr-width)/4.5);
   }

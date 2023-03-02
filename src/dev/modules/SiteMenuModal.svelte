@@ -205,7 +205,6 @@
   dialog {
     overflow: hidden;
     position: absolute;
-    background: pink;
   }
   #menu-button {
     position: absolute;
@@ -287,9 +286,16 @@
       height: 15%;
       left: 33%;
       top: 75%;
+      background-color: transparent;
+    }
+    dialog.splash #menu-button {
+      background-color: var(--color1-1);
+      border-radius: 5%;
+      border: 2px solid var(--color2-2);
     }
     dialog.splash #menu-icon {
       width: 60%;
+      stroke: var(--color2-2);
     }
     #menu-tabs {
       width: 84%;
