@@ -5,7 +5,7 @@
   import fullscreen from "../../helpers/fullscreen.js";
 
   // PROPS ------------------------------------------------------
-  export let animation = null;
+  export let handleLinkClick = null;
 
   // LOCAL STATE -----------------------------------------------
   let fadeSliderSection = false;
@@ -17,11 +17,11 @@
   function toggleBackgroundAudio(e) {
     backgroundAudio.pause(!e.target.checked)
   }
-  function handleLinkClick() {
-    pageExit("splash", 5000);
-    animation.reverse(4.5);
-    fadeSliderSection = true;
-  }
+  // function handleLinkClick() {
+  //   pageExit("splash", 5000);
+  //   animation.reverse(4.5);
+  //   fadeSliderSection = true;
+  // }
 
 </script>
 
@@ -50,7 +50,10 @@
     </div>
   </div>
   <a id="p1-link1" class="interface-style-1" href={null} 
-    on:click|preventDefault={handleLinkClick} 
+    on:click|preventDefault={()=> {
+      handleLinkClick();
+      fadeSliderSection = true;
+    }} 
   >Ready</a>
 </div>
 
