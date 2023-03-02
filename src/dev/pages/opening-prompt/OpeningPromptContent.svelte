@@ -1,7 +1,7 @@
 <!-- SCRIPTS //////////////////////////////////////////////////// -->
 <script>
   // IMPORTS ----------------------------------------------------
-  import { backgroundAudio, pageExit } from "../../stores/site.js";
+  import { backgroundAudio } from "../../stores/site.js";
   import fullscreen from "../../helpers/fullscreen.js";
 
   // PROPS ------------------------------------------------------
@@ -9,7 +9,6 @@
 
   // LOCAL STATE -----------------------------------------------
   let fadeSliderSection = false;
-  let focusTarget = 0;
 
   // EVENT HANDLERS -----------------------------------------------
   function toggleFullscreen(e) {
@@ -18,12 +17,6 @@
   function toggleBackgroundAudio(e) {
     backgroundAudio.pause(!e.target.checked)
   }
-  // function handleLinkClick() {
-  //   pageExit("splash", 5000);
-  //   animation.reverse(4.5);
-  //   fadeSliderSection = true;
-  // }
-
 </script>
 
 <div class="foreground">
@@ -50,10 +43,12 @@
       <p id="p1-p3">You can change<br class="portrait"/> these <br class="landscape"/> settings later<br class="portrait"/> in the menu.</p>
     </div>
   </div>
-  <a id="p1-link1" class="interface-style-1" href={"https://driijko.github.io/tracks"} 
+  <a id="p1-link1" class="interface-style-1" 
+    href={"https://driijko.github.io/tracks"} 
     on:click|preventDefault={()=> {
       handleLinkClick();
       fadeSliderSection = true;
+      $backgroundAudio.trackPath = "./assets/audio/background.mp3";
     }} 
   >Ready</a>
 </div>
@@ -61,9 +56,6 @@
 <style>
   .foreground > * {
     position: absolute;
-  }
-  .prompt-option:hover, .prompt-option:focus-within {
-    color: var(--color5);
   }
   input[type="checkbox"] {
     appearance: none;
@@ -97,10 +89,16 @@
   input[type="range"]::-moz-range-thumb {
     background-color: var(--color2-1); 
   }
-  input[type="range"]::-webkit-slider-thumb:hover, input[type="range"]:focus::-webkit-slider-thumb {
-    background-color: var(--color5);
-  }
   .fade {
     opacity: 0;
+  }
+  /* HIGHLIGHTING ------------------------------ */
+  @media (hover:hover) {
+    .prompt-option:hover, .prompt-option:focus-within {
+      color: var(--color5);
+    }
+    input[type="range"]::-webkit-slider-thumb:hover, input[type="range"]:focus::-webkit-slider-thumb {
+      background-color: var(--color5);
+    }
   }
 </style>

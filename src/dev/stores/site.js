@@ -104,7 +104,7 @@ export function setUp() {
 // BACKGROUND AUDIO ------------------------------------
 function createBackgroundAudio() {
   const {subscribe, update, set} = writable({
-    track: "./assets/audio/opening-prompt.mp3",
+    trackPath: "./assets/audio/opening-prompt.mp3",
     volume: 0,
     paused: true,
     loop: true,
@@ -113,12 +113,6 @@ function createBackgroundAudio() {
   return {
     subscribe,
     set,
-    changeTrack: (trackFilePath)=> update(prev => {
-      return {
-        ...prev,
-        track: trackFilePath,
-      }
-    }),
     loop: boolean => update(prev => {
       return {
         ...prev,

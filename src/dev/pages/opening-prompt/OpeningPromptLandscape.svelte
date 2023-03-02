@@ -39,7 +39,7 @@
       tl.set(["#p1-p1", "#p1-p2", "#p1-p3"], {transform: "rotateY(0deg)", stagger: 1}, 1)
       tl.from(["#p1-p1", "#p1-p2", "#p1-p3"], {duration: 1, ease:"linear", transform: "rotateY(90deg)", stagger: 1}, 1);
       tl.set(".prompt-option", {transform: "scaleX(1)"}, 2);
-      tl.from(".prompt-option", {duration: 6, transform: "scaleX(0)", opacity: 0, ease: "power1.out"}, 2);
+      tl.from(".prompt-option", {duration: 4, transform: "scaleX(0)", opacity: 0, ease: "power1.out"}, 2);
       tl.from("#p1-link1", {duration: 2, opacity: 0}, 6);
   });
 </script>
