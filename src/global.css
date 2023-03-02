@@ -307,8 +307,6 @@ svg {
   --color3: hsl(345, 100%, 50%);
   --color4: hsl(350, 100%, 50%);
   --color5: hsl(50, 100%, 70%);
-  --color5: hsl(50, 100%, 70%);
-  --color5-1: hsl(50, 100%, 20%);
 }
 
 /* FONTS ///////////////////////////////////////////////////////// */
@@ -330,6 +328,7 @@ svg {
   transition-timing-function: ease-out;
   transition-duration: 1s;
 }
+
 
 @media (hover: hover) {
   .interface-style-1:hover, .interface-style-1:focus {

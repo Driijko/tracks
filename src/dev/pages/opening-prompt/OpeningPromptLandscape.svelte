@@ -114,7 +114,7 @@
     left: 37.8%;
     top: 0%;
     width: 62%;
-    height: 100%;
+    height: 99%;
     font-size: calc(var(--uarr-width)/50);
     pointer-events: none;
   }
@@ -127,13 +127,13 @@
   #p1l :global(input[type="range"]) {
     position: absolute;
     left: 5%;
-    top: 82%;
+    top: 86%;
     width: 30%;
-    height: calc(var(--uarr-width)/12);
+    height: calc(var(--uarr-width)/20);
     pointer-events: initial;
   }
   #p1l :global(input[type="range"]::-webkit-slider-runnable-track) {
-    height: 30%;
+    height: 50%;
     border-radius: calc(var(--uarr-width)/50);
     border: calc(var(--uarr-width)/150) solid var(--color1);
     pointer-events: initial;

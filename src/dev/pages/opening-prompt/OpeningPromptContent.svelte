@@ -9,6 +9,7 @@
 
   // LOCAL STATE -----------------------------------------------
   let fadeSliderSection = false;
+  let focusTarget = 0;
 
   // EVENT HANDLERS -----------------------------------------------
   function toggleFullscreen(e) {
@@ -29,7 +30,7 @@
   <p id="p1-p1">Welcome to<br class="portrait"/> Tracks by Dreeko.</p>
   <div id="p1-d1">
     <p id="p1-p2">For the best experience,<br/> the following settings<br/> are recommended:</p>
-    <div id="prompt-option-1" class="prompt-option">
+    <div id="prompt-option-1" class="prompt-option" >
       <label for="fullscreen-option">Fullscreen</label>
       <input id="fullscreen-option" type="checkbox" on:click={toggleFullscreen}/>
     </div>
@@ -49,7 +50,7 @@
       <p id="p1-p3">You can change<br class="portrait"/> these <br class="landscape"/> settings later<br class="portrait"/> in the menu.</p>
     </div>
   </div>
-  <a id="p1-link1" class="interface-style-1" href={null} 
+  <a id="p1-link1" class="interface-style-1" href={"https://driijko.github.io/tracks"} 
     on:click|preventDefault={()=> {
       handleLinkClick();
       fadeSliderSection = true;
@@ -60,6 +61,9 @@
 <style>
   .foreground > * {
     position: absolute;
+  }
+  .prompt-option:hover, .prompt-option:focus-within {
+    color: var(--color5);
   }
   input[type="checkbox"] {
     appearance: none;
@@ -88,10 +92,13 @@
   input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    background-color: var(--color5); 
+    background-color: var(--color2-1); 
   }
   input[type="range"]::-moz-range-thumb {
-    background-color: var(--color5); 
+    background-color: var(--color2-1); 
+  }
+  input[type="range"]::-webkit-slider-thumb:hover, input[type="range"]:focus::-webkit-slider-thumb {
+    background-color: var(--color5);
   }
   .fade {
     opacity: 0;
