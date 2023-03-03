@@ -52,14 +52,14 @@
     <rect id="p1-r3" class="color1" x="0" y="200" width="150" height="700" />
     <rect id="p1-r4" class="color3" x="1410" y="60" width="130" height="200" />
     <rect id="p1-r5" class="color3" x="60" y="640" width="130" height="200" />
-    <line id="p1-l1" class="line" x1="0" y1="200" x2="1600" y2="200" />
-    <line id="p1-l2" class="line" x1="0" y1="700" x2="1600" y2="700" />
-    <line id="p1-l3" class="line" x1="600" y1="0" x2="600" y2="900" />
-    <line id="p1-l4" class="line" x1="1000" y1="0" x2="1000" y2="900" />
-    <line id="p1-l5" class="small-accent-line" x1="1000" y1="30" x2="1600" y2="30" />
-    <line id="p1-l6" class="small-accent-line" x1="1570" y1="0" x2="1570" y2="520" />
-    <line id="p1-l7" class="small-accent-line" x1="0" y1="870" x2="600" y2="870" />
-    <line id="p1-l8" class="small-accent-line" x1="30" y1="200" x2="30" y2="900" />
+    <line id="p1-l1" class="line color1" x1="0" y1="200" x2="1600" y2="200" />
+    <line id="p1-l2" class="line color1" x1="0" y1="700" x2="1600" y2="700" />
+    <line id="p1-l3" class="line color1" x1="600" y1="0" x2="600" y2="900" />
+    <line id="p1-l4" class="line color1" x1="1000" y1="0" x2="1000" y2="900" />
+    <line id="p1-l5" class="small-line color5" x1="1000" y1="30" x2="1600" y2="30" />
+    <line id="p1-l6" class="small-line color5" x1="1570" y1="0" x2="1570" y2="520" />
+    <line id="p1-l7" class="small-line color5" x1="0" y1="870" x2="600" y2="870" />
+    <line id="p1-l8" class="small-line color5" x1="30" y1="200" x2="30" y2="900" />
   </svg>
   <OpeningPromptContent {handleLinkClick} />
 </main>

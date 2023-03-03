@@ -114,7 +114,8 @@
 <!-- MARKUP ////////////////////////////////////////////////////// -->
 <dialog id="menu" open 
   class:splash={$currentPageName === "splash"}
-  transition:fade="{{delay: 4000, duration: 2000}}"
+  class:closed={!(menuState.open)}
+  transition:fade="{{delay: 7000, duration: 2000}}"
 >
   <button id="menu-button" type="button" on:click={handleMenuButtonClick}>
     <svg id="menu-icon" viewBox="0 0 100 100">
@@ -270,6 +271,19 @@
     width: 100%;
     height: 100%;
   }
+  /* SPLASH VERSION ---------------- */
+  dialog.splash.closed {
+    border-radius: 5%;
+  }
+  dialog.splash #menu-button {
+    background-color: var(--color1-1);
+    border-radius: 5%;
+    border: 2px solid var(--color2-2);
+  }
+  dialog.splash #menu-icon {
+    width: 60%;
+    stroke: var(--color2-2);
+  }
   /* PORTRAIT ------------------- */
   @media screen and (orientation: portrait) {
     dialog {
@@ -283,20 +297,14 @@
       width: 9%;
     }
     dialog.splash {
-      width: 33%;
-      height: 15%;
-      left: 33%;
-      top: 65%;
+      width: 20%;
+      height: 10%;
+      left: 40%;
+      top: 70%;
       background-color: transparent;
-    }
-    dialog.splash #menu-button {
-      background-color: var(--color1-1);
-      border-radius: 5%;
-      border: 2px solid var(--color2-2);
     }
     dialog.splash #menu-icon {
       width: 60%;
-      stroke: var(--color2-2);
     }
     #menu-tabs {
       width: 84%;
@@ -321,6 +329,33 @@
     }
     #menu-tabs {
       width: 100%;
+    }
+  }
+  /* HIGHLIGHTING ------------------------------ */
+  @media (hover:hover) {
+    dialog.splash {
+      transition-property: transform, box-shadow;
+      transition-timing-function: ease-out;
+      transition-duration: 1s;
+    }  
+    dialog.splash.closed:hover, dialog.splash.closed:focus-within {
+      transform: scale(1.2) translateY(5%);
+      box-shadow:0px 0px 1000px var(--color2-2), 0px 0px 1000px var(--color2-2);
+    }
+    dialog.splash #menu-button {
+      transition-property: background-color;
+      transition-timing-function: ease-in-out;
+      transition-duration: 1s;
+    } 
+    dialog.splash #menu-button:hover, dialog.splash #menu-button:focus {
+      background-color: var(--color1);
+      border-color: var(--color1);
+    } 
+    dialog.splash line {
+      transition: stroke 1s ease-in-out;
+    }
+    dialog.splash:hover line, dialog.splash #menu-button:focus line {
+      stroke: var(--color2);
     }
   }
 </style>

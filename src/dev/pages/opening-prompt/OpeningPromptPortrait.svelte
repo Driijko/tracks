@@ -40,10 +40,10 @@
     <rect id="p1-r1" class="color1" x="750" y="100" width="150" height="1400" />
     <rect id="p1-r2" class="color3" x="490" y="100" width="260" height="1400" />
     <rect id="p1-r3" class="color4" x="100" y="500" width="650" height="380" />
-    <line id="p1-l1" class="line" x1="0" y1="100" x2="900" y2="100" />
-    <line id="p1-l2" class="line" x1="100" y1="0" x2="100" y2="1600" />
-    <line id="p1-l3" class="line" x1="100" y1="1500" x2="900" y2="1500" />
-    <line id="p1-l4" class="accent-line" x1="850" y1="100" x2="850" y2="1500" />
+    <line id="p1-l1" class="line color1" x1="0" y1="100" x2="900" y2="100" />
+    <line id="p1-l2" class="line color1" x1="100" y1="0" x2="100" y2="1600" />
+    <line id="p1-l3" class="line color1" x1="100" y1="1500" x2="900" y2="1500" />
+    <line id="p1-l4" class="line color5" x1="850" y1="100" x2="850" y2="1500" />
   </svg>
   <OpeningPromptContent {handleLinkClick} />
 </main>
