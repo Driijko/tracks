@@ -3,7 +3,7 @@
 
   // IMPORTS --------------------------------------------
   import { onMount } from "svelte";
-  import { fly } from 'svelte/transition';
+  import { fade, fly } from 'svelte/transition';
   import { gsap } from "gsap";
   import fullscreen from "../helpers/fullscreen.js";
   import { backgroundAudio, pageExit, fullscreenMenuOpen, currentPageName }    from "../stores/site.js";
@@ -114,6 +114,7 @@
 <!-- MARKUP ////////////////////////////////////////////////////// -->
 <dialog id="menu" open 
   class:splash={$currentPageName === "splash"}
+  transition:fade="{{delay: 4000, duration: 2000}}"
 >
   <button id="menu-button" type="button" on:click={handleMenuButtonClick}>
     <svg id="menu-icon" viewBox="0 0 100 100">
@@ -285,7 +286,7 @@
       width: 33%;
       height: 15%;
       left: 33%;
-      top: 75%;
+      top: 65%;
       background-color: transparent;
     }
     dialog.splash #menu-button {

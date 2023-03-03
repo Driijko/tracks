@@ -372,3 +372,8 @@ svg {
   fill: var(--color4);
   stroke: var(--color4);
 }
+
+.color5 {
+  fill: var(--color5);
+  stroke: var(--color5);
+}
