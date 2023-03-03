@@ -6,7 +6,7 @@
   import { fade, fly } from 'svelte/transition';
   import { gsap } from "gsap";
   import fullscreen from "../helpers/fullscreen.js";
-  import { backgroundAudio, pageExit, fullscreenMenuOpen, currentPageName }    from "../stores/site.js";
+  import { backgroundAudio, pageExit, fullscreenMenuOpen, currentPageName, orientation }    from "../stores/site.js";
 
   // ANIMATION -----------------------------------------
   let animationDuration = 0.5;
@@ -115,7 +115,7 @@
 <dialog id="menu" open 
   class:splash={$currentPageName === "splash"}
   class:closed={!(menuState.open)}
-  transition:fade="{{delay: 7000, duration: 2000}}"
+  transition:fade="{$orientation === "portrait" ? {delay: 7000, duration: 2000}: {delay:13000, duration:2000}}"
 >
   <button id="menu-button" type="button" on:click={handleMenuButtonClick}>
     <svg id="menu-icon" viewBox="0 0 100 100">
@@ -321,8 +321,8 @@
     dialog.splash {
       width: 8%;
       height: 13%;
-      top: 75%;
-      left: 47%;
+      top: 43%;
+      left: 77.3%;
     }
     #menu-icon {
       width: 50%;

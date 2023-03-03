@@ -63,7 +63,7 @@
   
     {#if $currentPageName !== "loading-page" 
     && $currentPageName !== "opening-prompt"}
-      <!-- <SiteMenuModal /> -->
+      <SiteMenuModal />
     {/if}
   </div>
 </div>
