@@ -235,10 +235,22 @@
   }
   h1 {
     height: 10%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
     background-color: var(--color2);
+    padding-top: 4%;
+    color: var(--color1-2);
+    position: relative;
+  }
+  h1 span {
+    position: absolute;
+  }
+  h1 span:nth-of-type(1) {
+    font-family: "Permanent Marker", cursive;
+  }
+  h1 span:nth-of-type(2) {
+    font-family: "Dancing Script", cursive;
+  }
+  h1 span:nth-of-type(3) {
+    font-family: "Julius Sans One", sans-serif;
   }
   .tab {
     position: absolute;
@@ -257,6 +269,14 @@
     align-items: center;
     gap: 4rem;
     color: var(--color2-2);
+  }
+  nav li {
+    border-color: var(--color2);
+    border-style: solid;
+    background-color: var(--color1-1);
+    width: 100%;
+    text-align: center;
+    padding: 2%;
   }
   #menu-tabs {
     position: absolute;
@@ -341,29 +361,31 @@
       width: 60%;
     }
 
-    h1 {
-      color: var(--color2-2);
-    }
     h1 span:nth-of-type(1) {
-      font-family: "Permanent Marker", display;
-      font-size: calc(var(--uarr-width)/9);
-      padding-bottom: 2%;
+      font-size: calc(var(--uarr-width)/7);
+      left: 5%;
+      top: 10%;
+      letter-spacing: 0.1rem;
     }
     h1 span:nth-of-type(2) {
-      font-family: "Dancing Script";
-      font-size: calc(var(--uarr-width)/14);
-      padding-left: 1%;
+      font-size: calc(var(--uarr-width)/15);
+      left: 75%;
+      top: 10%;
     }
     h1 span:nth-of-type(3) {
-      font-family: "Julius Sans One";
-      font-size: calc(var(--uarr-width)/11);
-      padding-top: 2%;
+      font-size: calc(var(--uarr-width)/15);
+      left: 65%;
+      top: 55%;
     }
     .tab {
       border-width: calc(var(--uarr-width)/50);
     }
     nav {
       font-size: calc(var(--uarr-width)/10);
+    }
+    nav li {
+      border-top-width: calc(var(--uarr-width)/100);
+      border-bottom-width: calc(var(--uarr-width)/100);
     }
     #menu-tabs {
       width: 84%;
