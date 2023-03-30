@@ -48,7 +48,9 @@
     on:click|preventDefault={()=> {
       handleLinkClick();
       fadeSliderSection = true;
-      $backgroundAudio.trackPath = "./assets/audio/background.mp3";
+      if (!($backgroundAudio.paused)) {
+        $backgroundAudio.trackPath = "./assets/audio/background.mp3";
+      }
     }} 
   >Ready</a>
 </div>
