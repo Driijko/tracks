@@ -35,13 +35,13 @@
     tl.to("#site-audio", {duration: 3, volume: 0}, 0);
     tl.to("#site-audio", {duration: 0, attr: {src: trackPath}}, 3);
     tl.call(siteAudioPlay, [trackPath], 3);
-    tl.to("#site-audio", {duration: 3, volume: 1}, 3.1);
+    tl.to("#site-audio", {duration: 3, volume: $backgroundAudio.volume}, 3.1);
   }
 
 </script>
 
 <!-- MARKUP //////////////////////////////////////////////////////////// -->
-<audio bind:this={siteAudio} id="site-audio"
+<audio controls bind:this={siteAudio} id="site-audio"
   loop={true}
   src={"./assets/audio/opening-prompt.mp3"}
   bind:paused={$backgroundAudio.paused}
