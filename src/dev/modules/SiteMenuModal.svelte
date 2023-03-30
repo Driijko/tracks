@@ -155,7 +155,7 @@
           </ul>
         </nav>
       {:else if menuState.currentTab === "settings"}
-        <section class="tab" transition:fly="{{ x: 200, duration: 1000 }}">
+        <section id="settings" class="tab" transition:fly="{{ x: 200, duration: 1000 }}">
           <div>
             <label for="fullscreen" >Enter/Exit Fullscreen</label>
             <input id="fullscreen" type="checkbox"
@@ -171,10 +171,12 @@
             />
           </div>
           {#if !($backgroundAudio.paused)}
-            <label for="volume">Adjust volume to your preference:</label>
-            <input type="range" min="0.0" max="1.0" step="0.01" 
-              bind:value={$backgroundAudio.volume}
-            />
+            <div transition:fly="{{ x: 200, duration: 500 }}">
+              <label for="volume">Adjust volume to your preference:</label><br/>
+              <input type="range" min="0.0" max="1.0" step="0.01" 
+                bind:value={$backgroundAudio.volume}
+              />
+            </div>
           {/if}
         </section>
       {/if}
@@ -277,6 +279,78 @@
     width: 100%;
     text-align: center;
     padding: 2%;
+  }
+  #settings {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+  }
+  #settings > div {
+    border-color: var(--color2);
+    border-style: solid;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--color1-1);
+    color: var(--color2-2);
+    font-size: calc(var(--uarr-width)/20);
+    height: 19.2%;
+  }
+  #settings > div:nth-of-type(3) {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    margin: 0;
+    background-color: var(--color1);
+    transition: background-color 1s ease-out;
+    border-color: var(--color2-2);
+    border-style: solid;
+    border-radius: calc(var(--uarr-width)/50);
+    width: 18%;
+    height: 100%;
+  }
+  input[type="checkbox"]:checked {
+    background-color: var(--color5);
+  }
+  input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    width: 80%;
+    height: calc(var(--uarr-width)/7);
+  }
+  input[type="range"]::-webkit-slider-runnable-track {
+    background-color: var(--color1-2);
+    height: 30%;
+    border-radius: calc(var(--uarr-width)/50);
+    border: calc(var(--uarr-width)/100) solid var(--color1);
+  }
+  input[type="range"]::-moz-range-track { 
+    background-color: var(--color1-2);
+    height: 40%;
+    border-radius: calc(var(--uarr-width)/10);
+    border: calc(var(--uarr-width)/100) solid var(--color1);
+  }
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: var(--color2-1); 
+    margin-top: -3.8%; 
+    border: calc(var(--uarr-width)/100) solid var(--color1);
+    border-radius: calc(var(--uarr-width)/10);
+    height: 300%;
+    width: 11%;  
+  }
+  input[type="range"]::-moz-range-thumb {
+    background-color: var(--color2-1); 
+    border: calc(var(--uarr-width)/100) solid var(--color1);
+    border-radius: calc(var(--uarr-width)/10);
+    height: 80%;
+    width: 6.5%;   
   }
   #menu-tabs {
     position: absolute;
@@ -387,15 +461,14 @@
       border-top-width: calc(var(--uarr-width)/100);
       border-bottom-width: calc(var(--uarr-width)/100);
     }
+    #settings > div {
+      border-top-width: calc(var(--uarr-width)/100);
+      border-bottom-width: calc(var(--uarr-width)/100);
+      padding: 5%;
+    }
     #menu-tabs {
       width: 84%;
     }
-    /* #menu-tabs li button {
-      border-left-width: cal(var(--uarr-width)/100);
-      border-right-width: cal(var(--uarr-width)/100);
-      border-top-width: 0;
-      border-bottom-width: 0;
-    } */
   }
   /* LANDSCAPE ------------------- */
   @media screen and (orientation: landscape) {
