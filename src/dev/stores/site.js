@@ -3,7 +3,7 @@ import { writable, get } from "svelte/store";
 
 // SITE SETTINGS --------------------------------------
 const resizeDelay = 2000;
-const startingPageName = "opening-prompt";
+const startingPageName = "splash";
 const uarr1Res = [9, 16];
 const uarr2Res = [16, 9];
 

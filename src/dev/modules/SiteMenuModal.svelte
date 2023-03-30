@@ -115,6 +115,7 @@
 <dialog id="menu" open 
   class:splash={$currentPageName === "splash"}
   class:closed={!(menuState.open)}
+  class:open={menuState.open}
   transition:fade="{$orientation === "portrait" ? {delay: 7000, duration: 2000}: {delay:13000, duration:2000}}"
 >
   <button id="menu-button" type="button" on:click={handleMenuButtonClick}>
@@ -128,24 +129,28 @@
 
   {#if menuState.open}
     <div id="open-menu" transition:fly="{{ x: 200, duration: 1000 }}">
-      <h1>H1</h1>
+      <h1>
+        <span>Tracks</span>
+        <span>by</span>
+        <span>Dreeko</span>
+      </h1>
       {#if menuState.currentTab === "navigation"}
         <nav class="tab" transition:fly="{{ x: 200, duration: 1000 }}">
           <ul>
             <li>
               <a href={null} 
                 on:click|preventDefault={()=> pageExit("page1")}
-              >Page 1</a>
+              >Music</a>
             </li>
             <li>
               <a href={null} 
                 on:click|preventDefault={()=> pageExit("page2")}
-              >Page 2</a>
+              >About</a>
             </li>
             <li>
               <a href={null} 
                 on:click|preventDefault={()=> pageExit("page3")}
-              >Page 3</a>
+              >Contact</a>
             </li>
           </ul>
         </nav>
@@ -218,6 +223,7 @@
     justify-content: center;
     align-items: center;
     background-color: var(--color1);
+    z-index: 1;
   }
   #menu-icon {
     height: 90%;
@@ -225,17 +231,23 @@
   }
   #open-menu {
     height: 100%;
+    background-color: var(--color1);
   }
   h1 {
-    border: 4px solid green;
     height: 10%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--color2);
   }
   .tab {
     position: absolute;
     top: 10%;
     height: 79%;
     width: 100%;
-    border: 4px solid red;
+    background-color: var(--color1-2);
+    border-style: solid;
+    border-color: var(--color2);
   }
   nav ul {
     display: flex;
@@ -243,7 +255,8 @@
     height: 100%;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 4rem;
+    color: var(--color2-2);
   }
   #menu-tabs {
     position: absolute;
@@ -252,24 +265,32 @@
     width: 84%;
     height: 11%;
     bottom: 0%;
-    border: 4px solid red;
   }
   #menu-tabs li {
-    border: 1px solid blue;
     height: 100%;
     width: 20%;
+    padding-bottom: 2%;
   }
   #menu-tabs li button {
-    border: 1px solid blue;
     height: 100%;
     width: 100%;
+    border-radius: 0% 0% 20% 20%;
+
+    background-color: var(--color1-1);
   }
+
   #menu-tabs li button.selected {
-    background-color: yellow;
+    background-color: var(--color2);
   }
   #menu-tabs li button svg {
     width: 100%;
     height: 100%;
+  }
+  #menu-tabs li button svg path {
+    fill: var(--color1-2);
+  }
+  #menu-tabs li button.selected svg path {
+    fill: var(--color2-2);
   }
   /* SPLASH VERSION ---------------- */
   dialog.splash.closed {
@@ -278,11 +299,17 @@
   dialog.splash #menu-button {
     background-color: var(--color1-1);
     border-radius: 5%;
-    border: 2px solid var(--color2-2);
+    border-color: var(--color2-2);
+    border-style: solid;
   }
   dialog.splash #menu-icon {
     width: 60%;
     stroke: var(--color2-2);
+  }
+  dialog.open #menu-button {
+    border-color: var(--color2);
+    border-radius:0;
+    background-color: var(--color1-2);
   }
   /* PORTRAIT ------------------- */
   @media screen and (orientation: portrait) {
@@ -303,12 +330,50 @@
       top: 70%;
       background-color: transparent;
     }
+    dialog.splash #menu-button {
+      border-width: calc(var(--uarr-width)/100);
+    }
+    dialog.open #menu-button {
+      border-width: calc(var(--uarr-width)/80);
+      border-top-width: 0;
+    }
     dialog.splash #menu-icon {
       width: 60%;
+    }
+
+    h1 {
+      color: var(--color2-2);
+    }
+    h1 span:nth-of-type(1) {
+      font-family: "Permanent Marker", display;
+      font-size: calc(var(--uarr-width)/9);
+      padding-bottom: 2%;
+    }
+    h1 span:nth-of-type(2) {
+      font-family: "Dancing Script";
+      font-size: calc(var(--uarr-width)/14);
+      padding-left: 1%;
+    }
+    h1 span:nth-of-type(3) {
+      font-family: "Julius Sans One";
+      font-size: calc(var(--uarr-width)/11);
+      padding-top: 2%;
+    }
+    .tab {
+      border-width: calc(var(--uarr-width)/50);
+    }
+    nav {
+      font-size: calc(var(--uarr-width)/10);
     }
     #menu-tabs {
       width: 84%;
     }
+    /* #menu-tabs li button {
+      border-left-width: cal(var(--uarr-width)/100);
+      border-right-width: cal(var(--uarr-width)/100);
+      border-top-width: 0;
+      border-bottom-width: 0;
+    } */
   }
   /* LANDSCAPE ------------------- */
   @media screen and (orientation: landscape) {

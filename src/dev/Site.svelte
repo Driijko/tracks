@@ -41,7 +41,7 @@
 </script>
 
 <!-- MARKUP //////////////////////////////////////////////////////////// -->
-<audio controls bind:this={siteAudio} id="site-audio"
+<audio bind:this={siteAudio} id="site-audio"
   loop={true}
   src={"./assets/audio/opening-prompt.mp3"}
   bind:paused={$backgroundAudio.paused}
