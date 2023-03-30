@@ -225,7 +225,7 @@
     justify-content: center;
     align-items: center;
     background-color: var(--color1);
-    z-index: 1;
+    z-index: 2;
   }
   #menu-icon {
     height: 90%;
@@ -270,7 +270,6 @@
     justify-content: center;
     align-items: center;
     gap: 4rem;
-    color: var(--color2-2);
   }
   nav li {
     border-color: var(--color2);
@@ -278,7 +277,9 @@
     background-color: var(--color1-1);
     width: 100%;
     text-align: center;
-    padding: 2%;
+    font-family: "Bungee Outline";
+    color: var(--color2-2);
+    letter-spacing: calc(var(--uarr-width)/100);
   }
   #settings {
     display: flex;
@@ -295,11 +296,11 @@
     background-color: var(--color1-1);
     color: var(--color2-2);
     font-size: calc(var(--uarr-width)/20);
-    height: 19.2%;
+    /* height: 19.2%; */
   }
   #settings > div:nth-of-type(3) {
     flex-direction: column;
-    gap: 1rem;
+    height: 28%;
   }
   input[type="checkbox"] {
     appearance: none;
@@ -331,7 +332,7 @@
   }
   input[type="range"]::-moz-range-track { 
     background-color: var(--color1-2);
-    height: 40%;
+    height: 25%;
     border-radius: calc(var(--uarr-width)/10);
     border: calc(var(--uarr-width)/100) solid var(--color1);
   }
@@ -349,8 +350,8 @@
     background-color: var(--color2-1); 
     border: calc(var(--uarr-width)/100) solid var(--color1);
     border-radius: calc(var(--uarr-width)/10);
-    height: 80%;
-    width: 6.5%;   
+    height: 40%;
+    width: 9%;   
   }
   #menu-tabs {
     position: absolute;
@@ -362,15 +363,13 @@
   }
   #menu-tabs li {
     height: 100%;
-    width: 20%;
-    padding-bottom: 2%;
   }
   #menu-tabs li button {
     height: 100%;
     width: 100%;
-    border-radius: 0% 0% 20% 20%;
-
     background-color: var(--color1-1);
+    display: flex;
+    align-items: center;
   }
 
   #menu-tabs li button.selected {
@@ -378,7 +377,6 @@
   }
   #menu-tabs li button svg {
     width: 100%;
-    height: 100%;
   }
   #menu-tabs li button svg path {
     fill: var(--color1-2);
@@ -434,7 +432,6 @@
     dialog.splash #menu-icon {
       width: 60%;
     }
-
     h1 span:nth-of-type(1) {
       font-size: calc(var(--uarr-width)/7);
       left: 5%;
@@ -460,6 +457,7 @@
     nav li {
       border-top-width: calc(var(--uarr-width)/100);
       border-bottom-width: calc(var(--uarr-width)/100);
+      padding: 2%;
     }
     #settings > div {
       border-top-width: calc(var(--uarr-width)/100);
@@ -468,6 +466,16 @@
     }
     #menu-tabs {
       width: 84%;
+    }
+    #menu-tabs li {
+      width: 20%;
+      padding-bottom: 2%;
+    }
+    #menu-tabs li button {
+      border-radius: 0% 0% 20% 20%;
+    }
+    #menu-tabs svg {
+      height: 70%;
     }
   }
   /* LANDSCAPE ------------------- */
@@ -489,6 +497,48 @@
     }
     #menu-tabs {
       width: 100%;
+    }
+    h1 {
+      overflow:visible;
+      z-index: 1;
+    }
+    h1 span:nth-of-type(1) {
+      font-size: calc(var(--uarr-width)/20);
+      left: 1%;
+      top: 5%;
+      letter-spacing: 0.1rem;
+    }
+    h1 span:nth-of-type(2) {
+      font-size: calc(var(--uarr-width)/55);
+      left: 20%;
+      top: 15%;
+    }
+    h1 span:nth-of-type(3) {
+      font-size: calc(var(--uarr-width)/40);
+      left: 19.7%;
+      top: 50%;
+    }
+    .tab {
+      border-width: calc(var(--uarr-width)/200);
+    }
+    nav li {
+      border-top-width: calc(var(--uarr-width)/500);
+      border-bottom-width: calc(var(--uarr-width)/500);
+      padding: 0.1%;
+    }
+    nav a {
+      font-size: calc(var(--uarr-width)/40);
+    }
+    #menu-tabs li {
+      width: 15%;
+      padding-bottom: 1%;
+    }
+    #menu-tabs li button {
+      border-radius: 0% 0% 50% 50%;
+      padding-bottom: 5%;
+    }
+    #menu-tabs svg {
+      height: 80%;
     }
   }
   /* HIGHLIGHTING ------------------------------ */
