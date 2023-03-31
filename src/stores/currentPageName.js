@@ -1,10 +1,8 @@
 // IMPORT SCRIPTS ------------------------------------
 import { writable} from "svelte/store";
-
-// SETTINGS -----------------------------------------
-const startingPageName = "loading-screen";
+import siteSettings from "../helpers/siteSettings";
 
 // STORE
-const currentPageName = writable(startingPageName);
+const currentPageName = writable(siteSettings.startingPageName);
 
 export default currentPageName;

@@ -1,5 +1,21 @@
+<!-- SCRIPTS /////////////////////////////////////////////////////////// -->
+<script>
+  // IMPORTS ---------------------------------------
+  import { onMount } from "svelte";
+  import { fade } from "svelte/transition";
+  import pageExit from "../../helpers/pageExit";
+
+  // LOAD EVENT ----------------------------------
+  onMount(()=> {
+    window.addEventListener("load", ()=> pageExit("opening-prompt",2000));
+    return ()=> {
+      window.removeEventListener("load", ()=> pageExit("opening-prompt",2000));
+    };
+  });
+</script>
+
 <!-- MARKUP /////////////////////////////////////////////////////////// -->
-<div id="loading-screen">
+<div id="loading-screen" transition:fade="{{duration:2000}}">
   <div class="animation"></div>
   <div class="animation"></div>
   <p>Loading...</p>
