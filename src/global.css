@@ -1,0 +1,388 @@
+/* MEYER-WEB RESET SHEET /////////////////////////////////////////// */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+dialog {
+  margin: 0;
+  padding: 0;
+  left: initial;
+  border: none;
+}
+
+/* INTERFACE RESET //////////////////////// */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:focus, button:focus, input:focus {
+  outline: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+}
+
+input {
+  font-family: inherit;
+}
+
+input[type="checkbox"], input[type="range"] {
+  appearance: none;
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* GENERAL ///////////////////////////////////////////////////////// */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scrollbar-width: none;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
+  scroll-behavior: smooth; 
+  overscroll-behavior: contain;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+}
+
+p a {
+  text-decoration: underline;
+  padding: 0 0.3rem;
+}
+
+a, button, label, input {
+  cursor: pointer;
+}
+
+/* This is to make these elements at least
+the minimum recommended size on mobile. 
+Recommended interface size is 40px - 70px, 
+with 50-60 being ideal. */
+a, button, input {
+  min-width: 40px;
+  min-height: 40px;
+}
+
+i {
+  font-style: italic;
+}
+
+em {
+  font-weight: bold;
+}
+
+/* PREVENT OVERSIZED IMAGES */
+img {
+  max-width: 100%;
+  object-fit: contain;
+}
+
+svg {
+  width: 1rem;
+}
+
+/* CSS TOOLS //////////////////////////////////////////////////////// */
+.regular-scroll {
+  height: var(--viewport-height);
+  overflow-y: scroll;
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
+}
+.regular-scroll::-webkit-scrollbar {
+  display: none;
+}
+.hidden-submit {
+  visibility: hidden;
+  position: absolute;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-gap {
+  gap: 0.3rem;
+}
+
+/* BACKGROUND/FOREGROUND /////////////////////// */
+.background {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  z-index: -1;
+}
+
+.svg-background {
+  position: absolute;
+  left: -0.1%;
+  width: 100.2%;
+  height: 100.1%;
+}
+
+.foreground {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+/* UARR /////////////////////////// */
+.vp {
+  width: 100vw;
+  height: var(--viewport-height);
+}
+
+.uarr-container {
+  height: var(--viewport-height);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (orientation: portrait) {
+  .uarr {
+    aspect-ratio: var(--uarr1-aspect-ratio);
+    width: var(--uarr1-width);
+    height: var(--uarr1-height);
+  }
+}
+@media screen and (orientation: landscape) {
+  .uarr {
+    aspect-ratio: var(--uarr2-aspect-ratio);
+    width: var(--uarr2-width);
+    height: var(--uarr2-height);
+  }
+}
+.uarr1 {
+  aspect-ratio: var(--uarr1-aspect-ratio);
+  width: var(--uarr1-width);
+  height: var(--uarr1-height);
+}
+.uarr2 {
+  aspect-ratio: var(--uarr2-aspect-ratio);
+  width: var(--uarr2-width);
+  height: var(--uarr-height);
+}
+
+/* COVERING MODAL //////////////// */
+.covering-modal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+}
+
+.covering-modal .background {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: hsla(0, 0%, 0%, 0.7);
+}
+
+.covering-modal .container {
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+
+.covering-modal section {
+  pointer-events: initial;
+  position: relative;
+}
+
+.covering-modal .modal-closer-button {
+  padding: 0.1rem 0.3rem;
+  line-height: 0;
+  border: 1px solid black;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.covering-modal .modal-closer-button svg {
+  width: 1rem;
+}
+
+/* PORTRAIT/LANDSCAPE //////////////////// */
+@media only screen and (orientation: landscape) {
+  .portrait {
+    display: none;
+  }
+
+  .cruncher {
+    height: var(--viewport-height);
+  }
+
+  .content-container {
+    height: 100%;
+    position: relative;
+  }
+}
+
+@media only screen and (orientation: portrait) {
+  .landscape {
+    display: none;
+  }
+
+  .content-container {
+    height: 92%;
+    position: relative;
+  }
+}
+
+/* COLORS ////////////////////////////////////////////////////// */
+:root {
+  --color1: hsl(340, 100%, 10%);
+  --color1-1: hsl(340, 100%, 30%);
+  --color1-2: hsl(340, 100%, 20%);
+  --color2: hsl(340, 100%, 50%);
+  --color2-1: hsl(340, 100%, 60%);
+  --color2-2: hsl(340, 100%, 80%);
+  --color3: hsl(345, 100%, 50%);
+  --color4: hsl(350, 100%, 50%);
+  --color5: hsl(50, 100%, 70%);
+}
+
+/* FONTS ///////////////////////////////////////////////////////// */
+:root {
+  font-family: "Quicksand", sans-serif;
+  color: var(--color1);
+  font-weight: 600;
+}
+
+/* INTERFACE /////////////////////////////////////////////////////// */
+.interface-style-1 {
+  background-color: var(--color2-1);
+  color: var(--color1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3%;
+  transition-property: background-color, color;
+  transition-timing-function: ease-out;
+  transition-duration: 1s;
+}
+
+
+@media (hover: hover) {
+  .interface-style-1:hover, .interface-style-1:focus {
+    color: var(--color2);
+    background-color: var(--color1);
+  }
+}
+
+/* LINES & RECTS /////////////////////////////////////////////////// */
+.line {
+  stroke-width: 20;
+}
+
+.small-line {
+  stroke-width: 5;
+}
+
+.color1 {
+  fill: var(--color1);
+  stroke: var(--color1);
+}
+
+.color1-2 {
+  fill: var(--color1-2);
+  stroke: var(--color1-2);
+}
+
+.color2 {
+  fill: var(--color2);
+  stroke: var(--color2);
+}
+
+.color3 {
+  fill: var(--color3);
+  stroke: var(--color3);
+}
+
+.color4 {
+  fill: var(--color4);
+  stroke: var(--color4);
+}
+
+.color5 {
+  fill: var(--color5);
+  stroke: var(--color5);
+}
