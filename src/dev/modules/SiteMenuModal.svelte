@@ -557,7 +557,7 @@
       transition-timing-function: ease-in-out;
       transition-duration: 1s;
     } 
-    dialog.splash #menu-button:hover, dialog.splash #menu-button:focus {
+    dialog.splash.closed #menu-button:hover, dialog.splash.closed #menu-button:focus {
       background-color: var(--color1);
       border-color: var(--color1);
     } 
