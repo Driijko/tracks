@@ -564,7 +564,7 @@
     dialog.splash line {
       transition: stroke 1s ease-in-out;
     }
-    dialog.splash:hover line, dialog.splash #menu-button:focus line {
+    dialog.splash.closed:hover line, dialog.splash.closed #menu-button:focus line {
       stroke: var(--color2);
     }
   }
