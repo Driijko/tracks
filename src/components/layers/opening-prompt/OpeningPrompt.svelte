@@ -2,15 +2,29 @@
 <script>
   // IMPORTS ------------------------------------------------------
   import viewportOrientation  from "../../../stores/viewportOrientation"; 
-  // import OpeningPromptPortrait from "./OpeningPromptPortrait.svelte";
-  // import OpeningPromptLandscape from "./OpeningPromptLandscape.svelte";
+  import OpeningPromptPortrait from "./OpeningPromptPortrait.svelte";
+  import OpeningPromptLandscape from "./OpeningPromptLandscape.svelte";
 </script>
 
 <!-- MARKUP /////////////////////////////////////////////////////// -->
-{#if $viewportOrientation === "portrait"}
-  <!-- <OpeningPromptPortrait /> -->
-  <p>portrait</p>
-{:else}
- <!-- <OpeningPromptLandscape /> -->
- <p>landscape</p>
-{/if}
+<div class="uarr-container">
+  <div class="uarr">
+    {#if $viewportOrientation === "portrait"}
+      <OpeningPromptPortrait />
+    {:else}
+      <OpeningPromptLandscape />
+    {/if}
+  </div>
+</div>
+
+<!-- STYLE ///////////////////////////////////////////////////////////// -->
+<style>
+  .uarr-container {
+    position: relative;
+    background-color: var(--color1);
+  }
+  .uarr {
+    position: relative;
+    background-color: var(--color2);
+  }
+</style>
