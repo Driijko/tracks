@@ -1,5 +1,6 @@
 <!-- SCRIPTS /////////////////////////////////////////////// -->
 <script>
+  // IMPORTS ---------------------------------
   import Settings from "../../Settings.svelte";
 </script>
 
@@ -13,3 +14,29 @@
 </main>
 
 <!-- STYLES /////////////////////////////////////////////////////////// -->
+<style>
+  :global(main > *) {
+    position: absolute;
+  }
+  a {
+    border-style:solid;
+    border-color: var(--color2-2);
+    background-color: var(--color2-1);
+    color: var(--color1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3%;
+  }
+  @media (hover:hover) {
+    a {
+      transition-property: background-color, color;
+      transition-timing-function: ease-out;
+      transition-duration: 1s;
+    }
+    a:hover {
+      color: var(--color2);
+      background-color: var(--color1);
+    }
+  }
+</style>

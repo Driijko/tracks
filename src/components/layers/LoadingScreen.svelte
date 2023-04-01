@@ -2,20 +2,28 @@
 <script>
   // IMPORTS ---------------------------------------
   import { onMount } from "svelte";
-  import { fade } from "svelte/transition";
   import pageExit from "../../helpers/pageExit";
+
+  // LOCAL STATE ----------------------------------
+  let fade = false;
 
   // LOAD EVENT ----------------------------------
   onMount(()=> {
-    window.addEventListener("load", ()=> pageExit("opening-prompt",2000));
+    window.addEventListener("load", ()=>{
+      pageExit("opening-prompt",2000)
+      fade = true;
+    });
     return ()=> {
-      window.removeEventListener("load", ()=> pageExit("opening-prompt",2000));
+      window.removeEventListener("load", ()=> {
+        pageExit("opening-prompt",2000)
+        fade = true;
+      });
     };
   });
 </script>
 
 <!-- MARKUP /////////////////////////////////////////////////////////// -->
-<div id="loading-screen" transition:fade="{{duration:2000}}">
+<div id="loading-screen" class:fade>
   <div class="animation"></div>
   <div class="animation"></div>
   <p>Loading...</p>
@@ -30,6 +38,10 @@
     width: 100vw;
     height: var(--viewport-height);
     background-color: var(--color1);
+    transition: opacity 2s ease-out;
+  }
+  .fade {
+    opacity: 0;
   }
   p {
     color: var(--color2-2);

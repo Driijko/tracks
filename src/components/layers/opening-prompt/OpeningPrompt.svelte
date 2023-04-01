@@ -1,13 +1,14 @@
 <!-- SCRIPTS ///////////////////////////////////////////////////// -->
 <script>
   // IMPORTS ------------------------------------------------------
+  import { fade } from "svelte/transition";
   import viewportOrientation  from "../../../stores/viewportOrientation"; 
   import OpeningPromptPortrait from "./OpeningPromptPortrait.svelte";
   import OpeningPromptLandscape from "./OpeningPromptLandscape.svelte";
 </script>
 
 <!-- MARKUP /////////////////////////////////////////////////////// -->
-<div class="uarr-container">
+<div class="uarr-container" transition:fade="{{duration:2000}}">
   <div class="uarr">
     {#if $viewportOrientation === "portrait"}
       <OpeningPromptPortrait />

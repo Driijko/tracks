@@ -6,11 +6,14 @@
   import resetCount from "./stores/resetCount";
   import LoadingScreen from "./components/layers/LoadingScreen.svelte";
   import OpeningPrompt from "./components/layers/opening-prompt/OpeningPrompt.svelte";
+  import Audio from "./components/Audio.svelte";
 
   setUp();
 </script>
 
 <!-- MARKUP ///////////////////////////////////////////////////// -->
+<Audio />
+
 {#key resetCount}
   {#if $currentPageName === "loading-screen"}
     <LoadingScreen />

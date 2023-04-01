@@ -5,32 +5,32 @@
   import { onMount } from "svelte";
 
   // ANIMATION -------------------------------------------
-  const tl = gsap.timeline();
+  const tl = gsap.timeline({delay:1});
 
   onMount(()=> {
-    tl.from("#l1", {duration: 2, ease:"power1.inOut", attr:{x2: 0}},0);
-    tl.from("#l2", {duration: 2, ease:"power1.inOut", attr:{x1: 1600}},0);
-    tl.from("#l3", {duration: 1, ease:"power1.inOut", attr:{y2: 0}},0);
-    tl.from("#l4", {duration: 1, ease:"power1.inOut", 
-      attr:{y1: 900}},0);
-    tl.from("#l5", {duration: 1, ease:"power1.inOut", 
-    attr:{x1: 1600}},3);
-    tl.from("#l6", {duration: 1, ease:"power1.inOut", 
-    attr:{y2: 0}},2.5);
-    tl.from("#l7", {duration: 1, ease:"power1.inOut", 
-    attr:{x2: 0}},3);
-    tl.from("#l8", {duration: 1, ease:"power1.inOut", 
-    attr:{y1: 900}},2.5);
-    tl.from("#r1", {duration: 3, ease:"power1.out", attr:{x:1600, width: 0}},1);
-    tl.from("#r2", {duration: 3, ease:"power1.out", attr:{width: 0}},1);
-    tl.from("#r3", {duration: 2, ease:"power1.out", attr:{y: 900, height: 0}},1);
-    tl.from(["#r4", "#r5"], {duration: 2, ease: "power1.inOut", opacity: 0}, 4);
-    tl.from(["#p1", "#p2", "#p3"], {duration: 3, ease:"power1.inOut", letterSpacing: "-0.5em", stagger: 1}, 1);
-    tl.set(["#p1-p1", "#p1-p2", "#p1-p3"], {transform: "rotateY(0deg)", stagger: 1}, 1)
-    tl.from(["#p1-p1", "#p1-p2", "#p1-p3"], {duration: 1, ease:"linear", transform: "rotateY(90deg)", stagger: 1}, 1);
-    tl.set(".prompt-option", {transform: "scaleX(1)"}, 2);
-    tl.from(".prompt-option", {duration: 4, transform: "scaleX(0)", opacity: 0, ease: "power1.out"}, 2);
-    tl.from("#p1-link1", {duration: 2, opacity: 0}, 6);
+    // tl.from("#l1", {duration: 2, ease:"power1.inOut", attr:{x2: 0}},0);
+    // tl.from("#l2", {duration: 2, ease:"power1.inOut", attr:{x1: 1600}},0);
+    // tl.from("#l3", {duration: 1, ease:"power1.inOut", attr:{y2: 0}},0);
+    // tl.from("#l4", {duration: 1, ease:"power1.inOut", 
+    //   attr:{y1: 900}},0);
+    // tl.from("#l5", {duration: 1, ease:"power1.inOut", 
+    // attr:{x1: 1600}},3);
+    // tl.from("#l6", {duration: 1, ease:"power1.inOut", 
+    // attr:{y2: 0}},2.5);
+    // tl.from("#l7", {duration: 1, ease:"power1.inOut", 
+    // attr:{x2: 0}},3);
+    // tl.from("#l8", {duration: 1, ease:"power1.inOut", 
+    // attr:{y1: 900}},2.5);
+    // tl.from("#r1", {duration: 3, ease:"power1.out", attr:{x:1600, width: 0}},1);
+    // tl.from("#r2", {duration: 3, ease:"power1.out", attr:{width: 0}},1);
+    // tl.from("#r3", {duration: 2, ease:"power1.out", attr:{y: 900, height: 0}},1);
+    // tl.from(["#r4", "#r5"], {duration: 2, ease: "power1.inOut", opacity: 0}, 4);
+    // tl.from(["#p1", "#p2", "#p3"], {duration: 3, ease:"power1.inOut", letterSpacing: "-0.5em", stagger: 1}, 1);
+    // tl.set(["#p1-p1", "#p1-p2", "#p1-p3"], {transform: "rotateY(0deg)", stagger: 1}, 1)
+    // tl.from(["#p1-p1", "#p1-p2", "#p1-p3"], {duration: 1, ease:"linear", transform: "rotateY(90deg)", stagger: 1}, 1);
+    // tl.set(".prompt-option", {transform: "scaleX(1)"}, 2);
+    // tl.from(".prompt-option", {duration: 4, transform: "scaleX(0)", opacity: 0, ease: "power1.out"}, 2);
+    // tl.from("#p1-link1", {duration: 2, opacity: 0}, 6);
   });
 </script>
 
