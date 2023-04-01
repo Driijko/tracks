@@ -40,7 +40,8 @@
 
 <!-- STYLES ///////////////////////////////////////////// -->
 <style>
-  :global(main p:nth-of-type(1)) {
+  @media screen and (orientation: portrait) {
+    :global(main p:nth-of-type(1)) {
     width: 60%;
     left: 13%;
     top: 8%;
@@ -116,7 +117,6 @@
   :global(input[type="range"]) {
     width: 70%;
     height: 30%;
-    /* border: 4px solid yellow; */
   }
   :global(input[type="range"]::-webkit-slider-runnable-track) {
     height: 50%;
@@ -143,5 +143,6 @@
     font-size: calc(var(--uarr-width)/17);
     padding: 4%;
     border-width: calc(var(--uarr-width)/200);
+  }
   }
 </style>

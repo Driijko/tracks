@@ -3,6 +3,7 @@
   // IMPORTS --------------------------------------------
   import { gsap } from "gsap";
   import { onMount } from "svelte";
+  import OpeningPromptContent from "./OpeningPromptContent.svelte";
 
   // ANIMATION -------------------------------------------
   const tl = gsap.timeline({delay:1});
@@ -50,3 +51,4 @@
   <line id="l7" class="small-line color5" x1="0" y1="870" x2="600" y2="870" />
   <line id="l8" class="small-line color5" x1="30" y1="200" x2="30" y2="900" />
 </svg>
+<OpeningPromptContent />
