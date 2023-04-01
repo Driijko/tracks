@@ -34,6 +34,7 @@
   <line id="p1-l2" class="line color1" x1="100" y1="0" x2="100" y2="1600" />
   <line id="p1-l3" class="line color1" x1="100" y1="1500" x2="900" y2="1500" />
   <line id="p1-l4" class="line color5" x1="850" y1="100" x2="850" y2="1500" />
+  <line id="p1-l5" class="line color4" x1="90" y1="1000" x2="830" y2="1000" />
 </svg>
 <OpeningPromptContent />
 
@@ -82,7 +83,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: calc(var(--uarr-width)/20);
+    font-size: calc(var(--uarr-width)/16);
   }
   :global(main #settings > div > div) {
     width: 30%;
@@ -133,7 +134,7 @@
   :global(main p:nth-of-type(3)) {
     top: 72%;
     left: 13%;
-    font-size: calc(var(--uarr-width)/18);
+    font-size: calc(var(--uarr-width)/20);
     width: 70%;
   }
   :global(a) {
