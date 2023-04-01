@@ -56,14 +56,22 @@
   }
   input[type="range"]::-webkit-slider-runnable-track {
     background-color: var(--color1-1);
+    border-style: solid;
+    border-color: var(--color1);
   }
   input[type="range"]::-moz-range-track { 
     background-color: var(--color1-1);
+    border-style:solid;
+    border-color: var(--color1);
   }
   input[type="range"]::-webkit-slider-thumb {
     background-color: var(--color2-1); 
+    border-style: solid;
+    border-color: var(--color1);
   }
   input[type="range"]::-moz-range-thumb {
     background-color: var(--color2-1); 
+    border-style: solid;
+    border-color: var(--color1);
   }
 </style>

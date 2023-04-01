@@ -41,7 +41,7 @@
 <!-- STYLES ///////////////////////////////////////////// -->
 <style>
   @media screen and (orientation: portrait) {
-    :global(main p:nth-of-type(1)) {
+  :global(main p:nth-of-type(1)) {
     width: 60%;
     left: 13%;
     top: 8%;
@@ -111,7 +111,8 @@
     background-color: var(--color4);
     border-bottom: calc(var(--uarr-width)/50) solid var(--color1);
   }
-  :global(main #settings > div:nth-of-type(3).visible) {
+  :global(main #settings > div:nth-of-type(3).visible),
+  :global(main #settings > div:nth-of-type(3):focus-within) {
     top: 60%;
   }
   :global(input[type="range"]) {
@@ -122,14 +123,26 @@
     height: 50%;
     width: 50%;
     border-radius: calc(var(--uarr-width)/50);
-    border: calc(var(--uarr-width)/100) solid var(--color1);
+    border-width: calc(var(--uarr-width)/100);
   }
   :global(input[type="range"]::-webkit-slider-thumb) {
     margin-top: -4.5%; 
-    border: calc(var(--uarr-width)/100) solid var(--color1);
+    border-width: calc(var(--uarr-width)/100);
     border-radius: calc(var(--uarr-width)/10);
     height: 320%;
     width: 13.5%;    
+  }
+  :global(input[type="range"]::-moz-range-track) {
+    height: 30%;
+    border-radius: calc(var(--uarr-width)/10);
+    border-width: calc(var(--uarr-width)/100);
+  }
+  :global(input[type="range"]::-moz-range-thumb) {
+    margin-top: -4.5%; 
+    border-width: calc(var(--uarr-width)/100);
+    border-radius: calc(var(--uarr-width)/10);
+    height: 60%;
+    width: 10%;   
   }
   :global(main p:nth-of-type(3)) {
     top: 72%;
