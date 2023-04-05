@@ -4,6 +4,7 @@
   import { gsap } from "gsap";
   import { onMount } from "svelte";
   import OpeningPromptContent from "./OpeningPromptContent.svelte";
+  import pageExit from "../../../helpers/pageExit";
 
   // ANIMATION ------------------------------------------------
   const tl = gsap.timeline({delay:1});
@@ -27,6 +28,12 @@
     tl.from("#volume-adjust", {duration: 1, opacity: 0}, 2.5);
     tl.from("a", {duration: 2, opacity: 0}, 3);
   });
+
+  // EVENT HANDLERS ---------------------------------------
+  function handleLinkClick() {
+    tl.reverse(2.5);
+    pageExit("splash", 3000);
+  }
 </script>
 
 <!-- MARKUP ////////////////////////////////////////// -->
@@ -40,7 +47,7 @@
   <line id="l4" class="line color5" x1="850" y1="100" x2="850" y2="1500" />
   <line id="l5" class="line color4" x1="90" y1="1000" x2="830" y2="1000" />
 </svg>
-<OpeningPromptContent />
+<OpeningPromptContent on:linkClick={handleLinkClick} />
 
 <!-- STYLES ///////////////////////////////////////////// -->
 <style>

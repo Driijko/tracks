@@ -2,6 +2,16 @@
 <script>
   // IMPORTS ---------------------------------
   import Settings from "../../Settings.svelte";
+  import { createEventDispatcher } from 'svelte';
+  import audioStore from "../../../stores/audioStore";
+
+  // EVENT HANDLERS ----------------------------------------
+  const dispatch = createEventDispatcher();
+  function handleClick(e) {
+    dispatch("linkClick");
+    $audioStore.trackPath = "./assets/audio/background.mp3";
+  }
+
 </script>
 
 <!-- MARKUP //////////////////////////////////////////////////// -->
@@ -10,7 +20,7 @@
   <p>For the best experience the following settings are recommended:</p>
   <Settings />
   <p>You can change these settings later in the menu.</p>
-  <a href="https://driijko.github.io/tracks">Ready</a>
+  <a on:click|preventDefault={handleClick} href="https://driijko.github.io/tracks">Ready</a>
 </main>
 
 <!-- STYLES /////////////////////////////////////////////////////////// -->
