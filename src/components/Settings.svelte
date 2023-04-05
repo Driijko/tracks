@@ -20,19 +20,19 @@
 
 <!-- MARKUP /////////////////////////////////////////////// -->
 <div id="settings">
-  <div>
+  <div class="settings-option">
     <label for="fullscreen-option">Fullscreen</label>
     <div>
       <input id="fullscreen-option" type="checkbox" on:click={toggleFullscreen} />
     </div>
   </div>
-  <div>
+  <div class="settings-option">
     <label for="audio-option">Audio</label>
     <div>
       <input id="audio-option" type="checkbox" on:click={toggleAudio} />
     </div>
   </div>
-  <div class:visible>
+  <div id="volume-adjust" class:visible>
     <label for="volume">Adjust volume to your preference:</label>
     <input type="range" min="0.0" max="1.0" step="0.01" 
     bind:value={$audioStore.volume} />

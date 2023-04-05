@@ -9,32 +9,36 @@
   const tl = gsap.timeline({delay:1});
 
   onMount(()=> {
-    // tl.from("#p1-l1", {duration: 1, ease:"linear", attr:{x2: 0}},0);
-    // tl.from("#p1-l2", {duration: 1, ease:"linear", attr:{y2: 0}},0);
-    // tl.from("#p1-l3", {duration: 1, ease:"power1.inOut", attr:{x2: 100}},0.85);
-    // tl.from("#p1-l4", {duration: 1, ease:"power1.inOut", 
-    //   attr:{y1: 800, y2: 800}},1.7);
-    // tl.from("#p1-r1", {duration: 2, ease:"power1.inOut", attr:{x:900, width: 0}},0);
-    // tl.from(["#p1-r2", "#p1-r3"], {duration: 2, ease:"power1.inOut", opacity:0},0);
-    // tl.from(["#p1-p1", "#p1-p2", "#p1-p3"], {duration: 1.5, ease:"power1.inOut", letterSpacing: "-0.5em"}, 1);
-    // tl.set(["#p1-p1", "#p1-p2", "#p1-p3"], {transform: "rotateY(0deg)"}, 1)
-    // tl.from(["#p1-p1", "#p1-p2", "#p1-p3"], {duration: 0.5, ease:"linear", transform: "rotateY(90deg)"}, 1);
-      // tl.set(".prompt-option", {transform: "scaleX(1)"}, 1);
-      // tl.from(".prompt-option", {duration: 1.5, transform: "scaleX(0)"}, 1);
-      // tl.from("#p1-link1", {duration: 2, opacity: 0}, 2);
+    tl.from("#l1", {duration: 1, ease:"linear", attr:{x2: 0}},0);
+    tl.from("#l2", {duration: 1, ease:"linear", attr:{y2: 0}},0);
+    tl.from("#l3", {duration: 1, ease:"power1.inOut", attr:{x2: 100}},0.85);
+    tl.from("#l4", {duration: 1, ease:"power1.inOut", 
+      attr:{y1: 800, y2: 800}},1.7);
+    tl.from("#l5", {duration: 1, ease: "power1.inOut", attr: {x1:435, x2:435}}, 1.7);
+    tl.from("#r1", {duration: 2, ease:"power1.inOut", attr:{x:900, width: 0}},0);
+    tl.from("#r2", {duration: 2, ease:"power1.inOut", opacity:0},0);
+    tl.from("#r3", {duration: 2, ease:"power1.inOut", attr:{x:900, width: 0}},0);
+    tl.from("p", {duration: 1.5, ease:"power1.inOut", letterSpacing: "-0.5em"}, 1);
+    tl.set("p", {transform: "rotateY(0deg)"}, 1)
+    tl.from("p", {duration: 0.5, ease:"linear", transform: "rotateY(90deg)"}, 1);
+    tl.set(".settings-option", {transform: "scaleX(1)"}, 1);
+    tl.from(".settings-option", {duration: 1.5, transform: "scaleX(0)"}, 1);
+    tl.set("#volume-adjust", {opacity: 0}, 0);
+    tl.from("#volume-adjust", {duration: 1, opacity: 0}, 2.5);
+    tl.from("a", {duration: 2, opacity: 0}, 3);
   });
 </script>
 
 <!-- MARKUP ////////////////////////////////////////// -->
 <svg class="svg-background" viewBox="0 0 900 1600" >
-  <rect id="p1-r1" class="color1" x="750" y="100" width="150" height="1400" />
-  <rect id="p1-r2" class="color3" x="490" y="100" width="260" height="1400" />
-  <rect id="p1-r3" class="color1" x="100" y="500" width="650" height="640" />
-  <line id="p1-l1" class="line color1" x1="0" y1="100" x2="900" y2="100" />
-  <line id="p1-l2" class="line color1" x1="100" y1="0" x2="100" y2="1600" />
-  <line id="p1-l3" class="line color1" x1="100" y1="1500" x2="900" y2="1500" />
-  <line id="p1-l4" class="line color5" x1="850" y1="100" x2="850" y2="1500" />
-  <line id="p1-l5" class="line color4" x1="90" y1="1000" x2="830" y2="1000" />
+  <rect id="r1" class="color1" x="750" y="100" width="150" height="1400" />
+  <rect id="r2" class="color3" x="490" y="100" width="260" height="1400" />
+  <rect id="r3" class="color1" x="100" y="500" width="651" height="640" />
+  <line id="l1" class="line color1" x1="0" y1="100" x2="900" y2="100" />
+  <line id="l2" class="line color1" x1="100" y1="0" x2="100" y2="1600" />
+  <line id="l3" class="line color1" x1="100" y1="1500" x2="900" y2="1500" />
+  <line id="l4" class="line color5" x1="850" y1="100" x2="850" y2="1500" />
+  <line id="l5" class="line color4" x1="90" y1="1000" x2="830" y2="1000" />
 </svg>
 <OpeningPromptContent />
 
@@ -91,6 +95,8 @@
     padding: 5% 7%;
   }
   :global(main #settings > div > div > input[type="checkbox"]) {
+    min-width: 30px;
+    min-height: 30px;
     width: 100%;
     height: 100%;
     border-width: calc(var(--uarr-width)/100);
@@ -118,6 +124,7 @@
   :global(input[type="range"]) {
     width: 70%;
     height: 30%;
+    min-height: 0;
   }
   :global(input[type="range"]::-webkit-slider-runnable-track) {
     height: 50%;
