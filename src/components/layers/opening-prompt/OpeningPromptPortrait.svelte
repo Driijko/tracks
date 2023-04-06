@@ -47,31 +47,33 @@
   <line id="l4" class="line color5" x1="850" y1="100" x2="850" y2="1500" />
   <line id="l5" class="line color4" x1="90" y1="1000" x2="830" y2="1000" />
 </svg>
-<OpeningPromptContent on:linkClick={handleLinkClick} />
+<div id="this">
+  <OpeningPromptContent on:linkClick={handleLinkClick} />
+</div>
 
 <!-- STYLES ///////////////////////////////////////////// -->
 <style>
   @media screen and (orientation: portrait) {
-  :global(main p:nth-of-type(1)) {
+    #this :global(p:nth-of-type(1)) {
     width: 60%;
     left: 13%;
     top: 8%;
     font-size: calc(var(--uarr-width)/15);
   }
-  :global(main p:nth-of-type(2)) {
+  #this :global(main p:nth-of-type(2)) {
     width: 70%;
     left: 13%;
     top: 20%;
     font-size: calc(var(--uarr-width)/18);
   }
-  :global(main #settings) {
+  #this :global(main #settings) {
     width: 71.2%;
     left: 12.2%;
     top: 31%; 
     height: 40%;   
   }
-  :global(main #settings > div:nth-of-type(1)),
-  :global(main #settings > div:nth-of-type(2)) {
+  #this :global(main #settings > div:nth-of-type(1)),
+  #this :global(main #settings > div:nth-of-type(2)) {
     height: 30%;
     position: absolute;
     width: 100%;
@@ -79,17 +81,17 @@
     display: flex;
     background-color: var(--color4);
   }
-  :global(main #settings > div:nth-of-type(1)) {
+  #this :global(main #settings > div:nth-of-type(1)) {
     border-top: calc(var(--uarr-width)/50) solid var(--color1);
     border-bottom: calc(var(--uarr-width)/100) solid var(--color1);
   }
-  :global(main #settings > div:nth-of-type(2)) {
+  #this :global(main #settings > div:nth-of-type(2)) {
     top: 30%;
     border-bottom: calc(var(--uarr-width)/50) solid var(--color1);
     border-top: calc(var(--uarr-width)/100) solid var(--color1);
   }
-  :global(main #settings > div:nth-of-type(1) label),
-  :global(main #settings > div:nth-of-type(2) label) {
+  #this :global(main #settings > div:nth-of-type(1) label),
+  #this :global(main #settings > div:nth-of-type(2) label) {
     width: 70%;
     height: 100%;
     display: flex;
@@ -97,18 +99,18 @@
     align-items: center;
     font-size: calc(var(--uarr-width)/16);
   }
-  :global(main #settings > div > div) {
+  #this :global(main #settings > div > div) {
     width: 30%;
     padding: 5% 7%;
   }
-  :global(main #settings > div > div > input[type="checkbox"]) {
+  #this :global(main #settings > div > div > input[type="checkbox"]) {
     min-width: 30px;
     min-height: 30px;
     width: 100%;
     height: 100%;
     border-width: calc(var(--uarr-width)/100);
   }
-  :global(main #settings > div:nth-of-type(3)) {
+  #this :global(main #settings > div:nth-of-type(3)) {
     width: 100%;
     height: 40%;
     position: absolute;
@@ -123,51 +125,51 @@
     background-color: var(--color4);
     border-bottom: calc(var(--uarr-width)/50) solid var(--color1);
   }
-  :global(main #settings > div:nth-of-type(3) label) {
+  #this :global(main #settings > div:nth-of-type(3) label) {
     font-size: calc(var(--uarr-width)/20);
     text-align: center;
   }
-  :global(main #settings > div:nth-of-type(3).visible),
-  :global(main #settings > div:nth-of-type(3):focus-within) {
+  #this :global(main #settings > div:nth-of-type(3).visible),
+  #this :global(main #settings > div:nth-of-type(3):focus-within) {
     top: 60%;
   }
-  :global(input[type="range"]) {
+  #this :global(input[type="range"]) {
     width: 70%;
     height: 30%;
     min-height: 0;
   }
-  :global(input[type="range"]::-webkit-slider-runnable-track) {
+  #this :global(input[type="range"]::-webkit-slider-runnable-track) {
     height: 50%;
     width: 50%;
     border-radius: calc(var(--uarr-width)/50);
     border-width: calc(var(--uarr-width)/100);
   }
-  :global(input[type="range"]::-webkit-slider-thumb) {
+  #this :global(input[type="range"]::-webkit-slider-thumb) {
     margin-top: -4.5%; 
     border-width: calc(var(--uarr-width)/100);
     border-radius: calc(var(--uarr-width)/10);
     height: 320%;
     width: 13.5%;    
   }
-  :global(input[type="range"]::-moz-range-track) {
+  #this :global(input[type="range"]::-moz-range-track) {
     height: 30%;
     border-radius: calc(var(--uarr-width)/10);
     border-width: calc(var(--uarr-width)/100);
   }
-  :global(input[type="range"]::-moz-range-thumb) {
+  #this :global(input[type="range"]::-moz-range-thumb) {
     margin-top: -4.5%; 
     border-width: calc(var(--uarr-width)/100);
     border-radius: calc(var(--uarr-width)/10);
     height: 60%;
     width: 10%;   
   }
-  :global(main p:nth-of-type(3)) {
+  #this :global(main p:nth-of-type(3)) {
     top: 72%;
     left: 13%;
     font-size: calc(var(--uarr-width)/20);
     width: 70%;
   }
-  :global(a) {
+  #this :global(a) {
     top: 84.5%;
     left: 55.5%;
     font-size: calc(var(--uarr-width)/17);
