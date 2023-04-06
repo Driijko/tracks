@@ -8,7 +8,7 @@
 
   // LOCAL STATE --------------------------------------------
   let menuState = {
-    open: true,
+    open: false,
     currentTab: "navigation",
   };
 
@@ -143,12 +143,15 @@
     border-style: solid;
     background-color: var(--color1-1);
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items:center;
-    text-align: center;
     font-family: "Bungee Outline";
     color: var(--color2-2);
     letter-spacing: calc(var(--uarr-width)/100);
+  }
+  nav a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 </style>

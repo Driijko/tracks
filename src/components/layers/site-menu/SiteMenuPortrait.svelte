@@ -45,7 +45,7 @@
     border-width: calc(var(--uarr-width)/50);
   }
   #this :global(nav ul) {
-    gap: 10%;
+    gap: 8%;
   }
   #this :global(nav li) {
     border-top-width: calc(var(--uarr-width)/100);
