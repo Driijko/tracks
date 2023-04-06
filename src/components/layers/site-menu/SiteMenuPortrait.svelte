@@ -19,9 +19,5 @@
     border-radius: calc(var(--uarr-width)/100);
     padding: 3%;
   }
-  :global(#menu-button-icon) {
-    width: 100%;
-    height: 100%;
-  }
 }
 </style>

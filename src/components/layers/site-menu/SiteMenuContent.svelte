@@ -36,8 +36,11 @@
     background-color: var(--color1-1);
     border-color: var(--color2-2);
     border-style: solid;
+    pointer-events: initial;
   }
   #menu-button-icon {
     stroke: var(--color2-2);
+    width: 100%;
+    height: 100%;
   }
 </style>
