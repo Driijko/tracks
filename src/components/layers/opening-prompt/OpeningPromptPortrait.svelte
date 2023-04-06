@@ -119,10 +119,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: calc(var(--uarr-width)/25);
     gap: calc(var(--uarr-width)/20);
     background-color: var(--color4);
     border-bottom: calc(var(--uarr-width)/50) solid var(--color1);
+  }
+  :global(main #settings > div:nth-of-type(3) label) {
+    font-size: calc(var(--uarr-width)/20);
+    text-align: center;
   }
   :global(main #settings > div:nth-of-type(3).visible),
   :global(main #settings > div:nth-of-type(3):focus-within) {
