@@ -211,6 +211,10 @@ svg {
   justify-content: center;
   align-items: center;
 }
+.uarr {
+  position: relative;
+}
+
 @media screen and (orientation: portrait) {
   .uarr {
     aspect-ratio: var(--uarr1-aspect-ratio);

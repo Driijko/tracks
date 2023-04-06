@@ -17,7 +17,7 @@
     tl.from(".line-group-1", {duration: 6, attr: {y1:450,y2:450}, stagger:0.5, ease:"power1.inOut"},2);
     tl.from(".line-group-2", {duration: 4, attr: {x1:800,x2:800}, stagger:0.5, ease:"power1.inOut"},2);
     tl.from(".line-group-3", {duration: 3, attr: {x1:300,x2:300}, stagger:0.1, ease:"power1.inOut"},7.5);
-    tl.from("h1 span", {duration: 2, opacity:0, stagger: 1.5}, 9);
+    tl.from("#splash-title span", {duration: 2, opacity:0, stagger: 1.5}, 9);
   });
 </script>
 

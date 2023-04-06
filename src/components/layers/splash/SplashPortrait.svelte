@@ -16,7 +16,7 @@
     tl.from(".line-group-2",{duration: 2,ease:"power1.inOut",attr: {y1:1600}},0);
     tl.from(".line-group-3",{duration: 3,ease:"power1.inOut",stagger:0.1,attr: {x2:0}},1);
     tl.from(".line-group-4",{duration: 3,ease:"power1.inOut",stagger:0.1,attr: {x1:900}},1);
-    tl.from("h1 span", {duration: 2, opacity:0, stagger: 1.5}, 3);
+    tl.from("#splash-title span", {duration: 2, opacity:0, stagger: 1.5}, 3);
     tl.to("#r1", {duration: 2,ease: "linear",fill: "hsl(340, 100%, 10%)",repeat: -1,yoyo: true,},0);
     tl.to("#r2", {duration: 2,ease: "linear",fill: "hsl(360, 100%, 10%)",repeat: -1,yoyo: true,},1);
     tl.to("#r3", {duration: 3, ease: "linear", fill: "hsl(350, 100%, 70%)",repeat: -1,yoyo: true,},2);
