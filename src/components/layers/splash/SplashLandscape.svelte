@@ -80,20 +80,20 @@
 <!-- STYLES /////////////////////////////////////////////////// -->
 <style>
 @media screen and (orientation: landscape) {
-  :global(h1) {
+  :global(#splash-title) {
     position: absolute;
     left: 21%;
     top: 20%;
     line-height: 1.2;
   }
-  :global(span:nth-of-type(1)) {
+  :global(#splash-title span:nth-of-type(1)) {
     font-size: calc(var(--uarr-width)/10);
   }
-  :global(span:nth-of-type(2)) {
+  :global(#splash-title span:nth-of-type(2)) {
     font-size: calc(var(--uarr-width)/15);
     padding-left: 5%;
   }
-  :global(span:nth-of-type(3)) {
+  :global(#splash-title span:nth-of-type(3)) {
     font-size: calc(var(--uarr-width)/16);
   }
 }

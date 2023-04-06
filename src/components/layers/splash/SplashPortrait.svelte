@@ -54,19 +54,19 @@
 <!-- STYLES /////////////////////////////////////////////// -->
 <style>
   @media screen and (orientation: portrait) {
-    :global(h1) {
+    :global(#splash-title) {
       position: absolute;
       width: 100%;
       top: 20%;
       text-align: center;
     }
-    :global(span:nth-of-type(1)) {
+    :global(#splash-title span:nth-of-type(1)) {
       font-size: calc(var(--uarr-width)/4.5);
     }
-    :global(span:nth-of-type(2)) {
+    :global(#splash-title span:nth-of-type(2)) {
       font-size: calc(var(--uarr-width)/7);
     }
-    :global(span:nth-of-type(3)) {
+    :global(#splash-title span:nth-of-type(3)) {
       font-size: calc(var(--uarr-width)/10);
     }
   }

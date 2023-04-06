@@ -1,6 +1,6 @@
 <!-- MARKUP /////////////////////////////////////////////////// -->
 <main>
-  <h1>
+  <h1 id="splash-title">
     <span>Tracks</span><br/>
     <span>by</span><br/><br/>
     <span>DREEKO</span>
