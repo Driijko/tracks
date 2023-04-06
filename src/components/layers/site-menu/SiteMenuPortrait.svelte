@@ -52,5 +52,77 @@
     padding: 2%;
     font-size: calc(var(--uarr-width)/10);
   }
+  #this :global(#settings) {
+    gap: 5%;
+  }
+  #this :global(#settings > div) {
+    border-top-width: calc(var(--uarr-width)/100);
+    border-bottom-width: calc(var(--uarr-width)/100);
+    padding: 5%;
+    font-size: calc(var(--uarr-width)/20);
+    height: 19.2%;
+  }
+  #this :global(#settings > div:nth-of-type(1) label),
+  #this :global(#settings > div:nth-of-type(2) label) {
+    width: 70%;
+  }
+  #this :global(#settings > div > div) {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #this :global(input[type="checkbox"]) {
+    width: 50%;
+    height: 85%;
+    border-width: calc(var(--uarr-width)/100);
+    border-radius: calc(var(--uarr-width)/50);
+  }
+  #this :global(#settings > div:nth-of-type(3)) {
+    height: 0%;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0%;
+    overflow:hidden;
+    border-width: 0;
+    transition-property: height, padding, border-width;
+    transition-timing-function: ease-out;
+    transition-duration: 1s;
+  }
+  #this :global(#settings > div:nth-of-type(3).visible) {
+    height: 28%;
+    padding: 5%;
+    padding-top: 10%;
+    border-top-width: calc(var(--uarr-width)/100);
+    border-bottom-width: calc(var(--uarr-width)/100);
+  }
+  #this :global(input[type="range"]) {
+    width: 80%;
+    height: calc(var(--uarr-width)/7);
+  }
+  #this :global(input[type="range"]::-webkit-slider-runnable-track) {
+    height: 30%;
+    border-radius: calc(var(--uarr-width)/50);
+    border-width: calc(var(--uarr-width)/100);
+  }
+  #this :global(input[type="range"]::-moz-range-track) { 
+    border-radius: calc(var(--uarr-width)/10);
+    height: 25%;
+    border-width: calc(var(--uarr-width)/100);
+  }
+  #this :global(input[type="range"]::-webkit-slider-thumb) {
+    margin-top: -3.8%; 
+    border-width: calc(var(--uarr-width)/100);
+    border-radius: calc(var(--uarr-width)/10);
+    height: 300%;
+    width: 11%;  
+  }
+  #this :global(input[type="range"]::-moz-range-thumb) {
+    border-width: calc(var(--uarr-width)/100);
+    border-radius: calc(var(--uarr-width)/10);
+    height: 40%;
+    width: 9%;   
+  }
 }
 </style>

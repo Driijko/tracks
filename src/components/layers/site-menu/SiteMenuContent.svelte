@@ -4,12 +4,13 @@
   import currentPageName from "../../../stores/currentPageName";
   import { fade, fly } from 'svelte/transition';
   import pageExit from "../../../helpers/pageExit";
+  import Settings from "../../Settings.svelte";
 
 
   // LOCAL STATE --------------------------------------------
   let menuState = {
     open: true,
-    currentTab: "navigation",
+    currentTab: "settings",
   };
 
   // EVENT HANDLERS ----------------------------------------------
@@ -66,7 +67,11 @@
               </li>
             </ul>
           </nav>
-
+        
+        {:else if menuState.currentTab === "settings"}
+          <section class="tab" transition:fly="{{x:200,duration:1000}}">
+            <Settings />
+          </section>
         {/if}
       </div>
     {/if}
@@ -99,6 +104,7 @@
     height: 100%;
   }
   #open-menu {
+    pointer-events: initial;
     position: absolute;
     left: -0.1%;
     width: 100.2%;
@@ -154,5 +160,25 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  #menu :global(#settings) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+  }
+  #menu :global(#settings > div) {
+    border-color: var(--color2);
+    border-style: solid;
+    display: flex;
+    align-items: center;
+    background-color: var(--color1-1);
+    color: var(--color2-2);
+  }
+  #menu :global(#settings input[type="checkbox"]) {
+    background-color: var(--color1-2);
+  }
+  #menu :global(#settings input[type="checkbox"]:checked) {
+    background-color: var(--color5);
   }
 </style>
