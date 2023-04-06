@@ -37,5 +37,19 @@
     left: 19.7%;
     top: 50%; 
   }
+  #this :global(.tab) {
+    border-width: calc(var(--uarr-width)/200);
+  }
+  #this :global(nav ul) {
+    gap: 10%;
+  }
+  #this :global(nav li) {
+    border-top-width: calc(var(--uarr-width)/500);
+    border-bottom-width: calc(var(--uarr-width)/500);
+    padding: 0.1%;
+  }
+  #this :global(nav a) {
+    font-size: calc(var(--uarr-width)/40);
+  }
 }
 </style>
