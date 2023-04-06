@@ -22,7 +22,6 @@
     padding: 3%;
   }
   #this :global(#open-menu h1) {
-    height: 10%;
     padding-top: 4%;
   }
   #this :global(#open-menu h1 span:nth-of-type(1)) {

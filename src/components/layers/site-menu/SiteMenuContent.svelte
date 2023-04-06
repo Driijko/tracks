@@ -8,7 +8,7 @@
 
   // LOCAL STATE --------------------------------------------
   let menuState = {
-    open: false,
+    open: true,
     currentTab: "navigation",
   };
 
@@ -106,6 +106,7 @@
     background-color: var(--color1);
   }
   h1 {
+    height: 10%;
     background-color: var(--color2);
     color: var(--color1-2);
     position: relative;
