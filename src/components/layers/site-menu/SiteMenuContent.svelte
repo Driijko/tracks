@@ -2,13 +2,13 @@
 <script>
   // IMPORTS ------------------------------------------------
   import { onMount } from "svelte";
+  import { fly } from 'svelte/transition';
   import { gsap } from "gsap";
-  import currentPageName from "../../../stores/currentPageName";
-  import { fade, fly } from 'svelte/transition';
   import pageExit from "../../../helpers/pageExit";
-  import Settings from "../../Settings.svelte";
+  import currentPageName from "../../../stores/currentPageName";
   import viewportOrientation from "../../../stores/viewportOrientation";
-
+  import fullscreenMenuOpen  from "../../../stores/fullscreenMenuOpen";
+  import Settings from "../../Settings.svelte";
 
   // LOCAL STATE --------------------------------------------
   let menuState = {
@@ -60,7 +60,7 @@
         top: "89%",
         left: "84%",
       }, 0);
-      tl.to("#menu-icon", {
+      tl.to("#menu-button-icon", {
         width: "100%",
       }, 0);
     } else {
@@ -73,6 +73,13 @@
         height: "10%"
       }, 0);
     }
+
+    if ($fullscreenMenuOpen) {
+      menuState.open = true;
+      animationDuration = 0;
+      tl.play();
+      animationDuration = 0.5;
+    }
   });
 
   // EVENT HANDLERS ----------------------------------------------
@@ -84,6 +91,10 @@
     }
     menuState.open = !(menuState.open);
   }
+  function siteMenuFullscreenCheckboxClick() {
+    fullscreenMenuOpen.toggleFullscreenMenu(true);
+  }
+
 </script>
 
 <!-- MARKUP /////////////////////////////////////////////////// -->
@@ -138,7 +149,7 @@
         {:else if menuState.currentTab === "settings"}
           <!-- SETTINGS ----------- -->
           <section class="tab" transition:fly="{{x:200,duration:1000}}">
-            <Settings />
+            <Settings siteMenuFullscreenCheckboxClick={siteMenuFullscreenCheckboxClick} />
           </section>
         {/if}
 

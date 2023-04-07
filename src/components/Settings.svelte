@@ -3,6 +3,9 @@
   // IMPORTS ---------------------------------------------
   import fullscreen from "../helpers/fullscreen";
   import audioStore from "../stores/audioStore";
+
+  // PROPS ------------------------------------------------
+  export let siteMenuFullscreenCheckboxClick;
   
   // LOCAL STATE ------------------------------------------
   let visible = false;
@@ -10,6 +13,9 @@
   // EVENT HANDLERS --------------------------------------
   function toggleFullscreen(e) {
     fullscreen(e.target.checked);
+    if (siteMenuFullscreenCheckboxClick) {
+      siteMenuFullscreenCheckboxClick();
+    }
   }
 
   function toggleAudio(e) {
@@ -23,7 +29,8 @@
   <div class="settings-option">
     <label for="fullscreen-option">Fullscreen</label>
     <div>
-      <input id="fullscreen-option" type="checkbox" on:click={toggleFullscreen} />
+      <input id="fullscreen-option" type="checkbox" on:click={toggleFullscreen} checked={document.fullscreenElement}
+      />
     </div>
   </div>
   <div class="settings-option">
