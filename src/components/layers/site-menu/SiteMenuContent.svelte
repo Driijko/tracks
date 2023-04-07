@@ -76,6 +76,7 @@
 
     if ($fullscreenMenuOpen) {
       menuState.open = true;
+      menuState.currentTab = "settings";
       animationDuration = 0;
       tl.play();
       animationDuration = 0.5;
