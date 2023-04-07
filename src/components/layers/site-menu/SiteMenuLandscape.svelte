@@ -20,6 +20,11 @@
     border-width: calc(var(--uarr-width)/200);
     border-radius: calc(var(--uarr-width)/100);
     padding: 2%;
+    transition: padding 1s ease-out;
+  }
+  #this :global(#menu-button.open) {
+    padding: 0.5%;
+    border-radius: 0;
   }
   #this :global(#open-menu h1 span:nth-of-type(1)) {
     font-size: calc(var(--uarr-width)/20);
@@ -114,6 +119,17 @@
   }
   #this :global(#menu-tabs) {
     width: 100%;
+  }
+  #this :global(#menu-tabs li) {
+    width: 15%;
+    padding-bottom: 1%;
+  }
+  #this :global(#menu-tabs li button) {
+    border-radius: 0% 0% 50% 50%;
+    padding-bottom: 5%;
+  }
+  #this :global(#menu-tabs svg) {
+    height: 80%;
   }
 }
 </style>

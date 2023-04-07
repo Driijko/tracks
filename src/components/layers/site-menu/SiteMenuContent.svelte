@@ -1,20 +1,87 @@
 <!-- SCRIPTS ////////////////////////////////////////////////// -->
 <script>
   // IMPORTS ------------------------------------------------
+  import { onMount } from "svelte";
+  import { gsap } from "gsap";
   import currentPageName from "../../../stores/currentPageName";
   import { fade, fly } from 'svelte/transition';
   import pageExit from "../../../helpers/pageExit";
   import Settings from "../../Settings.svelte";
+  import viewportOrientation from "../../../stores/viewportOrientation";
 
 
   // LOCAL STATE --------------------------------------------
   let menuState = {
-    open: true,
+    open: false,
     currentTab: "settings",
   };
 
+  // ANIMATION -----------------------------------------
+  let animationDuration = 0.5;
+  let tl;
+  onMount(()=> {
+    tl = gsap.timeline({paused: true});
+    tl.to(["#line1", "#line2"], {
+      duration: animationDuration,
+      strokeWidth: "15",
+      attr: {
+        x1: "20",
+        y1: "20",
+        x2: "80",
+        y2: "80",
+      },
+      ease: "linear"
+    }, 0);
+    tl.to(["#line3","#line4"],  {
+      duration: animationDuration,
+      strokeWidth: "15",
+      attr: {
+        x1: "20",
+        y1: "80",
+        x2: "80",
+        y2: "20",
+      },
+      ease: "linear"
+    }, 0);
+    tl.to("#menu", {
+      duration: animationDuration,
+      left: 0,
+      top: 0,
+      width: "100%",
+      height: "100%",
+      ease: "linear"
+    },0);
+    if ($viewportOrientation === "portrait") {
+      tl.to("#menu-button", {
+        duration: animationDuration,
+        ease: "back.in(1)",
+        width: "16.1%",
+        height: "11%",
+        top: "89%",
+        left: "84%",
+      }, 0);
+      tl.to("#menu-icon", {
+        width: "100%",
+      }, 0);
+    } else {
+      tl.to("#menu-button", {
+        duration: animationDuration,
+        ease: "back.out(1)",
+        left: "95%",
+        top: "0%",
+        width: "5%",
+        height: "10%"
+      }, 0);
+    }
+  });
+
   // EVENT HANDLERS ----------------------------------------------
   function handleMenuButtonClick(e) {
+    if (menuState.open) {
+      tl.reverse();
+    } else {
+      tl.play();
+    }
     menuState.open = !(menuState.open);
   }
 </script>
@@ -24,7 +91,7 @@
   <div class="uarr">
 
     <!-- MENU BUTTON ----------------------------------- -->
-    <button id="menu-button" type="button" class:splash={$currentPageName === "splash"} on:click={handleMenuButtonClick}>
+    <button id="menu-button" type="button" class:splash={$currentPageName === "splash"} class:open={menuState.open} on:click={handleMenuButtonClick}>
       <svg id="menu-button-icon" viewBox="0 0 100 100">
         <line id="line1" x1="10" y1="10" x2="90" y2="10" stroke-linecap="round"  stroke-width="20" />
         <line id="line2" x1="10" y1="50" x2="90" y2="50" stroke-linecap="round"  stroke-width="20" />
@@ -35,7 +102,7 @@
 
     <!-- OPEN MENU --------------------------------------- -->
     {#if menuState.open}
-      <div id="open-menu" transition:fly="{{x:200,duration:1000}}">
+      <div id="open-menu" transition:fly="{{y:400,duration:1000}}">
 
         <!-- MENU TITLE ---------------------- -->
         <h1>
@@ -126,6 +193,11 @@
     border-color: var(--color2-2);
     border-style: solid;
     pointer-events: initial;
+    z-index: 1;
+  }
+  #menu-button.open {
+    border-color: var(--color2);
+    border-radius: 0;
   }
   #menu-button-icon {
     stroke: var(--color2-2);

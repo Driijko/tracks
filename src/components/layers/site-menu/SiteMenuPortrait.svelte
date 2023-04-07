@@ -21,6 +21,9 @@
     border-radius: calc(var(--uarr-width)/100);
     padding: 3%;
   }
+  #this :global(#menu-button.open) {
+    border-radius: 0;
+  }
   #this :global(#open-menu h1) {
     padding-top: 4%;
   }
