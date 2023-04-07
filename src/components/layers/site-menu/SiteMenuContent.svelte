@@ -339,4 +339,18 @@
   #menu-tabs li button.selected svg path {
     fill: var(--color2-2);
   }
+  /* HIGHLIGHTING ------------------------------ */
+  @media (hover:hover) {
+    #menu-button.splash {
+      transition-property: transform, box-shadow, background-color, border-color;
+      transition-timing-function: ease-out;
+      transition-duration: 1s;
+    }  
+    #menu-button.splash:hover {
+      transform: scale(1.2) translateY(5%);
+      box-shadow:0px 0px 1000px var(--color2-2), 0px 0px 1000px var(--color2-2);
+      background-color: var(--color1);
+      border-color: var(--color1);
+    }
+  }
 </style>
