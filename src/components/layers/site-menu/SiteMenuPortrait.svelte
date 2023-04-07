@@ -116,5 +116,18 @@
     height: 40%;
     width: 9%;   
   }
+  #this :global(#menu-tabs) {
+    width: 84%;
+  }
+  #this :global(#menu-tabs li) {
+    width: 20%;
+    padding-bottom: 2%;
+  }
+  #this :global(#menu-tabs li button) {
+    border-radius: 0% 0% 20% 20%;
+  }
+  #this :global(#menu-tabs svg) {
+    height: 70%;
+  }
 }
 </style>

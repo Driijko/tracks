@@ -112,5 +112,8 @@
     height: 60%;
     width: 7.5%;   
   }
+  #this :global(#menu-tabs) {
+    width: 100%;
+  }
 }
 </style>
