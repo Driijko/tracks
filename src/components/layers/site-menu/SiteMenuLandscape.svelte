@@ -21,9 +21,6 @@
     border-radius: calc(var(--uarr-width)/100);
     padding: 2%;
   }
-  #this :global(#menu-button.open:hover) {
-    transform: scale(1.3) translate(calc(var(--uarr-width)/-160), calc(var(--uarr-width)/150));
-  }
   #this :global(#menu-button.open) {
     padding: 0.5%;
     border-radius: 0;
@@ -131,6 +128,11 @@
   }
   #this :global(#menu-tabs svg) {
     height: 80%;
+  }
+}
+@media screen and (orientation: landscape) and (hover:hover) {
+  #this :global(#menu-button.open:hover) {
+    transform: scale(1.3) translate(calc(var(--uarr-width)/-200), calc(var(--uarr-width)/150));
   }
 }
 </style>

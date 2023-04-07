@@ -365,5 +365,15 @@
       background-color: var(--color1);
       border-color: var(--color2-2);
     }
+    nav li:hover {
+      background-color: var(--color1);
+      transform: scale(1.5);
+    }
+    #menu-tabs button path {
+      transition: fill 1s ease-out;
+    }
+    #menu-tabs button:hover path {
+      fill: var(--color2-1);
+    }
   }
 </style>
