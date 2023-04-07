@@ -181,4 +181,21 @@
   #menu :global(#settings input[type="checkbox"]:checked) {
     background-color: var(--color5);
   }
+  #menu :global(#settings > div:nth-of-type(3)) {
+    height: 0%;
+    justify-content: center;
+    padding: 0%;
+    overflow:hidden;
+    border-width: 0;
+    transition-property: height, padding, border-width;
+    transition-timing-function: ease-out;
+    transition-duration: 1s;
+  }
+  #menu :global(input[type="range"]::-webkit-slider-runnable-track) {
+    background-color: var(--color1-2);
+  }
+  #menu :global(input[type="range"]::-moz-range-track) {
+    background-color: var(--color1-2);
+  }
+
 </style>

@@ -80,15 +80,7 @@
     border-radius: calc(var(--uarr-width)/50);
   }
   #this :global(#settings > div:nth-of-type(3)) {
-    height: 0%;
     flex-direction: column;
-    justify-content: center;
-    padding: 0%;
-    overflow:hidden;
-    border-width: 0;
-    transition-property: height, padding, border-width;
-    transition-timing-function: ease-out;
-    transition-duration: 1s;
   }
   #this :global(#settings > div:nth-of-type(3).visible) {
     height: 28%;
