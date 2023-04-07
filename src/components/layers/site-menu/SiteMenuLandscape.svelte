@@ -72,7 +72,7 @@
     height: 100%;
     display: flex;
     align-items: center;
-    /* border: 4px solid blue; */
+    border: 4px solid blue;
   }
   #this :global(#settings label) {
     justify-content: flex-end;
@@ -95,27 +95,27 @@
     width: 48%;
   }
   #this :global(input[type="range"]::-webkit-slider-runnable-track) {
-    height: 50%;
+    height: calc(var(--uarr-width)/50);
     border-radius: calc(var(--uarr-width)/50);
     border-width: calc(var(--uarr-width)/200);
   }
   #this :global(input[type="range"]::-moz-range-track) { 
     border-radius: calc(var(--uarr-width)/10);
-    height: 25%;
+    height: calc(var(--uarr-width)/70);
     border-width: calc(var(--uarr-width)/200);
   }
   #this :global(input[type="range"]::-webkit-slider-thumb) {
-    margin-top: -3.9%; 
+    margin-top: calc(var(--uarr-width)/-88); 
     border-width: calc(var(--uarr-width)/200);
     border-radius: calc(var(--uarr-width)/10);
-    height: 400%;
-    width: 10%;  
+    height: calc(var(--uarr-width)/30);
+    width: calc(var(--uarr-width)/30);  
   }
   #this :global(input[type="range"]::-moz-range-thumb) {
     border-width: calc(var(--uarr-width)/200);
     border-radius: calc(var(--uarr-width)/10);
-    height: 60%;
-    width: 7.5%;   
+    height: calc(var(--uarr-width)/40);
+    width: calc(var(--uarr-width)/40);   
   }
   #this :global(#menu-tabs) {
     width: 100%;

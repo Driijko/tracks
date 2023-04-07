@@ -91,7 +91,8 @@
     display: flex;
     background-color: var(--color3);
   }
-  #this :global(#settings > div:nth-of-type(1)), :global(#settings > div:nth-of-type(2)) {
+  #this :global(#settings > div:nth-of-type(1)), 
+  :global(#settings > div:nth-of-type(2)) {
     height: 35%;
     z-index: 1;
   }
@@ -108,6 +109,8 @@
   }
   #this :global(input[type="checkbox"]) {
     border-width: calc(var(--uarr-width)/200);
+    width: 55%;
+    height: 25%;
   }
   #this :global(#settings > div > div) {
     width: 30%;

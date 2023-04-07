@@ -13,7 +13,7 @@
   // LOCAL STATE --------------------------------------------
   let menuState = {
     open: false,
-    currentTab: "settings",
+    currentTab: "navigation",
   };
 
   // ANIMATION -----------------------------------------
@@ -129,17 +129,17 @@
           <nav class="tab" transition:fly="{{ x: 200, duration: 1000 }}">
             <ul>
               <li>
-                <a href={null} 
+                <a href={"https://driijko.github.io/tracks"} 
                   on:click|preventDefault={()=> pageExit("page1")}
                 >Music</a>
               </li>
               <li>
-                <a href={null} 
+                <a href={"https://driijko.github.io/tracks"} 
                   on:click|preventDefault={()=> pageExit("page2")}
                 >About</a>
               </li>
               <li>
-                <a href={null} 
+                <a href={"https://driijko.github.io/tracks"} 
                   on:click|preventDefault={()=> pageExit("page3")}
                 >Contact</a>
               </li>

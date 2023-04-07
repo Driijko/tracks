@@ -1,6 +1,7 @@
 <!-- SCRIPTS /////////////////////////////////////////////// -->
 <script>
   // IMPORTS ---------------------------------------------
+  import { onDestroy } from "svelte";
   import fullscreen from "../helpers/fullscreen";
   import audioStore from "../stores/audioStore";
 
@@ -9,6 +10,19 @@
   
   // LOCAL STATE ------------------------------------------
   let visible = false;
+  let fullscreenStatus;
+  function setFullscreenStatus() {
+    if (document.fullscreenElement) {
+      fullscreenStatus = true;
+    } else {
+      fullscreenStatus = false;
+    }
+  }
+  setFullscreenStatus();
+  document.addEventListener("fullscreenchange", setFullscreenStatus);
+  onDestroy(()=> {
+    document.removeEventListener("fullscreenchange", setFullscreenStatus);
+  })
 
   // EVENT HANDLERS --------------------------------------
   function toggleFullscreen(e) {
@@ -29,7 +43,7 @@
   <div class="settings-option">
     <label for="fullscreen-option">Fullscreen</label>
     <div>
-      <input id="fullscreen-option" type="checkbox" on:click={toggleFullscreen} checked={document.fullscreenElement}
+      <input id="fullscreen-option" type="checkbox" on:click={toggleFullscreen} checked={fullscreenStatus}
       />
     </div>
   </div>

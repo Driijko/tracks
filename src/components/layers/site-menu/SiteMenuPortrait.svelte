@@ -111,7 +111,7 @@
     border-width: calc(var(--uarr-width)/100);
     border-radius: calc(var(--uarr-width)/10);
     height: 300%;
-    width: 11%;  
+    width: 10.5%;  
   }
   #this :global(input[type="range"]::-moz-range-thumb) {
     border-width: calc(var(--uarr-width)/100);
