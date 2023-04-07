@@ -229,7 +229,8 @@
     position: absolute;
     left: -0.1%;
     width: 100.2%;
-    height: 100%;
+    top: -0.1%;
+    height: 100.2%;
     background-color: var(--color1);
   }
   h1 {
