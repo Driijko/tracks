@@ -12,7 +12,7 @@
 
   // LOCAL STATE --------------------------------------------
   let menuState = {
-    open: false,
+    open: true,
     currentTab: "navigation",
   };
 
@@ -77,6 +77,14 @@
     if ($fullscreenMenuOpen) {
       menuState.open = true;
       menuState.currentTab = "settings";
+      animationDuration = 0;
+      tl.play();
+      animationDuration = 0.5;
+    }
+
+    if (true) {
+      menuState.open = true;
+      menuState.currentTab = "navigation";
       animationDuration = 0;
       tl.play();
       animationDuration = 0.5;
@@ -342,7 +350,7 @@
   /* HIGHLIGHTING ------------------------------ */
   @media (hover:hover) {
     #menu-button.splash {
-      transition-property: transform, box-shadow, background-color, border-color;
+      transition-property: transform, box-shadow, background-color, border-color, padding;
       transition-timing-function: ease-out;
       transition-duration: 1s;
     }  
@@ -351,6 +359,11 @@
       box-shadow:0px 0px 1000px var(--color2-2), 0px 0px 1000px var(--color2-2);
       background-color: var(--color1);
       border-color: var(--color1);
+    }
+    #menu-button.open:hover {
+      box-shadow: none;
+      background-color: var(--color1);
+      border-color: var(--color2-2);
     }
   }
 </style>

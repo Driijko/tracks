@@ -20,7 +20,9 @@
     border-width: calc(var(--uarr-width)/200);
     border-radius: calc(var(--uarr-width)/100);
     padding: 2%;
-    transition: padding 1s ease-out;
+  }
+  #this :global(#menu-button.open:hover) {
+    transform: scale(1.3) translate(calc(var(--uarr-width)/-160), calc(var(--uarr-width)/150));
   }
   #this :global(#menu-button.open) {
     padding: 0.5%;
@@ -72,7 +74,6 @@
     height: 100%;
     display: flex;
     align-items: center;
-    border: 4px solid blue;
   }
   #this :global(#settings label) {
     justify-content: flex-end;

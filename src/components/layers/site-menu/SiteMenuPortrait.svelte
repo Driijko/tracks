@@ -21,6 +21,9 @@
     border-radius: calc(var(--uarr-width)/100);
     padding: 3%;
   }
+  #this :global(#menu-button.open:hover) {
+    transform: scale(1.2) translate(calc(var(--uarr-width)/-70), calc(var(--uarr-width)/-80));
+  }
   #this :global(#menu-button.open) {
     border-radius: 0;
   }
@@ -132,5 +135,6 @@
   #this :global(#menu-tabs svg) {
     height: 70%;
   }
+
 }
 </style>
