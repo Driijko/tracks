@@ -47,6 +47,7 @@ dialog {
   padding: 0;
   left: initial;
   border: none;
+  background-color: transparent;
 }
 
 /* INTERFACE RESET //////////////////////// */
@@ -310,6 +311,16 @@ svg {
     height: 92%;
     position: relative;
   }
+}
+
+/* MENU-LAYER -------------------------------- */
+.menu-layer {
+  pointer-events: initial;
+  position: absolute;
+  left: -0.1%;
+  width: 100.2%;
+  top: -0.1%;
+  height: 100.2%;
 }
 
 /* COLORS ////////////////////////////////////////////////////// */
