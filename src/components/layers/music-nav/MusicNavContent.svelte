@@ -38,8 +38,5 @@ a {
   transition-timing-function: ease-out;
   transition-duration: 1s;
 }
-a:hover {
-  box-shadow: 0 0 calc(var(--uarr-width)/1) currentColor;
-}
 }
 </style>

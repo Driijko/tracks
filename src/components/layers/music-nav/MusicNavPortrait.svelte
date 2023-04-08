@@ -2,7 +2,6 @@
 <script>
   // IMPORTS --------------------------------------------
   import MusicNavContent from "./MusicNavContent.svelte";
-
 </script>
 
 <!-- MARKUP ///////////////////////////////////// -->
@@ -47,4 +46,10 @@ svg {
   left: 45%;
 }
 }
+@media screen and (orientation: portrait) and (hover:hover) {
+#this :global(a:hover) {
+  box-shadow: 0 0 calc(var(--uarr-width)/1) currentColor;
+}
+}
+
 </style>
