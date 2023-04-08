@@ -9,11 +9,13 @@
   import viewportOrientation from "../../../stores/viewportOrientation";
   import fullscreenMenuOpen  from "../../../stores/fullscreenMenuOpen";
   import Settings from "../../Settings.svelte";
+  import MusicNav from "../music-nav/MusicNav.svelte";
 
   // LOCAL STATE --------------------------------------------
   let menuState = {
     open: true,
     currentTab: "navigation",
+    musicNav: true,
   };
 
   // ANIMATION -----------------------------------------
@@ -99,6 +101,9 @@
       tl.play();
     }
     menuState.open = !(menuState.open);
+    if (menuState.musicNav) {
+      menuState.musicNav = false;
+    }
   }
   function siteMenuFullscreenCheckboxClick() {
     fullscreenMenuOpen.toggleFullscreenMenu(true);
@@ -139,7 +144,7 @@
             <ul>
               <li>
                 <a href={"https://driijko.github.io/tracks"} 
-                  on:click|preventDefault={()=> pageExit("page1")}
+                  on:click|preventDefault={()=>menuState.musicNav = true}
                 >Music</a>
               </li>
               <li>
@@ -190,6 +195,10 @@
 
       </div>
 
+    {/if}
+
+    {#if menuState.musicNav}
+      <MusicNav />
     {/if}
   </div>
 </dialog>
