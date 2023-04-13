@@ -9,6 +9,7 @@
   import LoadingScreen from "./components/layers/LoadingScreen.svelte";
   import OpeningPrompt from "./components/layers/opening-prompt/OpeningPrompt.svelte";
   import Splash from "./components/layers/splash/Splash.svelte";
+  import AmbientLight from "./components/layers/ambient-light/AmbientLight.svelte";
 
   setUp();
 </script>
@@ -25,6 +26,8 @@
     <SiteMenu />
     {#if $currentPageName === "splash"}
       <Splash />
+    {:else if $currentPageName === "ambient-light"}
+      <AmbientLight />
     {/if}
   {/if}
 {/key}

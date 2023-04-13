@@ -13,9 +13,10 @@
 
   // LOCAL STATE --------------------------------------------
   let menuState = {
-    open: true,
+    open: false,
     currentTab: "navigation",
     musicNav: false,
+    currentPageName: "splash",
   };
 
   // ANIMATION -----------------------------------------
@@ -83,14 +84,6 @@
       tl.play();
       animationDuration = 0.5;
     }
-
-    if (true) {
-      menuState.open = true;
-      menuState.currentTab = "navigation";
-      animationDuration = 0;
-      tl.play();
-      animationDuration = 0.5;
-    }
   });
 
   // EVENT HANDLERS ----------------------------------------------
@@ -107,6 +100,12 @@
   }
   function siteMenuFullscreenCheckboxClick() {
     fullscreenMenuOpen.toggleFullscreenMenu(true);
+  }
+
+  // REACTIVITY ----------------------------------------------
+  $: if (menuState.currentPageName !== $currentPageName && menuState.open) {
+    handleMenuButtonClick();
+    menuState.currentPageName = $currentPageName;
   }
 
 </script>

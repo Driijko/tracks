@@ -1,7 +1,12 @@
+<!-- SCRIPTS /////////////////////////////////////////////////// -->
+<script>
+  import pageExit from "../../../helpers/pageExit";
+</script>
+
 <!-- MARKUP ///////////////////////////////////////////////////// -->
 <ul id="music-nav">
   <li>
-    <a href={"https://driijko.github.io/tracks"}
+    <a href={"https://driijko.github.io/tracks"} on:click|preventDefault={()=>pageExit("ambient-light", 0)}
     >
       Dreamy Light Ambient
     </a>
