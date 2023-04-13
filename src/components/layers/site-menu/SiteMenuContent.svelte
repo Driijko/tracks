@@ -15,7 +15,7 @@
   let menuState = {
     open: true,
     currentTab: "navigation",
-    musicNav: true,
+    musicNav: false,
   };
 
   // ANIMATION -----------------------------------------
@@ -145,17 +145,17 @@
               <li>
                 <a href={"https://driijko.github.io/tracks"} 
                   on:click|preventDefault={()=>menuState.musicNav = true}
-                >Music</a>
+                >MUSIC</a>
               </li>
               <li>
                 <a href={"https://driijko.github.io/tracks"} 
                   on:click|preventDefault={()=> pageExit("page2")}
-                >About</a>
+                >ABOUT</a>
               </li>
               <li>
                 <a href={"https://driijko.github.io/tracks"} 
                   on:click|preventDefault={()=> pageExit("page3")}
-                >Contact</a>
+                >CONTACT</a>
               </li>
             </ul>
           </nav>
@@ -281,7 +281,8 @@
     border-style: solid;
     background-color: var(--color1-1);
     width: 100%;
-    font-family: "Bungee Outline";
+    font-family: "Quicksand";
+    /* font-weight: 400; */
     color: var(--color2-2);
     letter-spacing: calc(var(--uarr-width)/100);
   }
