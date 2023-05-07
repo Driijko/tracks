@@ -1,0 +1,37 @@
+<!-- SCRIPTS /////////////////////////////////////// -->
+<script>
+  import SiteMenuPortrait from "./SiteMenuPortrait.svelte";
+  import SiteMenuLandscape from "./SiteMenuLandscape.svelte";
+  import viewportOrientationStore from "../../../scripts/viewport/viewportOrientationStore";
+  import { siteMenuModal } from "../../../scripts/modalsStore";
+  import { resizing } from "../../../scripts/viewport/resizeStore";
+</script>
+
+<!-- MARKUP ///////////////////////////////////////////// -->
+
+{#if $resizing === false }
+  <div class="uarr-container" class:open={$siteMenuModal}>
+    <div class="uarr">
+      {#if $viewportOrientationStore === "portrait"}
+        <SiteMenuPortrait />
+      {:else}
+        <SiteMenuLandscape />
+      {/if}
+    </div>
+  </div>
+{/if}
+
+<!-- STYLES ////////////////////////////////////////////// -->
+<style>
+  div.uarr-container {
+    position: fixed;
+    z-index: 1;
+    pointer-events: none;
+    top: 0%;
+    left: 0%;
+  }
+  div.uarr-container.open {
+    background-color: white;
+    pointer-events: initial;
+  }
+</style>

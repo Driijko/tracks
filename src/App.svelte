@@ -1,33 +1,28 @@
-<!-- SCRIPTS ///////////////////////////////////////////////// -->
+<!-- SCRIPTS //////////////////////////////////////////// -->
 <script>
-  // IMPORTS ------------------------------------------------------
-  import currentPageName from "./stores/currentPageName";
-  import setUp from "./helpers/setUp";
-  import resetCount from "./stores/resetCount";
-  import Audio from "./components/Audio.svelte";
-  import SiteMenu from "./components/layers/site-menu/SiteMenu.svelte"
-  import LoadingScreen from "./components/layers/LoadingScreen.svelte";
-  import OpeningPrompt from "./components/layers/opening-prompt/OpeningPrompt.svelte";
-  import Splash from "./components/layers/splash/Splash.svelte";
-  import AmbientLight from "./components/layers/ambient-light/AmbientLight.svelte";
+  import setUp from "./toolkit/scripts/setUp";
+  import Router from "./toolkit/components/1-site/Router.svelte";
+  import AudioBkg from "./toolkit/components/1-site/AudioBkg.svelte";
+  import SplashPage from "./toolkit/components/2-pages/splash/SplashPage.svelte";
+  import OpeningPromptPage 
+  from "./toolkit/components/2-pages/opening-prompt/OpeningPromptPage.svelte";
+  import { resizing } from "./toolkit/scripts/viewport/resizeStore";
 
   setUp();
+
 </script>
 
-<!-- MARKUP ///////////////////////////////////////////////////// -->
-<Audio />
+<!-- MARKUP ///////////////////////////////////// -->
+<Router />
+<!-- <p> 
+  {$resizing}
+</p> -->
+<!-- <AudioBkg /> -->
+<!-- <SplashPage /> -->
+<!-- <OpeningPromptPage /> -->
 
-{#key resetCount}
-  {#if $currentPageName === "loading-screen"}
-    <LoadingScreen />
-  {:else if $currentPageName === "opening-prompt"}
-    <OpeningPrompt />
-  {:else}
-    <SiteMenu />
-    {#if $currentPageName === "splash"}
-      <Splash />
-    {:else if $currentPageName === "ambient-light"}
-      <AmbientLight />
-    {/if}
-  {/if}
-{/key}
+<!-- STYLES /////////////////////////////// -->
+<style>
+
+
+</style>

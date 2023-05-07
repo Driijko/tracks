@@ -1,4 +1,4 @@
-/* MEYER-WEB RESET SHEET /////////////////////////////////////////// */
+/* MEYER-WEB RESET SHEET (modified) ////////////////////////////////////// */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -45,7 +45,8 @@ table {
 dialog {
   margin: 0;
   padding: 0;
-  left: initial;
+  left: 0;
+  top: 0;
   border: none;
   background-color: transparent;
 }
@@ -66,16 +67,22 @@ button {
   font-size: inherit;
   font-family: inherit;
   color: inherit;
+  padding: 0;
 }
 
 input {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   font-family: inherit;
 }
 
 input[type="checkbox"], input[type="range"] {
-  appearance: none;
-  -webkit-appearance: none;
   margin: 0;
+}
+
+input[type="range"] {
+  background-color: transparent;
 }
 
 input[type="range"]::-webkit-slider-thumb {
@@ -128,16 +135,16 @@ a, button, label, input {
 the minimum recommended size on mobile. 
 Recommended interface size is 40px - 70px, 
 with 50-60 being ideal. */
-a, button, input {
+/* a, button, input {
   min-width: 40px;
   min-height: 40px;
-}
+} */
 
-i {
+em {
   font-style: italic;
 }
 
-em {
+strong {
   font-weight: bold;
 }
 
@@ -151,55 +158,7 @@ svg {
   width: 1rem;
 }
 
-/* CSS TOOLS //////////////////////////////////////////////////////// */
-.regular-scroll {
-  height: var(--viewport-height);
-  overflow-y: scroll;
-  -ms-overflow-style: none;  
-  scrollbar-width: none;  
-}
-.regular-scroll::-webkit-scrollbar {
-  display: none;
-}
-.hidden-submit {
-  visibility: hidden;
-  position: absolute;
-}
-
-.center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.icon-gap {
-  gap: 0.3rem;
-}
-
-/* BACKGROUND/FOREGROUND /////////////////////// */
-.background {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  z-index: -1;
-}
-
-.svg-background {
-  position: absolute;
-  left: -0.1%;
-  width: 100.2%;
-  height: 100.1%;
-}
-
-.foreground {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
-/* UARR /////////////////////////// */
+/* LAYOUT //////////////////////////////////////////////////// */
 .vp {
   width: 100vw;
   height: var(--viewport-height);
@@ -212,110 +171,63 @@ svg {
   justify-content: center;
   align-items: center;
 }
-.uarr {
+
+.uarr, .uarr1, .uarr2 {
   position: relative;
 }
 
+.horizontal-free-scroll {
+  overflow-x: scroll;
+  scrollbar-width: none;
+  white-space: nowrap;
+}
+
+.horizontal-free-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.horizontal-free-scroll > * {
+  display: inline-block;
+}
+
+/* PORTRAIT / LANDSCAPE ///////////////////////// */
 @media screen and (orientation: portrait) {
+  .landscape {
+    display: none;
+  }
+  :root {
+    --uarr-width: var(--uarr1-width);
+  }
   .uarr {
-    aspect-ratio: var(--uarr1-aspect-ratio);
     width: var(--uarr1-width);
     height: var(--uarr1-height);
   }
 }
+
 @media screen and (orientation: landscape) {
+  .portrait {
+    display: none;
+  }
+  :root {
+    --uarr-width: var(--uarr2-width);
+  }
   .uarr {
-    aspect-ratio: var(--uarr2-aspect-ratio);
     width: var(--uarr2-width);
     height: var(--uarr2-height);
   }
 }
+
 .uarr1 {
-  aspect-ratio: var(--uarr1-aspect-ratio);
   width: var(--uarr1-width);
   height: var(--uarr1-height);
 }
 .uarr2 {
-  aspect-ratio: var(--uarr2-aspect-ratio);
   width: var(--uarr2-width);
-  height: var(--uarr-height);
+  height: var(--uarr2-height);
 }
 
-/* COVERING MODAL //////////////// */
-.covering-modal {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-color: transparent;
-}
-
-.covering-modal .background {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  background-color: hsla(0, 0%, 0%, 0.7);
-}
-
-.covering-modal .container {
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-}
-
-.covering-modal section {
-  pointer-events: initial;
-  position: relative;
-}
-
-.covering-modal .modal-closer-button {
-  padding: 0.1rem 0.3rem;
-  line-height: 0;
-  border: 1px solid black;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-
-.covering-modal .modal-closer-button svg {
-  width: 1rem;
-}
-
-/* PORTRAIT/LANDSCAPE //////////////////// */
-@media only screen and (orientation: landscape) {
-  .portrait {
-    display: none;
-  }
-
-  .cruncher {
-    height: var(--viewport-height);
-  }
-
-  .content-container {
-    height: 100%;
-    position: relative;
-  }
-}
-
-@media only screen and (orientation: portrait) {
-  .landscape {
-    display: none;
-  }
-
-  .content-container {
-    height: 92%;
-    position: relative;
-  }
-}
-
-/* MENU-LAYER -------------------------------- */
-.menu-layer {
-  pointer-events: initial;
+/* FOREGROUND / BACKGROUND//////// */
+.foreground {
   position: absolute;
   left: -0.1%;
   width: 100.2%;
@@ -323,88 +235,46 @@ svg {
   height: 100.2%;
 }
 
+.background {
+  position: absolute;
+  left: -0.1%;
+  width: 100.2%;
+  top: -0.1%;
+  height: 100.2%;
+  /* z-index: -1; */
+}
+
 /* COLORS ////////////////////////////////////////////////////// */
 :root {
-  --color1: hsl(340, 100%, 10%);
-  --color1-1: hsl(340, 100%, 30%);
-  --color1-2: hsl(340, 100%, 20%);
-  --color2: hsl(340, 100%, 50%);
-  --color2-1: hsl(340, 100%, 60%);
-  --color2-2: hsl(340, 100%, 80%);
-  --color3: hsl(345, 100%, 50%);
-  --color4: hsl(350, 100%, 50%);
-  --color5: hsl(50, 100%, 70%);
+  --color1: hsl(0, 0%, 100%);
+  --color1-1: hsl(0, 0%, 95%);
+  --color1-2: hsla(0, 0%, 95%, 0.5);
+  --color2: hsl(0, 0%, 0%);
+  --color3: hsl(40, 100%, 80%);
+  --color3-1: hsl(40, 100%, 70%);
+  --color3-2: hsl(40, 100%, 50%);
+  --color3-3: hsl(40, 100%, 60%);
+  --color4: hsla(40, 100%, 10%, 0.9);
+  --color4-1: hsl(40, 100%, 7%);
+  --color5: hsl(150, 100%, 80%);
+  --color5-1: hsl(150, 100%, 60%);
+  --color5-2: hsl(150, 100%, 85%);
+  --color5-3: hsl(150, 100%, 48%);
 }
 
 /* FONTS ///////////////////////////////////////////////////////// */
 :root {
   font-family: "Quicksand", sans-serif;
-  color: var(--color1);
+  color: black;
   font-weight: 600;
 }
 
-/* INTERFACE /////////////////////////////////////////////////////// */
-.interface-style-1 {
-  background-color: var(--color2-1);
-  color: var(--color1);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 3%;
-  transition-property: background-color, color;
-  transition-timing-function: ease-out;
-  transition-duration: 1s;
-}
-
-
+/* FOCUS HIGHLIGHTING /////////////////////////////////////////// */
 @media (hover: hover) {
-  .interface-style-1:hover, .interface-style-1:focus {
-    color: var(--color2);
-    background-color: var(--color1);
-  }
   a:focus-visible, input:focus-visible, button:focus-visible {
-    transform: scale(1.3);
-    outline: 5px solid hsl(50, 100%, 80%);
+    transform: scale(1.2);
+    outline: 10px solid hsla(0, 0%, 50%, 0.8);
     outline-offset: 5px;
     z-index: 1;
   }
-}
-
-/* LINES & RECTS /////////////////////////////////////////////////// */
-.line {
-  stroke-width: 20;
-}
-
-.small-line {
-  stroke-width: 5;
-}
-
-.color1 {
-  fill: var(--color1);
-  stroke: var(--color1);
-}
-
-.color1-2 {
-  fill: var(--color1-2);
-  stroke: var(--color1-2);
-}
-
-.color2 {
-  fill: var(--color2);
-  stroke: var(--color2);
-}
-
-.color3 {
-  fill: var(--color3);
-  stroke: var(--color3);
-}
-
-.color4 {
-  fill: var(--color4);
-  stroke: var(--color4);
-}
-
-.color5 {
-  fill: var(--color5);
-  stroke: var(--color5);
 }
