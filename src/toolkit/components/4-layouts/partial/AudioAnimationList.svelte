@@ -6,6 +6,7 @@
   import viewportOrientationStore 
   from "../../../scripts/viewport/viewportOrientationStore";
   import Animation2 from "../../6-elements/art/Animation2.svelte";
+  import StrollAnimation from "../../6-elements/art/StrollAnimation.svelte";
 </script>
 
 <!-- MARKUP /////////////////////////////////////////// -->
@@ -16,7 +17,7 @@
     </svg>
   {:else}
     {#if $audioBkgTrack.name === "Stroll"}
-      <Animation2 />
+      <StrollAnimation />
     {/if}
   {/if}
 </div>
