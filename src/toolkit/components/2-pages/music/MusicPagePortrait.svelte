@@ -46,6 +46,7 @@
   height: 7.9%;
   width: 15%;
   left: 85%;
+  background-color: hsl(150, 100%, 85%);
 }
 @media screen and (orientation: landscape) {
   #this :global(.playlist-modal-closer-button) {
@@ -53,6 +54,7 @@
   }
 }
 #this :global(.audio-bkg-playlist-section h2) {
+  font-family: "Tenor Sans", sans-serif;
   height: 8%;
   display: flex;
   align-items: center;
@@ -60,6 +62,7 @@
   font-size: calc(var(--uarr1-width)/13);
   border-left: calc(var(--uarr1-width)/20) solid black;
   border-top: calc(var(--uarr1-width)/100) solid black;
+  background-color: hsl(150, 100%, 70%);
 }
 #this :global(.audio-bkg-playlist) {
   border: calc(var(--uarr1-width)/100) solid black;
@@ -70,10 +73,14 @@
   padding-top: calc(var(--uarr1-width)/50);
   padding-bottom: calc(var(--uarr1-width)/5);
   font-size: calc(var(--uarr1-width)/17);
+  background-color: hsla(150, 100%, 90%, 0.5);
 }
 #this :global(.audio-bkg-playlist li) {
   height: 15%;
   display: flex;
+}
+#this :global(.audio-bkg-playlist button) {
+  font-weight: 600;
 }
 #this :global(.audio-bkg-playlist::-webkit-scrollbar) {
   display: none;
@@ -83,6 +90,7 @@
   padding-top: calc(var(--uarr1-width)/19);
   border: calc(var(--uarr1-width)/100) solid black;
   height: 23%;
+  background-color: hsl(150, 100%, 70%);
 }
 #this :global(.audio-bkg-player h3) {
   text-align: center;
@@ -95,6 +103,7 @@
   border: calc(var(--uarr1-width)/200) solid black;
   top: 45%;
   left: 10%;
+  background-color: hsl(150, 100%, 85%);
 }
 #this :global(.audio-bkg-timer) {
   position: absolute;
@@ -112,5 +121,6 @@
   top: 45%;
   left: 72%;
   padding: calc(var(--uarr1-width)/50);
+  background-color: hsl(150, 100%, 85%);
 }
 </style>

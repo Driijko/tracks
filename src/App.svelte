@@ -15,8 +15,8 @@
 </script>
 
 <!-- MARKUP ///////////////////////////////////// -->
-<!-- <Router /> -->
-<SiteMenuModal />
+<Router />
+<!-- <SiteMenuModal /> -->
 <!-- <AudioBkg /> -->
 <!-- <SplashPage /> -->
 <!-- <OpeningPromptPage /> -->

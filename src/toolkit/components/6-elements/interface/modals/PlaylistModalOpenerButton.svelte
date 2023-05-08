@@ -18,4 +18,7 @@ button {
   align-items: center;
   justify-content: center;
 }
+button :global(path) {
+  fill: white;
+}
 </style>

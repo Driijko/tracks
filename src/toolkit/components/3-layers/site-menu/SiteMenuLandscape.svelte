@@ -26,11 +26,8 @@
   border-color: hsl(150, 100%,30%);
   background-color: hsl(150, 100%, 50%);
 }
-#this :global(.interface-tray.open line) {
+#this :global(.interface-tray.open .site-menu-modal line) {
   stroke: hsl(40, 100%, 0%);
-}
-#this :global(.interface-tray.closed) {
-  background-color: hsl(40, 100%, 50%);
 }
 #this :global(.interface-tray) {
   right: 0%;
@@ -42,6 +39,7 @@
   height: calc(var(--uarr2-width)/22);
   padding: calc(var(--uarr2-width)/80);
   padding-top: calc(var(--uarr2-width)/100);
+  background-color: black;
 }
 #this :global(.interface-tray.open li) {
   width: calc(var(--uarr2-width)/18);

@@ -8,21 +8,10 @@
 </script>
 
 <!-- MARKUP ///////////////////////////////////////////// -->
-
-<!-- {#if $resizing === false }
-  <div class="uarr-container" class:open={$siteMenuModal}>
-    <div class="uarr">
-      {#if $viewportOrientationStore === "portrait"}
-        <SiteMenuPortrait />
-      {:else}
-        <SiteMenuLandscape />
-      {/if}
-    </div>
-  </div>
-{/if} -->
-
-{#if $viewportOrientationStore === "portrait"}
-  <SiteMenuPortrait />
-{:else}
-  <SiteMenuLandscape />
+{#if $resizing === false}
+  {#if $viewportOrientationStore === "portrait"}
+    <SiteMenuPortrait />
+  {:else}
+    <SiteMenuLandscape />
+  {/if}
 {/if}

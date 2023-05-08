@@ -9,7 +9,7 @@
   const tl = gsap.timeline();
   onMount(()=> {
     tl.from(".a-path1", {
-      duration: 70,
+      duration: 10,
       strokeWidth: 0,
       stroke: "hsl(0, 100%, 100%)",
       ease: "power.out",

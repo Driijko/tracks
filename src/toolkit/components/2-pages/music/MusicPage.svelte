@@ -13,7 +13,7 @@
 <div class="uarr-container"
   class:landscape={$viewportOrientationStore === "landscape"}
 >
-  <div class="uarr2">
+  <div class="uarr2" class:portrait={$viewportOrientationStore === "portrait"}>
     <AudioAnimationList />
   </div>
   <div class="uarr1">
@@ -24,12 +24,15 @@
 <!-- STYLES //////////////////////////////////////// -->
 <style>
   .uarr-container.landscape {
-    background-color: black;
+    background-color: hsl(150, 80%, 90%);
   }
   .uarr1, .uarr2 {
     position: absolute;
   }
   .uarr2 {
     background-color: white;
+  }
+  .uarr2.portrait {
+    transform: rotate(90deg) scale(2.2);
   }
 </style>

@@ -1,11 +1,9 @@
 const playlists = {
   playlist1: {
-    name: "Playlist 1",
+    name: "TRACKS",
     tracks: [
-      { name: "Opening Prompt Loop", 
-      path: "./assets/audio/bkg/opening-prompt.mp3"},
-      { name: "Iroh 0",
-      path: "./assets/audio/bkg/test-music.mp3"}
+      { name: "Stroll", 
+      path: "./audio/stroll.mp3"},
     ],
   },
 };

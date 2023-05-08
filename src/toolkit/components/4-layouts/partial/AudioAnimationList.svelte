@@ -15,7 +15,7 @@
       <rect x="0" y="0" width="1600" height="900" fill="hsl(150, 100%, 70%)"/>
     </svg>
   {:else}
-    {#if $audioBkgTrack.name === "Opening Prompt Loop"}
+    {#if $audioBkgTrack.name === "Stroll"}
       <Animation2 />
     {/if}
   {/if}
@@ -23,9 +23,6 @@
 
 <!-- STYLES ////////////////////////////////////////// -->
 <style>
-div.portrait :global(svg) {
-  transform: rotate(90deg) scale(2.2);
-}
 svg {
   width: 100%;
 }
