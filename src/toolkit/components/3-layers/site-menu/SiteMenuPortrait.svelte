@@ -19,6 +19,16 @@
   hsl(40, 100%, 35%), hsl(150, 100%, 35%));
 }
 /* INTERFACE TRAY ------------------------------ */
+#this :global(.interface-tray) {
+  transition-property: background-color, left, width;
+  transition-timing-function: ease-out;
+}
+#this :global(.interface-tray.closed) {
+  transition-duration: 0.5s;
+}
+#this :global(.interface-tray.open) {
+  transition-duration: 1s;
+}
 #this :global(.interface-tray.open) {
   background-color: hsl(150, 100%, 40%);
 }
@@ -30,14 +40,11 @@
   stroke: hsl(40, 100%, 0%);
 }
 #this :global(.interface-tray.closed) {
-  background-color: hsl(40, 100%, 50%);
+  background-color: hsl(150, 100%, 0%);
 }
 #this :global(.interface-tray) {
   height: 8%;
   justify-content: center;
-  transition-property: left, width;
-  transition-duration: 0.5s;
-  transition-timing-function: ease-out;
   gap: 8%;
 }
 #this :global(.interface-tray.closed) {
@@ -45,9 +52,6 @@
   top: 92%;
   left: 0%;
   height: 8%;
-  transition-property: left, width;
-  transition-duration: 0.5s;
-  transition-timing-function: ease-out;
 }
 #this :global(.interface-tray li) {
   min-width: calc(var(--uarr1-width)/8);
@@ -69,9 +73,6 @@
   left: 85%;
   top: 91%;
   height: 9%;
-  transition-property: left, width;
-  transition-duration: 1s;
-  transition-timing-function: ease-out;
 }
 #this :global(.interface-tray.open button) {
   padding-top: calc(var(--uarr1-width)/40);
@@ -250,7 +251,7 @@
 
 /* Interface Tray hover/focus transitions */
 @media screen and (orientation: portrait) and (hover:hover) {
-  #this :global(.site-menu-modal-button svg) {
+  #this :global(.site-menu-modal-button.open svg) {
     transition-property: background-color, color, border-color, outline-width;
     transition-timing-function: ease-in;
     transition-duration: 0.3s;
@@ -258,17 +259,17 @@
     outline-width: 0;
     outline-style: solid;
   }
-  #this :global(.site-menu-modal-button line) {
+  #this :global(.site-menu-modal-button.open line) {
     transition-property: stroke;
     transition-timing-function: ease-in;
     transition-duration: 0.3s;
   }
-  #this :global(.site-menu-modal-button:hover svg) {
+  #this :global(.site-menu-modal-button.open:hover svg) {
     outline-width: calc(var(--uarr1-height) * 1.1);
     background-color: hsl(40, 100%, 0%);
     border-color: white;
   }
-  #this :global(.site-menu-modal-button:hover line) {
+  #this :global(.site-menu-modal-button.open:hover line) {
     stroke: white;
   }
 }
