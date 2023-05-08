@@ -5,23 +5,28 @@
   import CompassIcon from "../../6-elements/icons/menu/CompassIcon.svelte";
   import GearIcon from "../../6-elements/icons/menu/GearIcon.svelte";
   import SiteSettings from "../SiteSettings.svelte";
-  import BranchingNav from "../../4-layouts/partial/BranchingNav.svelte";
+  import Nav from "../Nav.svelte";
   import { siteMenuTab, newTab } from "../../../scripts/siteMenuStore";
+  import viewportOrientationStore
+  from "../../../scripts/viewport/viewportOrientationStore";
 
 </script>
 
 <!-- MARKUP /////////////////////////////////// -->
-{#if $siteMenuTab.current === "navigation"}
-  <TabTransition>
-    <BranchingNav />
-  </TabTransition>
-{:else if $siteMenuTab.current === "settings"}
-  <TabTransition>
-    <SiteSettings />
-  </TabTransition>
-{/if}
+<div class="tab-content">
 
-<ul class="site-menu-modal-tab-buttons">
+  {#if $siteMenuTab.current === "navigation"}
+    <TabTransition>
+      <Nav />
+    </TabTransition>
+  {:else if $siteMenuTab.current === "settings"}
+    <TabTransition>
+      <SiteSettings />
+    </TabTransition>
+  {/if}
+</div>
+
+<ul class="site-menu-tab-buttons">
   <li>
     <button class:selected={$siteMenuTab.current === "navigation"} 
       on:click={()=> newTab("navigation")}>
@@ -38,9 +43,6 @@
 
 <!-- STYLES /////////////////////////////////// -->
 <style>
-.site-menu-modal-tab-buttons {
-  background-color: white;
-}
 button {
   display: block;
   width: 100%;
@@ -48,11 +50,10 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: grey;
   border-radius: 0% 0% 50% 50%;
 }
 button.selected {
-  background-color: black;
+  background-color: hsl(150, 100%, 50%);
 }
 button.selected :global(svg path) {
   fill: white;

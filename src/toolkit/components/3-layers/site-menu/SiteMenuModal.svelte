@@ -9,7 +9,7 @@
 
 <!-- MARKUP ///////////////////////////////////////////// -->
 
-{#if $resizing === false }
+<!-- {#if $resizing === false }
   <div class="uarr-container" class:open={$siteMenuModal}>
     <div class="uarr">
       {#if $viewportOrientationStore === "portrait"}
@@ -19,19 +19,10 @@
       {/if}
     </div>
   </div>
-{/if}
+{/if} -->
 
-<!-- STYLES ////////////////////////////////////////////// -->
-<style>
-  div.uarr-container {
-    position: fixed;
-    z-index: 1;
-    pointer-events: none;
-    top: 0%;
-    left: 0%;
-  }
-  div.uarr-container.open {
-    background-color: white;
-    pointer-events: initial;
-  }
-</style>
+{#if $viewportOrientationStore === "portrait"}
+  <SiteMenuPortrait />
+{:else}
+  <SiteMenuLandscape />
+{/if}

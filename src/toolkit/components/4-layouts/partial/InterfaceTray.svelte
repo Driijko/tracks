@@ -47,8 +47,6 @@
     list[2] = playlistItem;
   };
 
-
-
   // Empty/fill tray of all items except site menu if site menu modal 
   // is open/closed.
   $: if ($siteMenuModal && list.length > 1) {
@@ -79,13 +77,22 @@
 <!-- STYLES //////////////////////////////////////// -->
 <style>
 ul {
+  position: absolute;
+  z-index: 2;
+  pointer-events: initial;
   display: flex;
   flex-flow: row-reverse;
 }
-li {
+/* ul.closed {
   background-color: black;
 }
-ul :global(svg) {
-  fill: white;
+ul.open {
+  background-color: white;
+} */
+/* li {
+  background-color: black;
+} */
+ul :global(line) {
+  stroke: white;
 }
 </style>

@@ -5,24 +5,35 @@
 </script>
 
 <!-- MARKUP /////////////////////////////////////// -->
-<div id="this" class:background-color={$siteMenuModal}>
-  <SiteMenuContent />
+<div class="uarr-container site-menu" class:open={$siteMenuModal}>
+  <div id="this" class="uarr">
+    <SiteMenuContent />
+  </div>
 </div>
 
 <!-- STYLE //////////////////////////////////////// -->
 <style>
 @media screen and (orientation: portrait) {
-#this {
-  width: 100%;
-  height: 100%;
-}
-#this.background-color {
-  background-color: black;
+.uarr-container.open {
+  background-image: linear-gradient(0deg,
+  hsl(40, 100%, 35%), hsl(150, 100%, 35%));
 }
 /* INTERFACE TRAY ------------------------------ */
+#this :global(.interface-tray.open) {
+  background-color: hsl(150, 100%, 40%);
+}
+#this :global(.interface-tray.open svg) {
+  border-color: hsl(40, 100%,40%);
+  background-color: hsl(40, 100%, 50%);
+}
+#this :global(.interface-tray.open line) {
+  stroke: hsl(40, 100%, 0%);
+}
+#this :global(.interface-tray.closed) {
+  background-color: hsl(40, 100%, 50%);
+}
 #this :global(.interface-tray) {
   height: 8%;
-  background-color: black;
   justify-content: center;
   transition-property: left, width;
   transition-duration: 0.5s;
@@ -33,6 +44,7 @@
   width: 100%;
   top: 92%;
   left: 0%;
+  height: 8%;
   transition-property: left, width;
   transition-duration: 0.5s;
   transition-timing-function: ease-out;
@@ -55,63 +67,75 @@
 #this :global(.interface-tray.open) {
   width: 15%;
   left: 85%;
-  top: 92%;
+  top: 91%;
+  height: 9%;
   transition-property: left, width;
   transition-duration: 1s;
   transition-timing-function: ease-out;
+}
+#this :global(.interface-tray.open button) {
+  padding-top: calc(var(--uarr1-width)/40);
+}
+#this :global(.interface-tray.open svg) {
+  width: calc(var(--uarr1-width)/10);
+  height: calc(var(--uarr1-width)/10);
+  padding: calc(var(--uarr1-width)/70);
+  border-width: calc(var(--uarr1-width)/100);
+  border-style: solid;
+  border-radius: calc(var(--uarr1-width)/100);
 }
 #this :global(.interface-tray.splash) {
   transition-property: top;
   transition-duration: 0.89s;
   transition-timing-function: ease-out;
 }
-/* INTERFACE TRAY SPLASH -------------------- */
 #this :global(.interface-tray.closed.splash) {
   top: 300%;
 }
-
 /* HEADER ------------------------------------------ */
 #this :global(header) {
-  border: 1px solid black;
-  height: 10%;
+  height: 8%;
+  padding-left: calc(var(--uarr1-width)/70);
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: calc(var(--uarr-width)/50);
-  padding-left: 1%;
+  align-items: center;
 }
 #this :global(h1) {
-  font-size: calc(var(--uarr-width)/14);
+  word-spacing: calc(var(--uarr1-width)/100);
+  display: flex;
+  align-items: center;
+  gap: calc(var(--uarr1-width)/30);
 }
-#this :global(h2) {
-  font-size: calc(var(--uarr-width)/24);
+#this :global(h1 span:nth-of-type(1)) {
+  font-size: calc(var(--uarr-width)/16);
+}
+#this :global(h1 span:nth-of-type(2)) {
+  font-size: calc(var(--uarr1-width)/22);
+}
+#this :global(h1 span:nth-of-type(3)) {
+  font-size: calc(var(--uarr1-width)/16);
 }
 /* BREADCRUMBS ---------------------------------- */
 #this :global(.site-menu-breadcrumbs) {
-  padding-left: 1%;
-  background-color: hsl(0, 0%, 20%);
-  color: white;
-  height: 3.2%;
-  font-size: calc(var(--uarr-width)/19.3);
-  display: flex;
+  padding-left: calc(var(--uarr1-width)/70);
+  padding-top: calc(var(--uarr1-width)/200);
+  height: 4%;
+  font-size: calc(var(--uarr-width)/18);
   overflow-x: scroll;
   scrollbar-width: 0;
-}
-#this :global(.site-menu-breadcrumbs li) {
-  white-space: nowrap;
-  padding-right: calc(var(--uarr-width)/60);
+  font-weight: 400;
 }
 /* TAB CONTENT ------------------------------------ */
 #this :global(.tab-content) {
-  height: 78.8%;
+  height: 79%;
+  border-width:calc(var(--uarr-width)/40);
+  border-style: solid; 
+  border-bottom: none;
+  /* border-top: none; */
 }
-/* NAV ---------------- */
 #this :global(nav), #this :global(.site-settings) {
   height: 100%;
-  border: calc(var(--uarr-width)/100) solid black;
-  background-color: hsl(0, 0%, 80%);
-  border-bottom: none;
 }
+/* NAV ---------------- */
 #this :global(nav ul) {
   height: 100%;
   display: flex;
@@ -138,10 +162,11 @@
   gap: calc(var(--uarr-width)/10);
 }
 #this :global(.site-settings-option) {
-  border-top: calc(var(--uarr-width)/30) solid black;
-  border-bottom: calc(var(--uarr-width)/30) solid black;
-  font-size: calc(var(--uarr-width)/12);
-  background-color: hsl(0, 0%, 90%);
+  border-top-style: solid;
+  border-top-width: calc(var(--uarr-width)/30);
+  border-bottom-style: solid;
+  border-bottom-width: calc(var(--uarr-width)/30);
+  font-size: calc(var(--uarr-width)/15);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -149,14 +174,16 @@
   padding: 3%;
 }
 #this :global(.site-settings input[type="checkbox"]) {
-  border: calc(var(--uarr-width)/50) solid black;
+  border-width: calc(var(--uarr-width)/50);
+  border-style: solid;
   width: calc(var(--uarr-width)/7);
   height: calc(var(--uarr-width)/7);
 }
 #this :global(.site-settings .volume-adjust) {
-  border-top: calc(var(--uarr-width)/50) solid black;
-  border-bottom: calc(var(--uarr-width)/50) solid black;
-  background-color: hsl(0, 0%, 90%);
+  border-top-width: calc(var(--uarr-width)/50);
+  border-top-style: solid;
+  border-bottom-width: calc(var(--uarr-width)/50);
+  border-bottom-style: solid;
   height: 25%;
   display: flex;
   flex-direction: column;
@@ -164,19 +191,22 @@
   align-items: center;
   gap: calc(var(--uarr-width)/20);
   padding-top: calc(var(--uarr-width)/100);
-  font-size: calc(var(--uarr-width)/17);
+  font-size: calc(var(--uarr-width)/18);
 }
 #this :global(input[type="range"]) {
   width: 70%;
+  height: calc(var(--uarr1-width)/10);
 }
 #this :global(input[type="range"]::-webkit-slider-runnable-track) {
   height: calc(var(--uarr-width)/20);
   border-radius: calc(var(--uarr-width)/10);
   border-width: calc(var(--uarr-width)/100);
+  border-style: solid;
 }
 #this :global(input[type="range"]::-webkit-slider-thumb) {
   margin-top: -4.5%; 
   border-width: calc(var(--uarr-width)/100);
+  border-style: solid;
   border-radius: calc(var(--uarr-width)/10);
   height: calc(var(--uarr-width)/12);
   width: calc(var(--uarr-width)/12);    
@@ -194,40 +224,52 @@
   width: calc(var(--uarr-width)/15);   
 }
 /* TAB BUTTONS ------------------------------------ */
-#this :global(.site-menu-modal-tab-buttons) {
+#this :global(.site-menu-tab-buttons) {
   display: flex;
   gap: calc(var(--uarr-width)/10);
   position: absolute;
-  top: 92%;
-  height: 8%;
+  top: 91%;
+  height: 9%;
   width: 85%;
-  border-top: calc(var(--uarr-width)/100) solid black;
+  border-top-width: calc(var(--uarr-width)/40);
+  border-top-style: solid;
 }
-#this :global(.site-menu-modal-tab-buttons li) {
+#this :global(.site-menu-tab-buttons li) {
   width: 20%;
   height: 100%;
   padding-bottom: 2%;
 }
-#this :global(.site-menu-modal-tab-buttons button) {
+#this :global(.site-menu-tab-buttons button) {
   padding-bottom: 5%;
   min-height: 0;
 }
-#this :global(.site-menu-modal-tab-buttons svg) {
+#this :global(.site-menu-tab-buttons svg) {
   width: 40%;
 }
 }
 
-/* Tab Button Label Hover Transitions */
+/* Interface Tray hover/focus transitions */
 @media screen and (orientation: portrait) and (hover:hover) {
-  #this :global(.site-menu-modal-tab-buttons input:not(:checked) + label:hover) {
-    transform: scale(1.4, 1.1) translateY(calc(var(--uarr-width)/200));
+  #this :global(.site-menu-modal-button svg) {
+    transition-property: background-color, color, border-color, outline-width;
+    transition-timing-function: ease-in;
+    transition-duration: 0.3s;
+    outline-color: hsla(150, 100%, 0%, 0.8);
+    outline-width: 0;
+    outline-style: solid;
   }
-}
-
-/* H2 Responsive */
-@media screen and (orientation: portrait) and (max-width: 380px) {
-  #this :global(h2) {
-    display: none;
+  #this :global(.site-menu-modal-button line) {
+    transition-property: stroke;
+    transition-timing-function: ease-in;
+    transition-duration: 0.3s;
+  }
+  #this :global(.site-menu-modal-button:hover svg) {
+    outline-width: calc(var(--uarr1-height) * 1.1);
+    background-color: hsl(40, 100%, 0%);
+    border-color: white;
+  }
+  #this :global(.site-menu-modal-button:hover line) {
+    stroke: white;
   }
 }
 </style>

@@ -12,7 +12,7 @@
 </script>
 
 <!-- MARKUP ///////////////////////////////////-->
-<div class="tab-content" 
+<div
   in:shift="{{
     x: currentTabPosition < prevTabPosition ? 
       -window.innerWidth : window.innerWidth, 
@@ -29,3 +29,11 @@
 >
   <slot />
 </div>
+
+<!-- STYLES /////////////////////// -->
+<style>
+  div {
+    width: 100%;
+    height: 100%;
+  }
+</style>

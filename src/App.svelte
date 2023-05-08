@@ -7,6 +7,8 @@
   import OpeningPromptPage 
   from "./toolkit/components/2-pages/opening-prompt/OpeningPromptPage.svelte";
   import { resizing } from "./toolkit/scripts/viewport/resizeStore";
+  import SiteMenuModal 
+  from "./toolkit/components/3-layers/site-menu/SiteMenuModal.svelte";
 
   setUp();
 
@@ -14,9 +16,7 @@
 
 <!-- MARKUP ///////////////////////////////////// -->
 <Router />
-<!-- <p> 
-  {$resizing}
-</p> -->
+<!-- <SiteMenuModal /> -->
 <!-- <AudioBkg /> -->
 <!-- <SplashPage /> -->
 <!-- <OpeningPromptPage /> -->
