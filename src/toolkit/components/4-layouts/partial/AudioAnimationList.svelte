@@ -6,7 +6,8 @@
   import viewportOrientationStore 
   from "../../../scripts/viewport/viewportOrientationStore";
   import Animation2 from "../../6-elements/art/Animation2.svelte";
-  import StrollAnimation from "../../6-elements/art/StrollAnimation.svelte";
+  import SwimmingAnimation from "../../6-elements/art/SwimmingAnimation.svelte";
+  import FadeAnimation from "../../6-elements/art/FadeAnimation.svelte";
 </script>
 
 <!-- MARKUP /////////////////////////////////////////// -->
@@ -34,8 +35,10 @@
       <rect x="0" y="0" width="1600" height="900" fill="url(#pattern1)"/>
     </svg>
   {:else}
-    {#if $audioBkgTrack.name === "Stroll"}
-      <StrollAnimation />
+    {#if $audioBkgTrack.name === "Swimming"}
+      <SwimmingAnimation />
+    {:else if $audioBkgTrack.name === "Fade"}
+      <FadeAnimation />
     {/if}
   {/if}
 </div>

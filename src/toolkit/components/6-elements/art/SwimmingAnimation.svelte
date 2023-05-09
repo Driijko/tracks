@@ -6,9 +6,6 @@
   import { audioBkgPaused, audioBkgCurrentTime, audioBkgRestartCount }
   from "../../../scripts/audioBkgStore";
 
-  // ANIMATION
-  const duration4 = 69;
-
   // ANIMATIONS ----------------------------
   function onComplete() {
     this.time(0).pause();

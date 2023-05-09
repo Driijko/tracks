@@ -2,8 +2,10 @@ const playlists = {
   playlist1: {
     name: "TRACKS",
     tracks: [
-      { name: "Stroll", 
-      path: "./audio/stroll.mp3"},
+      { name: "Fade",
+      path: "./audio/fade.mp3"},
+      { name: "Swimming", 
+      path: "./audio/swimming.mp3"},
     ],
   },
 };
