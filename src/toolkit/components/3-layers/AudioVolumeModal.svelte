@@ -39,7 +39,7 @@ dialog {
   z-index: 1;
 }
 .background {
-  background-color: hsla(0, 0%, 0%, 0.7);
+  background-color: hsla(150, 100%, 70%, 0.8);
 }
 button {
   width: 100%;
@@ -51,10 +51,27 @@ button {
 .container {
   position: absolute;
   pointer-events: initial;
-  background-color: white;
+  background-color: hsl(150, 100%, 5%);
+  color: white;
 }
 .container :global(.audio-bkg-volume-slider) {
   display: block;
+}
+.container :global(input[type="range"]::-webkit-slider-runnable-track) {
+  background-color: hsl(150, 100%, 0%);
+  border-color: white;
+}
+.container :global(input[type="range"]::-moz-range-track) {
+  background-color: hsl(150, 100%, 0%);
+  border-color: white;
+}
+.container :global(input[type="range"]::-webkit-slider-thumb) {
+  border-color: hsl(150, 50%, 90%);
+  background-color: hsl(150, 30%, 30%);
+}
+.container :global(input[type="range"]::-moz-range-thumb) {
+  border-color: hsl(150, 50%, 90%);
+  background-color: hsl(150, 30%, 30%);
 }
 @media screen and (orientation: portrait) {
   .container {
@@ -82,27 +99,21 @@ button {
     height: calc(var(--uarr1-width)/7);
   }
   .container :global(input[type="range"]::-webkit-slider-runnable-track) {
-    background-color: transparent;
     border-style: solid;
-    border-color: black;
     border-width: calc(var(--uarr1-width)/100);
     height: calc(var(--uarr1-width)/15);
     width: calc(var(--uarr1-width)/100);
     border-radius: calc(var(--uarr1-width)/10);
   }
   .container :global(input[type="range"]::-moz-range-track) { 
-    background-color: transparent;
     border-style: solid;
-    border-color: black;
     border-width: calc(var(--uarr1-width)/100);
     height: calc(var(--uarr1-width)/15);
     width: calc(var(--uarr1-width)/1.5);
     border-radius: calc(var(--uarr1-width)/10);
   }
   .container :global(input[type="range"]::-webkit-slider-thumb) {
-    background-color: grey; 
     border-style: solid;
-    border-color: black;
     border-width: calc(var(--uarr1-width)/100);
     border-radius: calc(var(--uarr1-width)/10);
     width: calc(var(--uarr1-width)/9);
@@ -110,9 +121,7 @@ button {
     margin-top: calc(var(--uarr1-width)/-32); 
   }
   .container :global(input[type="range"]::-moz-range-thumb) {
-    background-color: grey; 
     border-style: solid;
-    border-color: black;
     border-width: calc(var(--uarr1-width)/100);
     border-radius: calc(var(--uarr1-width)/10);
     width: calc(var(--uarr1-width)/9);
@@ -126,8 +135,8 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50%;
-    left: 25%;
+    width: 60%;
+    left: 20%;
     top: 20%;
     height: 60%;
     border-radius: calc(var(--uarr2-width)/100);
@@ -142,27 +151,21 @@ button {
     height: calc(var(--uarr2-width)/25);
   }
   .container :global(input[type="range"]::-webkit-slider-runnable-track) {
-    background-color: transparent;
     border-style: solid;
-    border-color: black;
     border-width: calc(var(--uarr2-width)/200);
     height: calc(var(--uarr2-width)/40);
     width: calc(var(--uarr2-width)/100);
     border-radius: calc(var(--uarr2-width)/10);
   }
   .container :global(input[type="range"]::-moz-range-track) { 
-    background-color: transparent;
     border-style: solid;
-    border-color: black;
     border-width: calc(var(--uarr2-width)/200);
     height: calc(var(--uarr2-width)/70);
     width: calc(var(--uarr2-width)/6);
     border-radius: calc(var(--uarr2-width)/10);
   }
   .container :global(input[type="range"]::-webkit-slider-thumb) {
-    background-color: grey; 
     border-style: solid;
-    border-color: black;
     border-width: calc(var(--uarr2-width)/200);
     border-radius: calc(var(--uarr2-width)/10);
     width: calc(var(--uarr2-width)/30);
@@ -170,9 +173,7 @@ button {
     margin-top: calc(var(--uarr2-width)/-110); 
   }
   .container :global(input[type="range"]::-moz-range-thumb) {
-    background-color: grey; 
     border-style: solid;
-    border-color: black;
     border-width: calc(var(--uarr2-width)/200);
     border-radius: calc(var(--uarr2-width)/10);
     width: calc(var(--uarr2-width)/35);

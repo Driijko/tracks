@@ -102,6 +102,7 @@
       tl.to("#id2-1 line", {
         duration: 1.5,
         strokeWidth: 0,
+        stagger: 0.1,
       },1.5);
     };
 

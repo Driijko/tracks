@@ -83,16 +83,4 @@ ul {
   display: flex;
   flex-flow: row-reverse;
 }
-/* ul.closed {
-  background-color: black;
-}
-ul.open {
-  background-color: white;
-} */
-/* li {
-  background-color: black;
-} */
-ul :global(line) {
-  stroke: white;
-}
 </style>

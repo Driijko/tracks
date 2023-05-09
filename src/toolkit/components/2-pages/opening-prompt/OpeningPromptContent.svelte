@@ -7,17 +7,17 @@
   from "../../../scripts/audioBkgStore";
 
   // Load and loop opening-prompt track.
-  audioBkgLoad("Opening Prompt Loop","./audio/opening-prompt.mp3");
+  audioBkgLoad("","./audio/opening-prompt.mp3");
   audioBkgSetLoop(true);
 
   // EVENT HANDLERS ----------------------------
   function handleClick() {
     newPage("splash");
     if ($audioBkgPaused) {
-      audioBkgLoad("Corridors", "./audio/corridors.mp3");
+      audioBkgLoad("Background Music", "./audio/corridors.mp3");
     }
     else {
-      audioBkgLoadPlay("Corridors", "./audio/corridors.mp3");
+      audioBkgLoadPlay("Background Music", "./audio/corridors.mp3");
     };
   };
 

@@ -19,48 +19,56 @@
   hsl(40, 100%, 35%), hsl(150, 100%, 35%));
 }
 /* INTERFACE TRAY ------------------------- */
-#this :global(.interface-tray.open) {
-  padding-right: calc(var(--uarr2-width)/300);
-}
-#this :global(.interface-tray.open svg) {
-  border-color: hsl(150, 100%,30%);
-  background-color: hsl(150, 100%, 50%);
-}
-#this :global(.interface-tray.open .site-menu-modal line) {
-  stroke: hsl(40, 100%, 0%);
-}
 #this :global(.interface-tray) {
   right: 0%;
   gap: calc(var(--uarr2-width)/100);
   top: 0%;
 }
-#this :global(.interface-tray.closed li) {
-  width: calc(var(--uarr2-width)/20);
-  height: calc(var(--uarr2-width)/22);
+#this :global(.interface-tray button) {
+  width: 100%;
+  height: 100%;
+}
+#this :global(.interface-tray.closed button) {
   padding: calc(var(--uarr2-width)/80);
   padding-top: calc(var(--uarr2-width)/100);
-  background-color: black;
-}
-#this :global(.interface-tray.open li) {
-  width: calc(var(--uarr2-width)/18);
-  height: calc(var(--uarr2-width)/18);
-  padding: calc(var(--uarr2-width)/120);
 }
 #this :global(.interface-tray svg) {
   width: 100%;
 }
-#this :global(.interface-tray.splash) {
-  transition-property: top;
-  transition-duration: 0.5s;
-  transition-timing-function: ease-out;
+#this :global(.interface-tray.closed li) {
+  width: calc(var(--uarr2-width)/20);
+  height: calc(var(--uarr2-width)/22);
+  background-color: black;
+}
+#this :global(.interface-tray.open) {
+  padding-right: calc(var(--uarr2-width)/300);
+  padding-top: calc(var(--uarr2-width)/3000);
+}
+#this :global(.interface-tray.open li) {
+  width: calc(var(--uarr2-width)/18);
+  height: calc(var(--uarr2-width)/18);
+  padding: calc(var(--uarr2-width)/200);
+  /* border: 1px solid red; */
+}
+#this :global(.interface-tray.open .site-menu-modal-button line) {
+  stroke: hsl(40, 100%, 0%);
+}
+#this :global(.interface-tray.open .site-menu-modal-button) {
+  border-color: hsl(150, 100%,30%);
+  background-color: hsl(150, 100%, 50%);
+  border-width: calc(var(--uarr2-width)/300);
+  border-style: solid;
+  border-radius: calc(var(--uarr2-width)/100);
 }
 #this :global(.interface-tray.open svg) {
   width: calc(var(--uarr2-width)/25);
   height: calc(var(--uarr2-width)/25);
   padding: calc(var(--uarr2-width)/500);
-  border-width: calc(var(--uarr2-width)/300);
-  border-style: solid;
-  border-radius: calc(var(--uarr2-width)/100);
+}
+#this :global(.interface-tray.splash) {
+  transition-property: top;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-out;
 }
 #this :global(.interface-tray.splash.closed) {
   top: -100%;
@@ -228,7 +236,7 @@
 /* HOVER/FOCUS TRANSITIONS -------------------------- */
 @media screen and (orientation: landscape) and (hover:hover) {
   /* SITE MENU MODAL BUTTON ----------------------- */
-  #this :global(.site-menu-modal-button.open svg) {
+  #this :global(.site-menu-modal-button.open) {
     transition-property: background-color, color, border-color, outline-width;
     transition-timing-function: ease-in;
     transition-duration: 0.3s;
@@ -236,17 +244,19 @@
     outline-width: 0;
     outline-style: solid;
   }
-  #this :global(.site-menu-modal-button line) {
+  #this :global(.site-menu-modal-button.open line) {
     transition-property: stroke;
     transition-timing-function: ease-in;
     transition-duration: 0.3s;
   }
-  #this :global(.site-menu-modal-button:hover svg) {
+  #this :global(.site-menu-modal-button.open:hover),
+  #this :global(.site-menu-modal-button.open:focus-visible) {
     outline-width: calc(var(--uarr2-width)/300);
     background-color: hsl(40, 100%, 0%);
     border-color: white;
   }
-  #this :global(.site-menu-modal-button:hover line) {
+  #this :global(.site-menu-modal-button.open:hover line),
+  #this :global(.site-menu-modal-button.open:focus-visible line) {
     stroke: white;
   }
   /* NAV LINKS ----------------------------------- */
@@ -258,9 +268,21 @@
     border-radius: 50%;
     display: block;
   }
-  #this :global(nav a:hover) {
+  #this :global(nav a:hover), #this :global(nav a:focus-visible) {
     transform: scale(1.3) translateX(calc(var(--uarr2-width)/200)) ;
     letter-spacing: calc(var(--uarr2-width)/200);
+  }
+  /* INTERFACE TRAY ------------------------------ */
+    #this :global(.interface-tray.closed button) {
+    transition-property: outline-width, color;
+    transition-timing-function: ease-in;
+    transition-duration: 0.3s;
+    outline-color: transparent;
+    outline-style: solid;
+    outline-width: calc(var(--uarr2-width)/100);
+  }
+  #this :global(.interface-tray.closed button:focus-visible) {
+    outline-color: hsla(0, 0%, 100%, 0.7);
   }
 }
 </style>

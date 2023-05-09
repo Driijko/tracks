@@ -82,13 +82,11 @@ button {
   display: flex; 
   justify-content: center; 
   align-items: center;
-  /* background-color: black; */
 }
 svg {
   height: 100%;
 }
 line {
-  /* stroke: white; */
   stroke-linecap: round;
 }
 </style>

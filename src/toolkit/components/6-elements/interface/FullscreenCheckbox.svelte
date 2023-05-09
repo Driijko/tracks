@@ -37,10 +37,3 @@
 <input id="fullscreen-option" type="checkbox" 
   on:click={toggleFullscreen} checked={fullscreenStatus}
 />
-
-<!-- STYLES ////////////////////////////////////////// -->
-<style>
-  input:checked {
-    background-color: grey;
-  }
-</style>

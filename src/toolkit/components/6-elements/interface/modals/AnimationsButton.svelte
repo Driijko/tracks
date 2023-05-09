@@ -22,6 +22,7 @@
 <button type="button" on:click={handleClick}
   class:on={$animationsOff === false}
   class:off={$animationsOff}
+  class="animations-button"
 >
   <PaletteIcon />
 </button>
@@ -29,19 +30,11 @@
 <!-- STYLES ////////////////////////////////////////// -->
 <style>
   button {
-    background-color: black;
     justify-content: center;
     align-items: center;
     display: flex;
   }
   button :global(svg) {
     width: 100%;
-  }
-  button.on :global(svg) {
-    width: 80%;
-    fill: white;
-  }
-  button.off :global(svg) {
-    fill: grey;
   }
 </style>

@@ -81,10 +81,6 @@
 
 <!-- STYLES ///////////////////////////////////////////////////// -->
 <style>
-button {
-  border-color: black;
-  border-style: solid;
-}
 svg {
   width: 100%; 
   height: 100%;

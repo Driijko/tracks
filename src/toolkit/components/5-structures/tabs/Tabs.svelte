@@ -30,10 +30,3 @@
     >3</button>
   </li>
 </ul>
-
-<!-- STYLES /////////////////////////////////// -->
-<style>
-button.selected {
-  background-color: hsl(0, 0%, 80%);
-}
-</style>

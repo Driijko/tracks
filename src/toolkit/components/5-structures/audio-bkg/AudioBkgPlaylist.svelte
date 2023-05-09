@@ -28,7 +28,6 @@
       audioBkgRestart();
     } 
     else {
-      // audioBkgFadeLoadPlay(track.name, track.path, fadeDuration);
       audioBkgLoadPlay(track.name, track.path);
       if ($audioBkgCurrentPlaylist.identifier !== identifier) {
         audioBkgNewPlaylist(identifier, tracks);
@@ -38,7 +37,7 @@
   };
 
   // REACT ON INITIALIZE ----------------------------------------
-  if ($audioBkgTrack.name === "") {
+  if ($audioBkgTrack.path === "") {
     audioBkgLoad(tracks[0].name, tracks[0].path);
     audioBkgNewPlaylist(identifier, tracks);
   };

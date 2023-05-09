@@ -35,7 +35,7 @@
   </svg>
   <ul class="foreground">
     <li>
-      <a href="home" on:click|preventDefault={()=> handleClick("home")}>
+      <a href="home" on:click|preventDefault={()=> handleClick("music")}>
         MUSIC
       </a>
     </li>

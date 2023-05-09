@@ -131,6 +131,14 @@ a, button, label, input {
   cursor: pointer;
 }
 
+button path {
+  fill: currentColor;
+}
+
+button line {
+  stroke: currentColor;
+}
+
 /* This is to make these elements at least
 the minimum recommended size on mobile. 
 Recommended interface size is 40px - 70px, 

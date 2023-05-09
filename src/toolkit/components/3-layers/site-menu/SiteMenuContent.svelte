@@ -39,6 +39,16 @@ div {
   height: 100%;
   overflow: hidden;
 }
+/* INTERFACE TRAY --------------------------- */
+#this :global(.interface-tray.closed button) {
+  color: white;
+}
+#this :global(.interface-tray.closed button) {
+  color: white;
+}
+#this :global(.interface-tray .animations-button.off) {
+  color: hsl(0, 0%, 65%);
+}
 /* HEADER ----------------------------------- */
 header {
   background-color: hsl(0, 0%, 0%);
