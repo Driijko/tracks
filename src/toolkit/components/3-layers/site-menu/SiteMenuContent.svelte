@@ -40,10 +40,7 @@ div {
   overflow: hidden;
 }
 /* INTERFACE TRAY --------------------------- */
-#this :global(.interface-tray.closed button) {
-  color: white;
-}
-#this :global(.interface-tray.closed button) {
+#this :global(.interface-tray button) {
   color: white;
 }
 #this :global(.interface-tray .animations-button.off) {
@@ -73,6 +70,10 @@ h1 span:nth-of-type(2) {
 }
 #this :global(.tab-content > *) {
   background-color: hsl(150, 100%, 50%);
+}
+/* NAV ------------------------------------------- */
+#this :global(nav a) {
+  color: hsl(150, 100%, 10%);
 }
 /* SITE SETTINGS ---------------------------------- */
 #this :global(.site-settings-option) {

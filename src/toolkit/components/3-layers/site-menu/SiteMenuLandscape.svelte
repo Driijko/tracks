@@ -48,7 +48,6 @@
   width: calc(var(--uarr2-width)/18);
   height: calc(var(--uarr2-width)/18);
   padding: calc(var(--uarr2-width)/200);
-  /* border: 1px solid red; */
 }
 #this :global(.interface-tray.open .site-menu-modal-button line) {
   stroke: hsl(40, 100%, 0%);
@@ -130,16 +129,24 @@
   flex-direction: column;
   justify-content: center;
   font-size: calc(var(--uarr-width)/30);
-  gap: 10%;
+  gap: calc(var(--uarr2-width)/20);
 }
 #this :global(nav li) {
   text-align: center;
   line-height: 1.3;
   width: 100%;
   word-spacing: calc(var(--uarr-width)/100);
+  display: flex;
+  justify-content: center;
 }
 #this :global(nav a) {
-  width: 100%;
+  border-width: calc(var(--uarr2-width)/500);
+  border-style: solid;
+  border-color: hsl(150, 100%, 60%);
+  display: block;
+  padding: calc(var(--uarr2-width)/100) calc(var(--uarr2-width)/50);
+  letter-spacing: calc(var(--uarr2-width)/300);
+  border-radius: calc(var(--uarr2-width)/200);
 }
 #this :global(nav li.selected) {
   font-size: calc(var(--uarr-width)/25);
@@ -261,16 +268,16 @@
   }
   /* NAV LINKS ----------------------------------- */
   #this :global(nav a) {
-    transition-property: text-shadow, transform, letter-spacing;
+    transition-property: border-color, transform, background-color, color;
     transition-timing-function: ease-out;
-    transition-duration: 1s;
-    padding: 1%;
-    border-radius: 50%;
-    display: block;
+    transition-duration: 0.3s;
+    outline: none;
   }
   #this :global(nav a:hover), #this :global(nav a:focus-visible) {
-    transform: scale(1.3) translateX(calc(var(--uarr2-width)/200)) ;
-    letter-spacing: calc(var(--uarr2-width)/200);
+    border-color: hsl(150, 100%, 70%);
+    transform: scale(1.15);
+    background-color: hsla(150, 100%, 70%, 0.5);
+    color: hsl(150, 100%,10%);
   }
   /* INTERFACE TRAY ------------------------------ */
     #this :global(.interface-tray.closed button) {
