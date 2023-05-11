@@ -15,23 +15,25 @@
   {#if $animationsOff || $audioBkgTrack.name === "Background Music"}
     <svg viewBox="0 0 1600 900">
       <defs>
-        <pattern id="pattern1" viewBox="0 0 20 20" width="20%" height="10%">
-          <path d="M 10,0 L 20,10 L 10,20 L 0,10 Z" fill="hsl(150, 100%, 75%" />
-          <line x1="0" y1="10" x2="10" y2="20" stroke="hsl(150, 100%, 68%)" />
-          <line x1="10" y1="20" x2="10" y2="0" stroke="hsl(150, 100%, 68%)" />
-          <line x1="10" y1="20" x2="7" y2="2" stroke="hsl(150, 100%, 68%)" />
-          <line x1="10" y1="20" x2="4" y2="5" stroke="hsl(150, 100%, 68%)" />
-          <line x1="10" y1="20" x2="2" y2="8" stroke="hsl(150, 100%, 68%)" />
-          <line x1="10" y1="20" x2="13" y2="2" stroke="hsl(150, 100%, 68%)" />
-          <line x1="10" y1="20" x2="16" y2="5" stroke="hsl(150, 100%, 68%)" />
-          <line x1="10" y1="20" x2="18" y2="8" stroke="hsl(150, 100%, 68%)" />
-          <line x1="10" y1="20" x2="20" y2="10" stroke="hsl(150, 100%, 68%)" />
+        <linearGradient id="gradient1" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="hsl(150, 100%, 50%)" />
+          <stop offset="80%" stop-color="hsl(40, 100%, 80%)" />
+        </linearGradient>
+        <pattern id="pattern1" viewBox="0 0 100 100" width="6.25%" height="11.11%">
+          <path stroke="hsla(40, 100%,80%, 0.5)" stroke-width="10" 
+            fill="hsla(150, 100%, 80%, 0)" stroke-linecap="round" stroke-linejoin="round"
+            d="M 50,0 Q 0,50 50,100 Q 100,50 50,0 Q 50,50 0,50"
+          />
+          <path stroke="hsla(40, 100%,80%, 0.5)" stroke-width="10" 
+            fill="hsla(150, 100%, 50%, 0)" stroke-linecap="round" stroke-linejoin="round"
+            d="M 50,100 Q 50,50 100,50"
+          />
         </pattern>
       </defs>
-      <rect x="0" y="0" width="1600" height="900" fill="hsl(150, 100%, 70%)"/>
-      <path fill="hsl(150, 100%, 60%)"
+      <rect x="0" y="0" width="1600" height="900" fill="url(#gradient1)"/>
+      <!-- <path fill="hsl(150, 100%, 60%)"
         d="M 0,0 Q 0,900 800,450 Q 1600,0 1600,900 H 0 Z"  
-      />
+      /> -->
       <rect x="0" y="0" width="1600" height="900" fill="url(#pattern1)"/>
     </svg>
   {:else}

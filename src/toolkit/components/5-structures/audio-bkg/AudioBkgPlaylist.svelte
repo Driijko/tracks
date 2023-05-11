@@ -50,7 +50,9 @@
   <ul class="audio-bkg-playlist">
     {#each tracks as track, index}
       <li>
-        <button type="button" on:click={()=> handleClick(track, index)}>
+        <button type="button" class="playlist-button"
+          on:click={()=> handleClick(track, index)}
+        >
           {track.name}
         </button>
       </li>
@@ -58,13 +60,3 @@
   </ul>
   <AudioBkgPlayer />
 </section>
-
-<!-- STYLES /////////////////////////////// -->
-<style>
-h2, section :global(.audio-bkg-player) {
-  background-color: white;
-}
-ul {
-  background-color: hsla(0, 0%, 100%, 0.7);
-}
-</style>

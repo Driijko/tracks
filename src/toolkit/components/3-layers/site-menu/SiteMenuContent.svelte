@@ -121,6 +121,15 @@ h1 span:nth-of-type(2) {
 }
 /* HOVER/FOCUS TRANSITIONS -------------------------------- */
 @media (hover:hover) {
+  /* INTERFACE TRAY ------------------------------------ */
+  #this :global(.interface-tray button svg) {
+    transition-property: transform;
+    transition-timing-function: ease-out;
+    transition-duration: 0.3s;   
+  }
+  #this :global(.interface-tray button:hover svg) {
+    transform: scale(1.3);
+  }
   /* TAB BUTTONS ------------------------------------- */
   #this :global(.site-menu-tab-buttons button) {
     transition-property: background-color;

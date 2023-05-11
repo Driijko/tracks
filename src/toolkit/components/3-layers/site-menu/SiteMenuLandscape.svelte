@@ -41,12 +41,12 @@
   background-color: black;
 }
 #this :global(.interface-tray.open) {
-  padding-right: calc(var(--uarr2-width)/300);
-  padding-top: calc(var(--uarr2-width)/3000);
+  padding-right: calc(var(--uarr2-width)/200);
+  padding-top: calc(var(--uarr2-width)/250);
 }
 #this :global(.interface-tray.open li) {
-  width: calc(var(--uarr2-width)/18);
-  height: calc(var(--uarr2-width)/18);
+  width: calc(var(--uarr2-width)/21);
+  height: calc(var(--uarr2-width)/21);
   padding: calc(var(--uarr2-width)/200);
 }
 #this :global(.interface-tray.open .site-menu-modal-button line) {

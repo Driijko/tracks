@@ -7,10 +7,7 @@
   from "../../../scripts/audioBkgStore";
 
   // ANIMATIONS ----------------------------
-  function onComplete() {
-    this.time(0).pause();
-  }
-  const tl = gsap.timeline({onComplete: onComplete});
+  const tl = gsap.timeline();
   onMount(()=> {
 
     // STAGE 1 ------------------------------
@@ -286,100 +283,190 @@
     tl.to("#svg1 .path1", {
       duration: 69,
       ease: "power1.out",
-      strokeDasharray: "1 8",
-      fill: "hsla(40, 100%, 70%, 0.1)",
+      fill: "hsla(40, 100%, 90%, 0.2)",
       attr: {
         d: "M 100,900 Q -300,-500 1400,300 Q 1600,900 800,800"
       }
-    },95.875);
+    },99);
     tl.to("#svg1 .path2", {
       duration: 69,
       ease: "power1.out",
-      strokeDasharray: "1 8",
-      fill: "hsla(40, 100%, 70%, 0.1)",
+      fill: "hsla(40, 100%, 90%, 0.2)",
       attr: {
         d: "M 400,900 Q -300,-500 1400,300 Q 1600,900 800,600"
       }
-    },95.875);
+    },99);
     tl.to("#svg1 .path3", {
       duration: 69,
       ease: "power1.out",
-      strokeDasharray: "1 8",
-      fill: "hsla(40, 100%, 70%, 0.1)",
+      fill: "hsla(40, 100%, 90%, 0.2)",
       attr: {
         d: "M 800,900 Q -300,-500 1400,300 Q 1600,900 800,450"
       }
-    },95.875);
+    },99);
     tl.to("#svg1 .path4", {
       duration: 69,
       ease: "power1.out",
-      strokeDasharray: "1 8",
-      fill: "hsla(40, 100%, 70%, 0.1)",
+      fill: "hsla(40, 100%, 90%, 0.2)",
       attr: {
         d: "M 1200,900 Q -300,-500 1400,300 Q 1600,900 800,300"
       }
-    },95.875);
+    },99);
     tl.to("#svg1 .path5", {
       duration: 69,
       ease: "power1.out",
-      strokeDasharray: "1 8",
-      fill: "hsla(40, 100%, 70%, 0.1)",
+      fill: "hsla(40, 100%, 90%, 0.2)",
       attr: {
         d: "M 1500,900 Q -300,-500 1400,300 Q 1600,900 800,100"
       }
-    },95.875);
+    },99);
 
     tl.to("#svg1 .path6", {
       duration: 69,
       ease: "power1.out",
-      strokeDasharray: "1 8",
-      fill: "hsla(40, 100%, 70%, 0.1)",
+      fill: "hsla(40, 100%, 90%, 0.2)",
       attr: {
         d: "M 100,0 Q 1900,1400 200,600 Q 0,0 800,100"
       }
-    },95.875);
+    },99);
     tl.to("#svg1 .path7", {
       duration: 69,
       ease: "power1.out",
-      strokeDasharray: "1 8",
-      fill: "hsla(40, 100%, 70%, 0.1)",
+      fill: "hsla(40, 100%, 90%, 0.2)",
       attr: {
         d: "M 400,0 Q 1900,1400 200,600 Q 0,0 800,300"
       }
-    },95.875);
+    },99);
     tl.to("#svg1 .path8", {
       duration: 69,
       ease: "power1.out",
-      strokeDasharray: "1 8",
-      fill: "hsla(40, 100%, 70%, 0.1)",
+      fill: "hsla(40, 100%, 90%, 0.2)",
       attr: {
         d: "M 800,0 Q 1900,1400 200,600 Q 0,0 800,450"
       }
-    },95.875);
+    },99);
     tl.to("#svg1 .path9", {
       duration: 69,
       ease: "power1.out",
-      strokeDasharray: "1 8",
-      fill: "hsla(40, 100%, 70%, 0.1)",
+      fill: "hsla(40, 100%, 90%, 0.2)",
       attr: {
         d: "M 1200,0 Q 1900,1400 200,600 Q 0,0 800,600"
       }
-    },95.875);
+    },99);
     tl.to("#svg1 .path10", {
       duration: 69,
       ease: "power1.out",
-      strokeDasharray: "1 8",
-      fill: "hsla(40, 100%, 70%, 0.1)",
+      fill: "hsla(40, 100%, 90%, 0.2)",
       attr: {
         d: "M 1500,0 Q 1900,1400 200,600 Q 0,0 800,800"
       }
-    },95.875);
+    },99);
 
-    // REACT ON MOUNT ----------------------
-    // In case animations get turned off and on.
-    if ($audioBkgCurrentTime !== 0) {
-      tl.seek($audioBkgCurrentTime);
-    };
+    // STAGE 5 ------------------------------------------------
+    tl.to("#svg1 .path1", {
+      duration: 30,
+      ease: "power1.out",
+      strokeDasharray: "1 12",
+    },99);
+    tl.to("#svg1 .path2", {
+      duration: 30,
+      ease: "power1.out",
+      strokeDasharray: "1 12",
+    },99);
+    tl.to("#svg1 .path3", {
+      duration: 30,
+      ease: "power1.out",
+      strokeDasharray: "1 12",
+    },99);
+    tl.to("#svg1 .path4", {
+      duration: 30,
+      ease: "power1.out",
+      strokeDasharray: "1 12",
+    },99);
+    tl.to("#svg1 .path5", {
+      duration: 30,
+      ease: "power1.out",
+      strokeDasharray: "1 12",
+    },99);
+
+    tl.to("#svg1 .path6", {
+      duration: 30,
+      ease: "power1.out",
+      strokeDasharray: "1 12",
+    },99);
+    tl.to("#svg1 .path7", {
+      duration: 30,
+      ease: "power1.out",
+      strokeDasharray: "1 12",
+    },99);
+    tl.to("#svg1 .path8", {
+      duration: 30,
+      ease: "power1.out",
+      strokeDasharray: "1 12",
+    },99);
+    tl.to("#svg1 .path9", {
+      duration: 30,
+      ease: "power1.out",
+      strokeDasharray: "1 12",
+    },99);
+    tl.to("#svg1 .path10", {
+      duration: 30,
+      ease: "power1.out",
+      strokeDasharray: "1 12",
+    },99);
+
+    // STAGE 6 ------------------------------------------------
+    tl.to("#svg1 .path1", {
+      duration: 30,
+      ease: "power1.out",
+      strokeDasharray: "1 8",
+    },129);
+    tl.to("#svg1 .path2", {
+      duration: 30,
+      ease: "power1.out",
+      strokeDasharray: "1 8",
+    },129);
+    tl.to("#svg1 .path3", {
+      duration: 30,
+      ease: "power1.out",
+      strokeDasharray: "1 8",
+    },129);
+    tl.to("#svg1 .path4", {
+      duration: 30,
+      ease: "power1.out",
+      strokeDasharray: "1 8",
+    },129);
+    tl.to("#svg1 .path5", {
+      duration: 30,
+      ease: "power1.out",
+      strokeDasharray: "1 8",
+    },129);
+
+    tl.to("#svg1 .path6", {
+      duration: 30,
+      ease: "power1.out",
+      strokeDasharray: "1 8",
+    },129);
+    tl.to("#svg1 .path7", {
+      duration: 30,
+      ease: "power1.out",
+      strokeDasharray: "1 8",
+    },129);
+    tl.to("#svg1 .path8", {
+      duration: 30,
+      ease: "power1.out",
+      strokeDasharray: "1 8",
+    },129);
+    tl.to("#svg1 .path9", {
+      duration: 30,
+      ease: "power1.out",
+      strokeDasharray: "1 8",
+    },129);
+    tl.to("#svg1 .path10", {
+      duration: 30,
+      ease: "power1.out",
+      strokeDasharray: "1 8",
+    },129);
 
     return (()=> {
       tl.kill();
@@ -395,6 +482,10 @@
 
   $: if ($audioBkgRestartCount) {
     tl.restart();
+  }
+
+  $: if (tl.time() !== $audioBkgCurrentTime) {
+    tl.seek($audioBkgCurrentTime);
   }
 
 </script>

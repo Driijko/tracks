@@ -69,7 +69,7 @@ ul {
   position: absolute;
 }
 a {
-  font-weight: 400;
+  font-weight: 500;
   font-family: "Kodchasan";
 }
 @keyframes animate {

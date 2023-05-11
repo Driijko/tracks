@@ -69,18 +69,26 @@
   height: 69%;
   overflow-y: scroll;
   scrollbar-width: none;
-  padding-left: calc(var(--uarr1-width)/20);
   padding-top: calc(var(--uarr1-width)/50);
   padding-bottom: calc(var(--uarr1-width)/5);
   font-size: calc(var(--uarr1-width)/17);
-  background-color: hsla(150, 100%, 90%, 0.5);
+  background-color: hsla(150, 100%, 90%, 0.7);
 }
 #this :global(.audio-bkg-playlist li) {
   height: 15%;
-  display: flex;
 }
 #this :global(.audio-bkg-playlist button) {
   font-weight: 600;
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  padding-left: calc(var(--uarr1-width)/40);
+  border-top-width: calc(var(--uarr1-width)/100);
+  border-top-style: solid;
+  border-bottom-width: calc(var(--uarr1-width)/100);
+  border-bottom-style: solid;
+  border-color: transparent;
 }
 #this :global(.audio-bkg-playlist::-webkit-scrollbar) {
   display: none;
@@ -122,5 +130,37 @@
   left: 72%;
   padding: calc(var(--uarr1-width)/50);
   background-color: hsl(150, 100%, 85%);
+}
+
+/* HOVER/FOCUS TRANSITIONS ------------------------- */
+/* PLAYLIST INTERFACE ------------------------- */
+@media (hover:hover) {
+  #this :global(.playlist-modal-closer-button),
+  #this :global(.audio-bkg-pause-play-button),
+  #this :global(.audio-bkg-volume-modal-button),
+  #this :global(.playlist-button) {
+    transition-property: background-color, color;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+  }
+  #this :global(.playlist-modal-closer-button:hover),
+  #this :global(.playlist-modal-closer-button:focus-visible),
+  #this :global(.audio-bkg-pause-play-button:hover),
+  #this :global(.audio-bkg-pause-play-button:focus-visible),
+  #this :global(.audio-bkg-volume-modal-button:hover),
+  #this :global(.audio-bkg-volume-modal-button:focus-visible) {
+    background-color: black;
+    color: white;
+  }
+  #this :global(.playlist-button) {
+    transition-property: background-color;
+    transition-duration: 0s;
+    transition-timing-function: ease-out;
+  }
+  #this :global(.playlist-button:hover),
+  #this :global(.playlist-button:focus-visible) {
+    background-color: hsl(0, 100%, 100%);
+    border-color: black;
+  }
 }
 </style>

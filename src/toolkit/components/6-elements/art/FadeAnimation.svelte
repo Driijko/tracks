@@ -15,11 +15,11 @@
   onMount(()=> {
 
     tl.to("#svg2 .rect5", {
-      duration: 200,
+      duration: 160,
       opacity: 1,
     },0);
     tl.to("#svg2 .rect6", {
-      duration: 120,
+      duration: 80,
       opacity: 0.4,
     },0);
     tl.to("#svg2 .line1", {
@@ -180,15 +180,9 @@
       fill: "hsl(50, 100%, 90%)"
     },80);
     tl.to("#svg2 line", {
-      duration: 40,
+      duration: 60,
       stroke: "hsl(50, 100%, 50%)",
     },80); 
-
-    // REACT ON MOUNT ----------------------
-    // In case animations get turned off and on.
-    if ($audioBkgCurrentTime !== 0) {
-      tl.seek($audioBkgCurrentTime);
-    };
 
     return (()=> {
       tl.kill();
@@ -204,6 +198,10 @@
 
   $: if ($audioBkgRestartCount) {
     tl.restart();
+  }
+
+  $: if (tl.time() !== $audioBkgCurrentTime) {
+    tl.seek($audioBkgCurrentTime);
   }
 
 </script>
@@ -415,7 +413,7 @@
     />
   
     <line class="line21" stroke="hsl(50, 100%, 100%)" stroke-width="5"
-      x1="232" y1="700" x2="232" y2="700"
+      x1="233" y1="700" x2="233" y2="700"
     />
     <line class="line21" stroke="hsl(50, 100%, 100%)" stroke-width="5"
       x1="1366" y1="700" x2="1366" y2="700"
