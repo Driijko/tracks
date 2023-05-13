@@ -2,6 +2,8 @@ const playlists = {
   playlist1: {
     name: "TRACKS",
     tracks: [
+      { name: "Prism",
+      path: "/audio/prism.mp3"},
       { name: "Fade",
       path: "./audio/fade.mp3"},
       { name: "Swimming", 

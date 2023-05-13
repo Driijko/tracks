@@ -7,11 +7,7 @@
   from "../../../scripts/audioBkgStore";
 
   // ANIMATIONS ----------------------------
-  function onComplete() {
-    // this.time(0).pause();
-    console.log("complete");
-  }
-  const tl = gsap.timeline({onComplete: onComplete, defaults: {ease: "none"}});
+  const tl = gsap.timeline({ defaults: {ease: "none"}});
   onMount(()=> {
 
     tl.to("#svg2 .rect5", {

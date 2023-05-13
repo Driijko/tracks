@@ -8,6 +8,7 @@
   import Animation2 from "../../6-elements/art/Animation2.svelte";
   import SwimmingAnimation from "../../6-elements/art/SwimmingAnimation.svelte";
   import FadeAnimation from "../../6-elements/art/FadeAnimation.svelte";
+  import PrismAnimation from "../../6-elements/art/prism-animation/PrismAnimation.svelte";
 </script>
 
 <!-- MARKUP /////////////////////////////////////////// -->
@@ -31,9 +32,6 @@
         </pattern>
       </defs>
       <rect x="0" y="0" width="1600" height="900" fill="url(#gradient1)"/>
-      <!-- <path fill="hsl(150, 100%, 60%)"
-        d="M 0,0 Q 0,900 800,450 Q 1600,0 1600,900 H 0 Z"  
-      /> -->
       <rect x="0" y="0" width="1600" height="900" fill="url(#pattern1)"/>
     </svg>
   {:else}
@@ -41,6 +39,8 @@
       <SwimmingAnimation />
     {:else if $audioBkgTrack.name === "Fade"}
       <FadeAnimation />
+    {:else if $audioBkgTrack.name === "Prism"}
+      <PrismAnimation />
     {/if}
   {/if}
 </div>
