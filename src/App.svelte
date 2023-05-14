@@ -9,6 +9,7 @@
   import { resizing } from "./toolkit/scripts/viewport/resizeStore";
   import SiteMenuModal 
   from "./toolkit/components/3-layers/site-menu/SiteMenuModal.svelte";
+  import Background from "./toolkit/tools/Background.svelte";
 
   setUp();
 
@@ -16,6 +17,7 @@
 
 <!-- MARKUP ///////////////////////////////////// -->
 <Router />
+<!-- <Background /> -->
 <!-- <SiteMenuModal /> -->
 <!-- <AudioBkg /> -->
 <!-- <SplashPage /> -->
