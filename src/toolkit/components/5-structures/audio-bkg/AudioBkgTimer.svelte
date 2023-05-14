@@ -18,7 +18,9 @@
   <span> / </span>
   <span>
     {Math.floor($audioBkgTotalTime / 60)}:{
-    Math.floor($audioBkgTotalTime % 60)}
+      Math.floor($audioBkgTotalTime % 60) < 10 ? 
+      `0${Math.floor($audioBkgTotalTime % 60)}`
+      : Math.floor($audioBkgTotalTime % 60)}
   </span>
 </span>
 {/if}
