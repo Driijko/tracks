@@ -58,7 +58,15 @@
 
 <!-- MARKUP //////////////////////////////////////////// -->
 <svg id="svg4" viewBox="0 0 1600 900">
-
+  <defs>
+    <filter id="filter1" x="0" y="0" width="1600" height="900">
+      <!-- <feImage result="IMAGE" xlink:href="./images/pic2.jpg" x="0" y="0" width="100%" height="100%" preserveAspectRatio="none"></feImage>
+      <feDisplacementMap in="SourceGraphic" in2="IMAGE" scale="15" xChannelSelector="R" yChannelSelector="R" result="TEXTURED_TEXT"></feDisplacementMap> -->
+      <feImage xlink:href="./images/pic1.jpg" x="0" y="0" width="100%" height="100%" preserveAspectRatio="none" result="BG"></feImage>
+      <feBlend in="BG" in2="SourceGraphic" mode="multiply" result="BLENDED_TEXT"></feBlend>
+    </filter>
+  </defs>
+<g filter="url(#filter1)">
   <!-- CHANNEL 2A ------------------------------ -->
   <!-- LEFT SIDE -->
   <path class="path9 path10" fill={fill1} stroke={stroke2} stroke-width={strokeWidth1} 
@@ -404,6 +412,7 @@
     stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="1 1"
     d="M 800,886 Q 850,500 350,450 Z"
   />
+</g>
 </svg>
 
 

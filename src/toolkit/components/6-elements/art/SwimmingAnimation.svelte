@@ -561,7 +561,6 @@
     stroke-dasharray="5 10" stroke-linejoin="round" stroke-linecap="round"
     d="M 1500,0 Q 1500,0 1500,0 Q 1500,0 1500,0" 
   />
-
 </svg>
 
 <!-- STYLES /////////////////////////////////////////////////// -->

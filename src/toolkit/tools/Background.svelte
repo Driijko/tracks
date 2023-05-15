@@ -5,7 +5,7 @@
 
 <!-- MARKUP //////////////////////////////////// -->
 <button on:click={()=> fullscreen(true)}>
-  <img src="./images/pic1.png" alt="test" />
+  <img src="./images/pic2.jpg" alt="test" />
 </button>
 
 <!-- STYLES ////////////////////////////////////// -->
@@ -18,6 +18,6 @@
   img {
     height: 100%;
     /* filter: grayscale(1) contrast(0.15) brightness(1.8); */
-    filter: grayscale(1) brightness(6);
+    filter: contrast(0.1) brightness(1.9);
   }
 </style>

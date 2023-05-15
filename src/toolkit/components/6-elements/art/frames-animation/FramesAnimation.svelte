@@ -43,7 +43,7 @@
       ease: "none",
     }, 14);
     tl.from("#svg5 .circle2", {
-      duration: 80,
+      duration: 82,
       attr: {cx: 1800},
       ease: "none",
     }, 14);

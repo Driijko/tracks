@@ -67,7 +67,7 @@ button {
 }
 .container :global(input[type="range"]::-webkit-slider-thumb) {
   border-color: hsl(150, 50%, 90%);
-  background-color: hsl(150, 30%, 30%);
+  background-color: hsl(150, 100%, 12%);
 }
 .container :global(input[type="range"]::-moz-range-thumb) {
   border-color: hsl(150, 50%, 90%);

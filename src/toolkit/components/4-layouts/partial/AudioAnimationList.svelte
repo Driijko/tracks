@@ -9,7 +9,8 @@
   import SwimmingAnimation from "../../6-elements/art/SwimmingAnimation.svelte";
   import FadeAnimation from "../../6-elements/art/FadeAnimation.svelte";
   import PrismAnimation from "../../6-elements/art/prism-animation/PrismAnimation.svelte";
-  import FramesAnimation from "../../6-elements/art/frames-animation/FramesAnimation.svelte"
+  import FramesAnimation from "../../6-elements/art/frames-animation/FramesAnimation.svelte";
+  import VeilsAnimation from "../../6-elements/art/VeilsAnimation.svelte";
 </script>
 
 <!-- MARKUP /////////////////////////////////////////// -->
@@ -44,6 +45,8 @@
       <PrismAnimation />
     {:else if $audioBkgTrack.name === "Frames"}
       <FramesAnimation />
+    {:else if $audioBkgTrack.name === "Veils"}
+      <VeilsAnimation />
     {/if}
   {/if}
 </div>
