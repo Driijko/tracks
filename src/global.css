@@ -180,7 +180,7 @@ svg {
   align-items: center;
 }
 
-.uarr, .uarr1, .uarr2 {
+.uarr, .uarr1, .uarr2, .uarr1-pad {
   position: relative;
   overflow: hidden;
 }
@@ -234,6 +234,11 @@ svg {
   width: var(--uarr2-width);
   height: var(--uarr2-height);
 }
+.uarr1-pad {
+  width: var(--uarr1-width);
+  height: calc(var(--uarr1-height) * 0.92);
+  top: calc(var(--uarr1-height) * -0.04);
+}
 
 /* FOREGROUND / BACKGROUND//////// */
 .foreground {
@@ -251,6 +256,14 @@ svg {
   top: -0.1%;
   height: 100.2%;
   /* z-index: -1; */
+}
+
+.uarr1-pad .background, .uarr1-pad .foreground {
+  position: absolute;
+  left: -0.1%;
+  width: 100.2%;
+  top: -0.1%;
+  height: calc(var(--uarr1-height)* 0.921);
 }
 
 /* SITE MENU /////////////////////////////// */

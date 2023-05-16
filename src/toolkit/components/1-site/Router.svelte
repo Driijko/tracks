@@ -11,6 +11,7 @@
   import SiteMenuModal from "../3-layers/site-menu/SiteMenuModal.svelte";
   import MusicPage from "../2-pages/music/MusicPage.svelte";
   import Notify from "../3-layers/Notify.svelte";
+  import AboutPage from "../2-pages/about/AboutPage.svelte";
 </script>
 
 <!-- MARKUP ///////////////////////////////////// -->
@@ -28,6 +29,8 @@
       <SplashPage />
     {:else if $currentPage === "music"}
       <MusicPage />
+    {:else if $currentPage === "about"}
+      <AboutPage />
     {/if}
   {/if}
 {/key}
