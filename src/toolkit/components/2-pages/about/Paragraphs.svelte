@@ -1,6 +1,4 @@
-<p>
-  The seed for this project began when a friend asked to hear some music I'd been working on. I put together a rather simple website within an hour, completely unstyled, but sufficient for the purpose of streaming music. In the back of my mind, I began to consider a more elaborate presentation.
-</p>
+
 <p>
   My desire was to create a site which visually matched the music I was creating. Something dynamic, yet poised. My obsession is the idea of "flow": a mental state in which a person is completely immersed in an activity, undistracted. I often seek flow through cultivating a calm, relaxed atmosphere. The music and the website were designed to capture and cultivate a state of serene indulgence.
 </p>

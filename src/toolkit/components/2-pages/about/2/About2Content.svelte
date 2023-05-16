@@ -1,0 +1,3 @@
+<p class="foreground">
+  The seed for this project began when a friend asked to hear some music I'd been working on. <br class="portarit"/><br class="portarit"/> I put together a rather simple website within an hour, completely unstyled,<br class="landscape"/> but sufficient for the purpose of streaming music. <br class="portarit"/><br class="portarit"/>In the back of my mind, I began to consider a more elaborate presentation.
+</p>

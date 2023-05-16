@@ -33,14 +33,14 @@
     };
 
     if (axis === "vertical") {
-      gsap.to(".snap-scroll", {
+      gsap.to(snapScroll, {
         duration: 0.5,
         ease: "circ.out",
         scrollTop: Math.round(0 + (snapScroll.clientHeight * newPosition)),
       });
     } 
     else {
-      gsap.to(".snap-scroll", {
+      gsap.to(snapScroll, {
         duration: 0.5,
         ease: "circ.out",
         scrollLeft: Math.round(0 + (snapScroll.clientWidth * newPosition)),
@@ -185,6 +185,8 @@
 div {
   width: 100%;
   height: 100%;
+  max-width: 100vw;
+  max-height: var(--viewport-height);
   scrollbar-width: none;  
 }
 div::-webkit-scrollbar {
