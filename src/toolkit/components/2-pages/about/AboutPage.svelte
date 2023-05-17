@@ -8,6 +8,7 @@
   import About4 from "./4/About4.svelte";
   import About5 from "./5/About5.svelte";
   import About6 from "./6/About6.svelte";
+  import About7 from "./7/About7.svelte";
   import SnapScroll from "../../4-layouts/partial/SnapScroll.svelte";
 </script>
 
@@ -20,6 +21,7 @@
     <About4 />
     <About5 />
     <About6 />
+    <About7 />
   </SnapScroll>
 </div>
 <!-- STYLES /////////////////////////////////// -->

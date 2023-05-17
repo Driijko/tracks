@@ -1,7 +1,7 @@
 <!-- SCRIPTS /////////////////////////////////////////// -->
 <script>
   // IMPORTS --------------------------------------
-  import About7Content from "./About7Content.svelte";
+  import About7Content from "./About8Content.svelte";
 </script>
 
 <!-- MARKUP ////////////////////////////////////////////////// -->
