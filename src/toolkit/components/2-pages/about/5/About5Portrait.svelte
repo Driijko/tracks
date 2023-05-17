@@ -5,7 +5,7 @@
 </script>
 
 <!-- MARKUP ////////////////////////////////////////////////// -->
-<div id="id15" class="uarr-container">
+<div id="this" class="uarr-container">
   <div class="uarr1-pad">
     <svg class="background" viewBox="0 0 900 1472">
       <rect x="0" y="0" width="900" height="1472" fill="hsl(150, 100%, 80%)" />
@@ -33,26 +33,10 @@ svg {
   width: 100%;
   height: 100%;
 }
-.uarr-container {
-  background-color: hsl(40, 100%, 70%);
-}
-line {
-  stroke-width: 10;
-  stroke: hsl(40, 100%, 50%);
-}
-#id15 :global(p) {
-  background-color: hsl(150, 100%, 90%);
+#this :global(p) {
   height: calc(var(--uarr1-height)* 0.65);
-  padding: calc(var(--uarr1-width) * 0.05);
-  position: absolute;
-  line-height: 1.3;
   top: 14.5%;
-  font-size: calc(var(--uarr1-width)/18);
   border-top-width: calc(var(--uarr1-width)/50);
   border-bottom-width: calc(var(--uarr1-width)/50);
-  border-top-style: solid;
-  border-bottom-style: solid;
-  border-top-color: hsl(40, 100%, 50%);
-  border-bottom-color: hsl(40, 100%, 50%);
 }
 </style>

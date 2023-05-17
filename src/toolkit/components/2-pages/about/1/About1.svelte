@@ -14,10 +14,3 @@
     <About1Landscape />
   {/if}
 </div>
-
-<!-- STYLES ///////////////////////////////// -->
-<style>
-.uarr-container {
-  background-color: hsl(40, 100%, 70%);
-}
-</style>

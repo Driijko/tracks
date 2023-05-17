@@ -1,7 +1,7 @@
 <!-- SCRIPTS /////////////////////////////////////////// -->
 <script>
   // IMPORTS --------------------------------------
-  import About7Content from "./About8Content.svelte";
+  import About8Content from "./About8Content.svelte";
 </script>
 
 <!-- MARKUP ////////////////////////////////////////////////// -->
@@ -22,12 +22,8 @@
       <line x1="100" y1="1320" x2="100" y2="1440" />
       <line x1="0" y1="1440" x2="900" y2="1440" />
       <line x1="0" y1="1320" x2="900" y2="1320" />
-      <line x1="0" y1="1100" x2="900" y2="1100" />
-      <line x1="0" y1="1150" x2="900" y2="1150" />
-      <line x1="0" y1="1050" x2="900" y2="1050" />
-      <line x1="150" y1="1050" x2="150" y2="1150" />
     </svg>
-    <About7Content />
+    <About8Content />
   </div>
 </div>
 
@@ -37,26 +33,10 @@ svg {
   width: 100%;
   height: 100%;
 }
-.uarr-container {
-  background-color: hsl(40, 100%, 70%);
-}
-line {
-  stroke-width: 10;
-  stroke: hsl(40, 100%, 50%);
-}
 #this :global(p) {
-  background-color: hsl(150, 100%, 90%);
-  height: calc(var(--uarr1-height)* 0.21);
-  padding: calc(var(--uarr1-width) * 0.05);
-  position: absolute;
-  line-height: 1.3;
-  top: 27.5%;
-  font-size: calc(var(--uarr1-width)/18);
+  height: calc(var(--uarr1-height)* 0.577);
+  top: 19%;
   border-top-width: calc(var(--uarr1-width)/50);
   border-bottom-width: calc(var(--uarr1-width)/50);
-  border-top-style: solid;
-  border-bottom-style: solid;
-  border-top-color: hsl(40, 100%, 50%);
-  border-bottom-color: hsl(40, 100%, 50%);
 }
 </style>

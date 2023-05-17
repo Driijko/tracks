@@ -30,27 +30,11 @@ svg {
   width: 100%;
   height: 100%;
 }
-.uarr-container {
-  background-color: hsl(40, 100%, 70%);
-}
-line {
-  stroke-width: 10;
-  stroke: hsl(40, 100%, 50%);
-}
 #this :global(p) {
   height: calc(var(--uarr2-height)* 0.14);
-  padding: calc(var(--uarr1-width) * 0.05);
-  position: absolute;
-  line-height: 2;
   top: 30%;
   left: 36%;
-  background-color: hsl(150, 100%, 90%);
-  font-size: calc(var(--uarr2-width)/70);
   border-top-width: calc(var(--uarr2-width)/150);
   border-bottom-width: calc(var(--uarr2-width)/150);
-  border-top-style: solid;
-  border-bottom-style: solid;
-  border-top-color: hsl(40, 100%, 50%);
-  border-bottom-color: hsl(40, 100%, 50%);
 }
 </style>

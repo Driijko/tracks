@@ -31,10 +31,7 @@
 
 <!-- STYLES //////////////////////////////////// -->
 <style>
-line {
-  stroke-width: 10;
-  stroke: hsl(40, 100%, 50%);
-}
+
 #id7 :global(header) {
   position: absolute;
   top: 30%;

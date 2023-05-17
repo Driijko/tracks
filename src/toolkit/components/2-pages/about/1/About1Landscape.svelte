@@ -23,7 +23,7 @@
 </script>
 
 <!-- MARKUP /////////////////////////////////////// -->
-<div id="id8" class="uarr2">
+<div id="this" class="uarr2">
   <svg id="svg8" class="background" viewBox="0 0 1600 900">
     <rect x="0" y="0" width="1600" height="900" fill="hsl(150, 100%, 80%)" />
     <line class="line2" x1="1527" y1="0" x2="1527" y2="900" />
@@ -49,26 +49,22 @@ svg {
   width: 100%;
   height: 100%;
 }
-line {
-  stroke: hsl(40, 100%, 50%);
-  stroke-width: 10;
-}
 .line1 {
-  stroke-width: 5;
+  stroke-width: 5 !important;
 }
-#id8 :global(header) {
+#this :global(header) {
   position: absolute;
   width: 20%;
   height: 40%;
   left: 73%;
   top: 30%;
 }
-#id8 :global(h2) {
+#this :global(h2) {
   font-size: calc(var(--uarr2-width)/30);
   text-align: right;
   line-height: 1.5;
 }
-#id8 :global(header svg) {
+#this :global(header svg) {
   width: calc(var(--uarr2-width)/25);
   position: absolute;
   left: 73%;
