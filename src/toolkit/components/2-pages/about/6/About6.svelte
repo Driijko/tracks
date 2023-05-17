@@ -2,15 +2,15 @@
 <script>
   import viewportOrientationStore 
   from "../../../../scripts/viewport/viewportOrientationStore";
-  import About4Portrait from "./About4Portrait.svelte";
-  import About4Landscape from "./About4Landscape.svelte";
+  import About6Portrait from "./About6Portrait.svelte";
+  import About6Landscape from "./About6Landscape.svelte";
 </script>
 
 <!-- MARKUP //////////////////////////////// -->
 <div class="uarr-container">
   {#if $viewportOrientationStore === "portrait"}
-    <About4Portrait />
+    <About6Portrait />
   {:else if $viewportOrientationStore === "landscape"}
-    <About4Landscape />
+    <About6Landscape />
   {/if}
 </div>
