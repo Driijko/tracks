@@ -1,11 +1,11 @@
 <!-- SCRIPTS /////////////////////////////////////////// -->
 <script>
   // IMPORTS --------------------------------------
-  import About4Content from "./About4Content.svelte";
+  import About5Content from "./About5Content.svelte";
 </script>
 
 <!-- MARKUP ////////////////////////////////////////////////// -->
-<div id="id12" class="uarr-container">
+<div id="id15" class="uarr-container">
   <div class="uarr1-pad">
     <svg class="background" viewBox="0 0 900 1472">
       <rect x="0" y="0" width="900" height="1472" fill="hsl(150, 100%, 80%)" />
@@ -22,12 +22,8 @@
       <line x1="100" y1="1320" x2="100" y2="1440" />
       <line x1="0" y1="1440" x2="900" y2="1440" />
       <line x1="0" y1="1320" x2="900" y2="1320" />
-      <line x1="0" y1="1100" x2="900" y2="1100" />
-      <line x1="0" y1="1150" x2="900" y2="1150" />
-      <line x1="0" y1="1050" x2="900" y2="1050" />
-      <line x1="150" y1="1050" x2="150" y2="1150" />
     </svg>
-    <About4Content />
+    <About5Content />
   </div>
 </div>
 
@@ -44,13 +40,13 @@ line {
   stroke-width: 10;
   stroke: hsl(40, 100%, 50%);
 }
-#id12 :global(p) {
+#id15 :global(p) {
   background-color: hsl(150, 100%, 90%);
-  height: calc(var(--uarr1-height)* 0.35);
+  height: calc(var(--uarr1-height)* 0.65);
   padding: calc(var(--uarr1-width) * 0.05);
   position: absolute;
   line-height: 1.3;
-  top: 21%;
+  top: 14.5%;
   font-size: calc(var(--uarr1-width)/18);
   border-top-width: calc(var(--uarr1-width)/50);
   border-bottom-width: calc(var(--uarr1-width)/50);

@@ -1,3 +1,3 @@
 <p>
-  Musically, I was most inspired by <a href="http://kaitlynaureliasmith.com/js_artist/kaitlyn-aurelia-smith/">Kaitlin Aurelia Smith</a>.<br /> Her album <a href="https://open.spotify.com/album/50y4wXsQ4K8Xi6YDOv7mGO?si=hJxKmX8RQCGXa5Flx9usJA">Euclid</a> in particular,<br class="landscape"/> which I think is an exceptional example of how to make electronic music sound organic.
+  Musically, I was most inspired by <a href="http://kaitlynaureliasmith.com/js_artist/kaitlyn-aurelia-smith/" target="_blank" rel="noopener noreferrer">Kaitlin Aurelia Smith</a>.<br /> Her album <a href="https://open.spotify.com/album/50y4wXsQ4K8Xi6YDOv7mGO?si=hJxKmX8RQCGXa5Flx9usJA" target="_blank" rel="noopener noreferrer">Euclid</a> in particular,<br class="landscape"/> which I think is an exceptional example of how to make electronic music sound organic.
 </p>

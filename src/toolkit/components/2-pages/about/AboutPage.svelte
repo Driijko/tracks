@@ -6,16 +6,27 @@
   import About2 from "./2/About2.svelte";
   import About3 from "./3/About3.svelte";
   import About4 from "./4/About4.svelte";
+  import About5 from "./5/About5.svelte";
   import SnapScroll from "../../4-layouts/partial/SnapScroll.svelte";
 </script>
 
 <!-- MARKUP /////////////////////////////////// -->
-<SnapScroll axis="vertical" handleScroll={null}>
-  <About1 />
-  <About2 />
-  <About3 />
-  <About4 />
-</SnapScroll>
-
+<div id="id14">
+  <SnapScroll axis="vertical" handleScroll={null}>
+    <About1 />
+    <About2 />
+    <About3 />
+    <About4 />
+    <About5 />
+  </SnapScroll>
+</div>
+<!-- STYLES /////////////////////////////////// -->
 <style>
+@media (hover:hover) {
+  #id14 :global(a:hover), #id14 :global(a:focus-visible) {
+    background-color: black;
+    color: white;
+    text-decoration: none;
+  }
+}
 </style>
