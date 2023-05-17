@@ -9,6 +9,8 @@
   <div class="uarr1-pad">
     <svg class="background" viewBox="0 0 900 1472">
       <rect x="0" y="0" width="900" height="1472" fill="hsl(150, 100%, 80%)" />
+      <rect x="840" y="30" width="40" height="120" fill="hsl(40, 100%, 80%)" />
+      <rect x="25" y="1320" width="40" height="120" fill="hsl(40, 100%, 80%)" />
       <line x1="20" y1="0" x2="20" y2="1472" />
       <line x1="880" y1="0" x2="880" y2="1472" />
       <line x1="800" y1="30" x2="800" y2="150" />

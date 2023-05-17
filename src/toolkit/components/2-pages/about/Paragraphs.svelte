@@ -1,8 +1,6 @@
 
 
-<p>
-  Musically, I was most inspired by <a href="http://kaitlynaureliasmith.com/js_artist/kaitlyn-aurelia-smith/">Kaitlin Aurelia Smith</a>. Her album <a href="https://open.spotify.com/album/50y4wXsQ4K8Xi6YDOv7mGO?si=hJxKmX8RQCGXa5Flx9usJA">Euclid</a> in particular, which I think is an exceptional example of how to make electronic music sound organic.
-</p>
+
 <p>
   Another important musical influence comes from Chinese classical music, especially <a href="https://www.liufangmusic.net/English/">Liu Fang</a>, <a href="https://www.actaonline.org/profile/weishan-liu/">Weishan Liu</a>, <a href="http://www.silkqin.com/03qobj/zengchengwei.htm">Zeng Chenwei</a>, and <a href="https://www.auxsons.com/en/breves/sounds-of-the-world-guan-pinghu-the-spirit-of-chinese-guqin/">Guan Pinghu</a>. Chinese traditional and classical music is very diverse, but there are certain specific aesthetic ideals I find especially compelling: simplicity, contrast of timbre, and the use of space/silence as a kind of musical texture of it's own. You particularly see these ideals in music written for the qin.
 </p>

@@ -1,22 +1,23 @@
 <!-- SCRIPTS /////////////////////////////////////////// -->
 <script>
   // IMPORTS --------------------------------------
-  import About3Content from "./About3Content.svelte";
+  import About4Content from "./About4Content.svelte";
 </script>
 
 <!-- MARKUP ////////////////////////////////////////////////// -->
-<div id="id11" class="uarr-container">
+<div id="id13" class="uarr-container">
   <div class="uarr2">
     <svg class="background" viewBox="0 0 1600 900">
       <rect x="0" y="0" width="1600" height="900" fill="hsl(150, 100%, 80%)" />
-      <line x1="109" y1="0" x2="109" y2="527" />
-      <line x1="1494" y1="0" x2="1494" y2="527" />
-      <line x1="0" y1="527" x2="1600" y2="527" />
-      <rect x="700" y="800" width="300" height="100" fill="hsl(40, 100%, 50%)" />
-      <line x1="700" y1="0" x2="700" y2="900" />
-      <line x1="1000" y1="0" x2="1000" y2="900" />
+      <rect x="1119" y="150" width="77" height="750" fill="hsl(40, 100%, 80%)" />
+      <line x1="109" y1="0" x2="109" y2="900" />
+      <line x1="1119" y1="0" x2="1119" y2="900" />
+      <line x1="1119" y1="150" x2="1600" y2="150" />
+      <line x1="1080" y1="261" x2="1080" y2="900" />
+      <line x1="1200" y1="150" x2="1200" y2="900" />
+      <line x1="1080" y1="880" x2="1119" y2="880" />
     </svg>
-    <About3Content />
+    <About4Content />
   </div>
 </div>
 
@@ -33,12 +34,12 @@ line {
   stroke-width: 10;
   stroke: hsl(40, 100%, 50%);
 }
-#id11 :global(p) {
-  height: calc(var(--uarr2-height)* 0.34);
+#id13 :global(p) {
+  height: calc(var(--uarr2-height)* 0.24);
   padding: calc(var(--uarr1-width) * 0.05);
   position: absolute;
   line-height: 2;
-  top: 25%;
+  top: 5%;
   left: 7%;
   background-color: hsl(150, 100%, 90%);
   font-size: calc(var(--uarr2-width)/70);

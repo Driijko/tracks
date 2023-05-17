@@ -1,3 +1,3 @@
 <p>
-  My desire was to create a site which visually matched the music I was creating. <br /><br class="portrait"/> Something dynamic, yet poised. <br/><br class="portrait"/>I'm obsessed with the idea of "flow": a mental state in which a person is completely immersed in an activity, undistracted.<br/><br class="portrait"/>  The music and the website were designed to capture and cultivate a "flowing" state,<br class="landscape"/> calm but also focused and stimulating.
+  My desire was to create a site which visually matched the music I was creating. <br /><br class="portrait"/> Something dynamic, yet gentle. <br/><br class="portrait"/>I'm obsessed with the idea of "flow": a mental state in which a person is completely immersed in an activity, undistracted.<br/><br class="portrait"/>  The music and the website were designed to capture and cultivate a "flowing" state,<br class="landscape"/> calm but also focused and stimulating.
 </p>
