@@ -1,5 +1,7 @@
 <!-- SCRIPTS ////////////////////////////////////// -->
 <script>
+  // IMPORTS --------------------------------
+  import { setPageExit } from "../../../scripts/currentPageStore";
   import About1 from "./1/About1.svelte";
   import About2 from "./2/About2.svelte";
   import About3 from "./3/About3.svelte";
@@ -13,10 +15,17 @@
   import About11 from "./11/About11.svelte";
   import About12 from "./12/About12.svelte";
   import SnapScroll from "../../4-layouts/partial/SnapScroll.svelte";
+
+  // PAGE EXIT ---------------------------------------
+  let fade = false;
+  function pageExit() {
+    fade = true;
+  }
+  setPageExit(pageExit,2000);
 </script>
 
 <!-- MARKUP /////////////////////////////////// -->
-<div id="this">
+<div id="this" class:fade>
   <SnapScroll axis="vertical" handleScroll={null}>
     <About1 />
     <About2 />
@@ -34,6 +43,14 @@
 </div>
 <!-- STYLES /////////////////////////////////// -->
 <style>
+#this {
+  transition-property: opacity;
+  transition-timing-function: ease-out;
+  transition-duration: 2s;
+}
+.fade {
+  opacity: 0;
+}
 #this :global(.uarr-container) {
   background-color: hsl(40, 100%, 70%);
 }

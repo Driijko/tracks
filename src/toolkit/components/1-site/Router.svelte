@@ -12,6 +12,7 @@
   import MusicPage from "../2-pages/music/MusicPage.svelte";
   import Notify from "../3-layers/Notify.svelte";
   import AboutPage from "../2-pages/about/AboutPage.svelte";
+  import ContactPage from "../2-pages/contact/ContactPage.svelte";
 </script>
 
 <!-- MARKUP ///////////////////////////////////// -->
@@ -31,6 +32,8 @@
       <MusicPage />
     {:else if $currentPage === "about"}
       <AboutPage />
+    {:else if $currentPage === "contact"}
+      <ContactPage />
     {/if}
   {/if}
 {/key}
