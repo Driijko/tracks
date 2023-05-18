@@ -1,7 +1,7 @@
 <!-- SCRIPTS /////////////////////////////////////////// -->
 <script>
   // IMPORTS --------------------------------------
-  import About10Content from "./About10Content.svelte";
+  import About11Content from "./About11Content.svelte";
 </script>
 
 <!-- MARKUP ////////////////////////////////////////////////// -->
@@ -9,15 +9,13 @@
   <div class="uarr2">
     <svg class="background" viewBox="0 0 1600 900">
       <rect x="0" y="0" width="1600" height="900" fill="hsl(150, 100%, 80%)" />
-      <rect x="317" y="285" width="980" height="450" fill="hsl(150, 100%, 60%)" />
-      <line x1="640" y1="0" x2="640" y2="735" />
-      <line x1="980" y1="0" x2="980" y2="735" />
-      <line x1="317" y1="0" x2="317" y2="900" />
-      <line x1="1300" y1="0" x2="1300" y2="900" />
-      <line x1="0" y1="500" x2="1600" y2="500" />
-      <line x1="0" y1="735" x2="1600" y2="735" />
+      <rect x="700" y="600" width="70" height="300" fill="hsl(40, 100%, 50%)" />
+      <line x1="775" y1="140" x2="775" y2="900" />
+      <line x1="828" y1="140" x2="828" y2="900" />
+      <line x1="1021" y1="395" x2="1021" y2="900" />
+      <line x1="700" y1="556" x2="700" y2="900" />
     </svg>
-    <About10Content />
+    <About11Content />
   </div>
 </div>
 
@@ -45,38 +43,46 @@ svg {
   border-top-width: calc(var(--uarr2-width)/160);
   border-bottom-width: calc(var(--uarr2-width)/160);
 }
+#this :global(.icons-section) {
+  width: 48%;
+  top: 43%;
+}
 #this :global(p) {
   border-top-width: calc(var(--uarr2-width)/160);
   border-bottom-width: calc(var(--uarr2-width)/160);
-  top: 18%;
-  left: 20%;
+  width: 100%;
+}
+#this :global(.fonts-section) {
+  top: 25.3%;
+  left: 52%;
+  height: 70%;
+  width: 48%;
+  /* border: 1px solid blue; */
 }
 #this :global(ul) {
-  width: 100%;
-  height: calc(var(--uarr2-height)* 0.5);
-  width: 60.8%;
-  left: 20%;
-  top: 31%;
-  display: flex;
-  flex-wrap: wrap;
+  top: 45%;
+  width: 75%;
+  left: 25%;
+  height: calc(var(--uarr1-height)* 0.28);
 }
 #this :global(li) {
-  width: 33.33%;
-  height: 50%; 
+  width: 100%;
+  height: 33.33%; 
 }
-#this :global(a) {
+#this :global(li a) {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: calc(var(--uarr2-width)/50);
+  gap: calc(var(--uarr1-width)/20);
   width: 100%;
   height: 100%;
   border-color: hsl(40, 100%, 50%);
   border-style: solid;
-  font-size: calc(var(--uarr2-width)/50);
+  border-top-width: calc(var(--uarr2-width)/160);
+  background-color: hsl(150, 100%, 70%);
+  font-size: calc(var(--uarr1-width)/14);
 }
-#this :global(a img) {
-  height: 30%;
+#this :global(ul li:nth-of-type(3) a) {
+  border-bottom-width: calc(var(--uarr2-width)/160);
 }
 </style>

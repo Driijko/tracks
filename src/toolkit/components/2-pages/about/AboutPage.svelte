@@ -12,6 +12,7 @@
   import About8 from "./8/About8.svelte";
   import About9 from "./9/About9.svelte";
   import About10 from "./10/About10.svelte";
+  import About11 from "./11/About11.svelte";
   import SnapScroll from "../../4-layouts/partial/SnapScroll.svelte";
 </script>
 
@@ -28,6 +29,7 @@
     <About8 />
     <About9 />
     <About10 />
+    <About11 />
   </SnapScroll>
 </div>
 <!-- STYLES /////////////////////////////////// -->
@@ -72,6 +74,16 @@
   #this :global(.technologies-section a:hover), 
   #this :global(.technologies-section a:focus-visible) {
     transform: scale(1.4);
+  }
+  #this :global(.fonts-section a) {
+    transition-property: background-color, color;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+  }
+  #this :global(.fonts-section a:hover), 
+  #this :global(.fonts-section a:focus-visible) {
+    color: white;
+    background-color: hsl(40, 100%, 50%);
   }
 }
 @media (hover:hover) and (orientation: portrait) {
