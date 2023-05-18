@@ -1,7 +1,5 @@
 <!-- SCRIPTS ////////////////////////////////////// -->
 <script>
-  import viewportOrientationStore 
-  from "../../../scripts/viewport/viewportOrientationStore";
   import About1 from "./1/About1.svelte";
   import About2 from "./2/About2.svelte";
   import About3 from "./3/About3.svelte";
@@ -13,6 +11,7 @@
   import About9 from "./9/About9.svelte";
   import About10 from "./10/About10.svelte";
   import About11 from "./11/About11.svelte";
+  import About12 from "./12/About12.svelte";
   import SnapScroll from "../../4-layouts/partial/SnapScroll.svelte";
 </script>
 
@@ -30,6 +29,7 @@
     <About9 />
     <About10 />
     <About11 />
+    <About12 />
   </SnapScroll>
 </div>
 <!-- STYLES /////////////////////////////////// -->
@@ -75,13 +75,13 @@
   #this :global(.technologies-section a:focus-visible) {
     transform: scale(1.4);
   }
-  #this :global(.fonts-section a) {
+  #this :global(.fonts-section ul a) {
     transition-property: background-color, color;
     transition-duration: 0.3s;
     transition-timing-function: ease-out;
   }
-  #this :global(.fonts-section a:hover), 
-  #this :global(.fonts-section a:focus-visible) {
+  #this :global(.fonts-section ul a:hover), 
+  #this :global(.fonts-section ul a:focus-visible) {
     color: white;
     background-color: hsl(40, 100%, 50%);
   }
