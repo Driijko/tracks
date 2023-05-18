@@ -11,11 +11,12 @@
   import About7 from "./7/About7.svelte";
   import About8 from "./8/About8.svelte";
   import About9 from "./9/About9.svelte";
+  import About10 from "./10/About10.svelte";
   import SnapScroll from "../../4-layouts/partial/SnapScroll.svelte";
 </script>
 
 <!-- MARKUP /////////////////////////////////// -->
-<div id="id14">
+<div id="this">
   <SnapScroll axis="vertical" handleScroll={null}>
     <About1 />
     <About2 />
@@ -26,18 +27,19 @@
     <About7 />
     <About8 />
     <About9 />
+    <About10 />
   </SnapScroll>
 </div>
 <!-- STYLES /////////////////////////////////// -->
 <style>
-#id14 :global(.uarr-container) {
+#this :global(.uarr-container) {
   background-color: hsl(40, 100%, 70%);
 }
-#id14 :global(line) {
+#this :global(line) {
   stroke-width: 10;
   stroke: hsl(40, 100%, 50%);
 }
-#id14 :global(p) {
+#this :global(p) {
   position: absolute;
   padding: calc(var(--uarr1-width) * 0.05);
   background-color: hsl(150, 100%, 90%);
@@ -45,22 +47,38 @@
   border-style: solid;
 }
 @media screen and (orientation: portrait) {
-  #id14 :global(p) {
+  #this :global(p) {
     line-height: 1.3;
     font-size: calc(var(--uarr1-width)/18);
   }
 }
 @media screen and (orientation: landscape) {
-  #id14 :global(p) {
+  #this :global(p) {
     line-height: 2;
     font-size: calc(var(--uarr2-width)/70);
   }
 }
 @media (hover:hover) {
-  #id14 :global(a:hover), #id14 :global(a:focus-visible) {
+  #this :global(p a:hover), #this :global(p a:focus-visible) {
     background-color: black;
     color: white;
     text-decoration: none;
+  }
+  #this :global(.technologies-section a) {
+    transition-property: transform;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+  }
+  #this :global(.technologies-section a:hover), 
+  #this :global(.technologies-section a:focus-visible) {
+    transform: scale(1.4);
+  }
+}
+@media (hover:hover) and (orientation: portrait) {
+  #this :global(.technologies-section a:hover), 
+  #this :global(.technologies-section a:focus-visible) {
+    border-bottom-width: calc(var(--uarr1-width)/100);
+    background-color: hsl(150, 100%, 50%);
   }
 }
 </style>
