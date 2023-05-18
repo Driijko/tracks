@@ -9,7 +9,7 @@
   <div class="uarr2">
     <svg class="background" viewBox="0 0 1600 900">
       <rect x="0" y="0" width="1600" height="900" fill="hsl(150, 100%, 80%)" />
-      <rect x="317" y="285" width="980" height="450" fill="hsl(150, 100%, 60%)" />
+      <rect x="317" y="279" width="980" height="451" fill="hsl(150, 100%, 60%)" />
       <line x1="640" y1="0" x2="640" y2="735" />
       <line x1="980" y1="0" x2="980" y2="735" />
       <line x1="317" y1="0" x2="317" y2="900" />
@@ -50,6 +50,7 @@ svg {
   border-bottom-width: calc(var(--uarr2-width)/160);
   top: 18%;
   left: 20%;
+  width: 60.85%;
 }
 #this :global(ul) {
   width: 100%;

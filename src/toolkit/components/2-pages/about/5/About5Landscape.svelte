@@ -31,5 +31,6 @@ svg {
   left: 0%;
   border-top-width: calc(var(--uarr2-width)/150);
   border-bottom-width: calc(var(--uarr2-width)/150);
+  width: 70.31%;
 }
 </style>

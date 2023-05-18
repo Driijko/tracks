@@ -43,6 +43,7 @@ svg {
   top: 30%;
   border-top-width: calc(var(--uarr2-width)/170);
   border-bottom-width: calc(var(--uarr2-width)/170);
+  width: 62.2%;
 }
 #this :global(img) {
   height: 43.9%;

@@ -52,18 +52,25 @@ svg {
   border-bottom-width: calc(var(--uarr2-width)/160);
   width: 100%;
 }
+#this :global(.icons-section p) {
+  padding-top: calc(var(--uarr2-height) * 0.035);
+  height: calc(var(--uarr2-height) * 0.19);
+}
 #this :global(.fonts-section) {
   top: 25.3%;
   left: 52%;
   height: 70%;
   width: 48%;
-  /* border: 1px solid blue; */
+}
+#this :global(.fonts-section p) {
+  padding-top: calc(var(--uarr2-height) * 0.035);
+  height: calc(var(--uarr2-height) * 0.19);
 }
 #this :global(ul) {
   top: 45%;
   width: 75%;
   left: 25%;
-  height: calc(var(--uarr1-height)* 0.28);
+  height: calc(var(--uarr2-height)* 0.32);
 }
 #this :global(li) {
   width: 100%;
@@ -73,7 +80,6 @@ svg {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: calc(var(--uarr1-width)/20);
   width: 100%;
   height: 100%;
   border-color: hsl(40, 100%, 50%);
