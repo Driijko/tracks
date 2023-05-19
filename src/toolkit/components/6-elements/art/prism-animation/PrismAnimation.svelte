@@ -34,9 +34,8 @@
     tl.add(channel1Animation(),96);
     tl.add(channel2CAnimation(),96);
 
-    return (()=> {
-      tl.kill();
-    });
+    return ()=> tl.kill();
+
   });
 
   // REACTIVE -------------------------
@@ -60,8 +59,6 @@
 <svg id="svg4" viewBox="0 0 1600 900">
   <defs>
     <filter id="filter1" x="0" y="0" width="1600" height="900">
-      <!-- <feImage result="IMAGE" xlink:href="./images/pic2.jpg" x="0" y="0" width="100%" height="100%" preserveAspectRatio="none"></feImage>
-      <feDisplacementMap in="SourceGraphic" in2="IMAGE" scale="15" xChannelSelector="R" yChannelSelector="R" result="TEXTURED_TEXT"></feDisplacementMap> -->
       <feImage xlink:href="./images/pic1.jpg" x="0" y="0" width="100%" height="100%" preserveAspectRatio="none" result="BG"></feImage>
       <feBlend in="BG" in2="SourceGraphic" mode="multiply" result="BLENDED_TEXT"></feBlend>
     </filter>
