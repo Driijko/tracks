@@ -5,13 +5,11 @@
 </script>
 
 <!-- MARKUP ////////////////////////////////////////////////// -->
-<div id="this" class="uarr-container">
-  <div class="uarr1-pad">
-    <svg class="background" viewBox="0 0 900 1472">
-      <rect x="0" y="0" width="900" height="1472" fill="hsl(150, 100%, 80%)" />
-    </svg>
-    <About10Content />
-  </div>
+<div id="this" class="uarr1-pad">
+  <svg class="background" viewBox="0 0 900 1472">
+    <rect x="0" y="0" width="900" height="1472" fill="hsl(150, 100%, 80%)" />
+  </svg>
+  <About10Content />
 </div>
 
 <!-- STYLES ////////////////////////////////////////////// -->

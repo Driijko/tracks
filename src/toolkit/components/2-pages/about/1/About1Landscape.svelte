@@ -24,7 +24,7 @@
 
 <!-- MARKUP /////////////////////////////////////// -->
 <div id="id8" class="uarr2">
-  <svg id="svg8" class="background" viewBox="0 0 1600 900">
+  <svg id="svg8" class="background"  viewBox="0 0 1600 900">
     <rect x="0" y="0" width="1600" height="900" fill="hsl(150, 100%, 80%)" />
     <line class="line2" x1="1527" y1="0" x2="1527" y2="900" />
     <line class="line3" x1="0" y1="68" x2="1600" y2="68" />

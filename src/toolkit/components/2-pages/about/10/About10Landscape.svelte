@@ -5,20 +5,18 @@
 </script>
 
 <!-- MARKUP ////////////////////////////////////////////////// -->
-<div id="this" class="uarr-container">
-  <div class="uarr2">
-    <svg class="background" viewBox="0 0 1600 900">
-      <rect x="0" y="0" width="1600" height="900" fill="hsl(150, 100%, 80%)" />
-      <rect x="317" y="279" width="980" height="451" fill="hsl(150, 100%, 60%)" />
-      <line x1="640" y1="0" x2="640" y2="735" />
-      <line x1="980" y1="0" x2="980" y2="735" />
-      <line x1="317" y1="0" x2="317" y2="900" />
-      <line x1="1300" y1="0" x2="1300" y2="900" />
-      <line x1="0" y1="500" x2="1600" y2="500" />
-      <line x1="0" y1="735" x2="1600" y2="735" />
-    </svg>
-    <About10Content />
-  </div>
+<div id="this" class="uarr2">
+  <svg class="background" viewBox="0 0 1600 900">
+    <rect x="0" y="0" width="1600" height="900" fill="hsl(150, 100%, 80%)" />
+    <rect x="317" y="279" width="980" height="451" fill="hsl(150, 100%, 60%)" />
+    <line x1="640" y1="0" x2="640" y2="735" />
+    <line x1="980" y1="0" x2="980" y2="735" />
+    <line x1="317" y1="0" x2="317" y2="900" />
+    <line x1="1300" y1="0" x2="1300" y2="900" />
+    <line x1="0" y1="500" x2="1600" y2="500" />
+    <line x1="0" y1="735" x2="1600" y2="735" />
+  </svg>
+  <About10Content />
 </div>
 
 <!-- STYLES ////////////////////////////////////////////// -->

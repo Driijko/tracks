@@ -37,15 +37,21 @@
   // REACTIVE --------------------------------
   $: if ($currentPage === "music") {
     list[1] = animationsItem;
+    if ($playlistModal && list.length > 2) {
+      list = [list[0], list[1]];
+    } else if ($playlistModal === false) {
+      list[2] = playlistItem;
+    };
   } else {
     list = [list[0]];
   }
+
   // Remove/add playlist button if playlist modal is open/closed.
-  $: if ($playlistModal && list.length > 2) {
-    list = [list[0], list[1]];
-  } else if ($playlistModal === false) {
-    list[2] = playlistItem;
-  };
+  // $: if ($playlistModal && list.length > 2) {
+  //   list = [list[0], list[1]];
+  // } else if ($playlistModal === false) {
+  //   list[2] = playlistItem;
+  // };
 
   // Empty/fill tray of all items except site menu if site menu modal 
   // is open/closed.

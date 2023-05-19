@@ -7,10 +7,8 @@
 </script>
 
 <!-- MARKUP //////////////////////////////// -->
-<div class="uarr-container">
-  {#if $viewportOrientationStore === "portrait"}
-    <About5Portrait />
-  {:else if $viewportOrientationStore === "landscape"}
-    <About5Landscape />
-  {/if}
-</div>
+{#if $viewportOrientationStore === "portrait"}
+  <About5Portrait />
+{:else if $viewportOrientationStore === "landscape"}
+  <About5Landscape />
+{/if}

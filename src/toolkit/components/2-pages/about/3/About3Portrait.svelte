@@ -5,8 +5,7 @@
 </script>
 
 <!-- MARKUP ////////////////////////////////////////////////// -->
-<div id="this" class="uarr-container">
-  <div class="uarr1-pad">
+  <div id="this" class="uarr1-pad">
     <svg class="background" viewBox="0 0 900 1472">
       <rect x="0" y="0" width="900" height="1472" fill="hsl(150, 100%, 80%)" />
       <rect x="840" y="30" width="40" height="120" fill="hsl(40, 100%, 80%)" />
@@ -24,7 +23,6 @@
     </svg>
     <About3Content />
   </div>
-</div>
 
 <!-- STYLES ////////////////////////////////////////////// -->
 <style>

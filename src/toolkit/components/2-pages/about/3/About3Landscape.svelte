@@ -5,8 +5,7 @@
 </script>
 
 <!-- MARKUP ////////////////////////////////////////////////// -->
-<div id="id11" class="uarr-container">
-  <div class="uarr2">
+  <div id="this" class="uarr2">
     <svg class="background" viewBox="0 0 1600 900">
       <rect x="0" y="0" width="1600" height="900" fill="hsl(150, 100%, 80%)" />
       <line x1="109" y1="0" x2="109" y2="527" />
@@ -18,7 +17,6 @@
     </svg>
     <About3Content />
   </div>
-</div>
 
 <!-- STYLES ////////////////////////////////////////////// -->
 <style>
@@ -26,7 +24,7 @@ svg {
   width: 100%;
   height: 100%;
 }
-#id11 :global(p) {
+#this :global(p) {
   height: calc(var(--uarr2-height)* 0.34);
   top: 25%;
   left: 7%;

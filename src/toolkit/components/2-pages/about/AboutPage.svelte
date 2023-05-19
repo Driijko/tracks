@@ -25,7 +25,7 @@
 </script>
 
 <!-- MARKUP /////////////////////////////////// -->
-<div id="this" class:fade>
+<div id="this" class:fade class="uarr-container">
   <SnapScroll axis="vertical" handleScroll={null}>
     <About1 />
     <About2 />
@@ -47,6 +47,14 @@
   transition-property: opacity;
   transition-timing-function: ease-out;
   transition-duration: 2s;
+  background-color: hsl(40, 100%, 70%);
+
+}
+#this :global(.snap-scroll) {
+  width: var(--uarr2-width);
+  height: var(--uarr2-height);
+  transform-origin: 50% 50%;
+  transform: scale(0.8);
 }
 .fade {
   opacity: 0;
@@ -60,13 +68,13 @@
 }
 #this :global(p) {
   position: absolute;
-  padding: calc(var(--uarr1-width) * 0.05);
   background-color: hsl(150, 100%, 90%);
   border-color:hsl(40, 100%, 50%);
   border-style: solid;
 }
 @media screen and (orientation: portrait) {
   #this :global(p) {
+    padding: calc(var(--uarr1-width) * 0.05);
     line-height: 1.3;
     font-size: calc(var(--uarr1-width)/18);
   }
@@ -75,6 +83,7 @@
   #this :global(p) {
     line-height: 2;
     font-size: calc(var(--uarr2-width)/70);
+    padding: calc(var(--uarr2-height) * 0.03) calc(var(--uarr2-width) * 0.01);
   }
 }
 @media (hover:hover) {

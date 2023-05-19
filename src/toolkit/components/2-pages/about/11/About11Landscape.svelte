@@ -5,18 +5,16 @@
 </script>
 
 <!-- MARKUP ////////////////////////////////////////////////// -->
-<div id="this" class="uarr-container">
-  <div class="uarr2">
-    <svg class="background" viewBox="0 0 1600 900">
-      <rect x="0" y="0" width="1600" height="900" fill="hsl(150, 100%, 80%)" />
-      <rect x="700" y="600" width="70" height="300" fill="hsl(40, 100%, 50%)" />
-      <line x1="775" y1="140" x2="775" y2="900" />
-      <line x1="828" y1="140" x2="828" y2="900" />
-      <line x1="1021" y1="395" x2="1021" y2="900" />
-      <line x1="700" y1="556" x2="700" y2="900" />
-    </svg>
-    <About11Content />
-  </div>
+<div id="this" class="uarr2">
+  <svg class="background" viewBox="0 0 1600 900">
+    <rect x="0" y="0" width="1600" height="900" fill="hsl(150, 100%, 80%)" />
+    <rect x="700" y="600" width="70" height="300" fill="hsl(40, 100%, 50%)" />
+    <line x1="775" y1="140" x2="775" y2="900" />
+    <line x1="828" y1="140" x2="828" y2="900" />
+    <line x1="1021" y1="395" x2="1021" y2="900" />
+    <line x1="700" y1="556" x2="700" y2="900" />
+  </svg>
+  <About11Content />
 </div>
 
 <!-- STYLES ////////////////////////////////////////////// -->
