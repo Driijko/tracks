@@ -144,13 +144,23 @@
   justify-content: center;
   font-size: calc(var(--uarr-width)/13);
   gap: 10%;
+  width: 100%;
 }
 #this :global(nav li) {
   text-align: center;
   line-height: 1.3;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 #this :global(nav a) {
-  width: 100%;
+  border-width: calc(var(--uarr1-width)/200);
+  border-style: solid;
+  border-color: hsl(150, 100%, 60%);
+  display: block;
+  padding: calc(var(--uarr1-width)/100) calc(var(--uarr1-width)/50);
+  letter-spacing: calc(var(--uarr1-width)/100);
+  border-radius: calc(var(--uarr1-width)/100);
 }
 #this :global(nav li.selected) {
   font-size: calc(var(--uarr-width)/10);
@@ -249,8 +259,9 @@
 }
 }
 
-/* Interface Tray hover/focus transitions */
+/* HOVER/FOCUS TRANSITIONS ------------------------------- */
 @media screen and (orientation: portrait) and (hover:hover) {
+  /* SITE MENU MODAL BUTTON ----------------------------------- */
   #this :global(.site-menu-modal-button.open svg) {
     transition-property: background-color, color, border-color, outline-width;
     transition-timing-function: ease-in;
@@ -271,6 +282,19 @@
   }
   #this :global(.site-menu-modal-button.open:hover line) {
     stroke: white;
+  }
+  /* NAV LINKS ------------------------------------------- */
+  #this :global(nav a) {
+    transition-property: border-color, transform, background-color, color;
+    transition-timing-function: ease-out;
+    transition-duration: 0.3s;
+    outline: none;
+  }
+  #this :global(nav a:hover), #this :global(nav a:focus-visible) {
+    border-color: hsl(150, 100%, 70%);
+    transform: scale(1.15);
+    background-color: hsla(150, 100%, 70%, 0.5);
+    color: hsl(150, 100%,10%);
   }
 }
 </style>

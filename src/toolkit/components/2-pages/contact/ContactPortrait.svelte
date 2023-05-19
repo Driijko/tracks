@@ -90,8 +90,8 @@
   line-height: 2;
   width: calc(var(--uarr1-width));
   height: calc(var(--uarr1-height) * 0.57);
-  padding-top: calc(var(--uarr1-height) * 0.04);
-  padding-left: calc(var(--uarr1-width) * 0.025);
+  /* padding-top: calc(var(--uarr1-height) * 0.04); */
+  padding: calc(var(--uarr1-height) * 0.045) calc(var(--uarr1-width) * 0.05);
   font-size: calc(var(--uarr1-width)/17);
 }
 </style>

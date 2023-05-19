@@ -25,7 +25,7 @@
 </script>
 
 <!-- MARKUP /////////////////////////////////// -->
-<div id="this" class:fade>
+<div id="this" class:fade >
   <SnapScroll axis="vertical" handleScroll={null}>
     <About1 />
     <About2 />
@@ -43,6 +43,8 @@
 </div>
 <!-- STYLES /////////////////////////////////// -->
 <style>
+@keyframes fade-in {from{opacity:0;}to{opacity:1;}}
+@keyframes fade-out {from{opacity:1;}to{opacity:0;}}
 #this {
   transition-property: opacity;
   transition-timing-function: ease-out;
@@ -52,9 +54,11 @@
   height: var(--viewport-height);
   display: flex;
   justify-content: center;
-}
-.fade {
   opacity: 0;
+  animation: fade-in 2s ease-out forwards;
+}
+#this.fade {
+  animation: fade-out 2s ease-out forwards;
 }
 #this :global(.uarr-container) {
   background-color: hsl(40, 100%, 70%);
