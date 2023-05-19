@@ -31,7 +31,9 @@
 
 <!-- STYLES //////////////////////////////////// -->
 <style>
-
+#id7 {
+  top: 0;
+}
 #id7 :global(header) {
   position: absolute;
   top: 30%;

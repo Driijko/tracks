@@ -25,7 +25,7 @@
 </script>
 
 <!-- MARKUP /////////////////////////////////// -->
-<div id="this" class:fade class="uarr-container">
+<div id="this" class:fade>
   <SnapScroll axis="vertical" handleScroll={null}>
     <About1 />
     <About2 />
@@ -48,13 +48,10 @@
   transition-timing-function: ease-out;
   transition-duration: 2s;
   background-color: hsl(40, 100%, 70%);
-
-}
-#this :global(.snap-scroll) {
-  width: var(--uarr2-width);
-  height: var(--uarr2-height);
-  transform-origin: 50% 50%;
-  transform: scale(0.8);
+  width: 100vw;
+  height: var(--viewport-height);
+  display: flex;
+  justify-content: center;
 }
 .fade {
   opacity: 0;
@@ -72,18 +69,42 @@
   border-color:hsl(40, 100%, 50%);
   border-style: solid;
 }
+/* PORTRAIT --------------------------------------- */
 @media screen and (orientation: portrait) {
+  #this :global(.snap-scroll) {
+    width: var(--uarr1-width);
+    height: calc(var(--uarr1-height) * 0.92);
+  }
   #this :global(p) {
     padding: calc(var(--uarr1-width) * 0.05);
     line-height: 1.3;
     font-size: calc(var(--uarr1-width)/18);
   }
 }
+/* LANDSCAPE ----------------------------------------- */
 @media screen and (orientation: landscape) {
+  #this {
+    align-items: center;
+  }
+  #this :global(.snap-scroll) {
+    width: var(--uarr2-width);
+    height: var(--uarr2-height);
+    transform-origin: 50% 50%;
+  }
   #this :global(p) {
     line-height: 2;
     font-size: calc(var(--uarr2-width)/70);
     padding: calc(var(--uarr2-height) * 0.03) calc(var(--uarr2-width) * 0.01);
+  }
+}
+@media screen and (orientation:landscape) and (min-width: 1920px) {
+  #this :global(.snap-scroll) {
+    transform: scale(0.75);
+  }
+}
+@media screen and (orientation:landscape) and (min-width: 2560px) {
+  #this :global(.snap-scroll) {
+    transform: scale(0.7);
   }
 }
 @media (hover:hover) {

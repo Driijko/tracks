@@ -177,7 +177,7 @@ path {
 #id10 :global(section) {
   position: absolute;
   font-size: calc(var(--uarr2-width)/70);
-  line-height: 1.5;
+  line-height: 2;
   left: 2%;
   top: 5%;
 }

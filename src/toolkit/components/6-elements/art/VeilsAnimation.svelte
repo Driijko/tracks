@@ -11,15 +11,9 @@
   onMount(()=> {
     tl.from("#svg6 line", {
       duration:80, 
-      // attr:{x2:0},
-      // ease: "none",
       strokeWidth: 5,
       opacity: 0,
     },38);
-    tl.to("#svg6 image", {
-      duration: 20,
-      attr: {x:20, y:20},
-    },0);
     tl.to("#svg6 rect",{duration: 5, opacity: 0.5},0);
     tl.to("#svg6 rect",{
       duration: 20, 
@@ -46,6 +40,7 @@
       duration: 40,
       strokeWidth: 50,
     },80);
+    
     return ()=> tl.kill();
   });
 

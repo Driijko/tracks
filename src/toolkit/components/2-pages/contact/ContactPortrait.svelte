@@ -87,10 +87,10 @@
   overflow:hidden;
 }
 #id9 :global(address) {
-  line-height: 1.5;
+  line-height: 2;
   width: calc(var(--uarr1-width));
   height: calc(var(--uarr1-height) * 0.57);
-  padding-top: calc(var(--uarr1-height) * 0.03);
+  padding-top: calc(var(--uarr1-height) * 0.04);
   padding-left: calc(var(--uarr1-width) * 0.025);
   font-size: calc(var(--uarr1-width)/17);
 }

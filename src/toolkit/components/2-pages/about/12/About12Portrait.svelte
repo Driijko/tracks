@@ -14,6 +14,9 @@
 
 <!-- STYLES ////////////////////////////////////////////// -->
 <style>
+#this {
+  top: 0;
+}
 svg {
   width: 100%;
   height: 100%;
@@ -45,9 +48,9 @@ svg {
   width: 100%;
 }
 #this :global(p:nth-of-type(1)) {
-  top: 25%;
+  top: 24%;
 }
 #this :global(p:nth-of-type(2)) {
-  top: 58%;
+  top: 57%;
 }
 </style>

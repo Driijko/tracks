@@ -43,13 +43,15 @@ svg {
   border-top-width: calc(var(--uarr2-width)/160);
   border-bottom-width: calc(var(--uarr2-width)/160);
   width: 100%;
-  height: calc(var(--uarr2-height) * 0.14);
-  padding-top: calc(var(--uarr2-height) * 0.035);
 }
 #this :global(p:nth-of-type(1)) {
   top: 30%;
+  height: calc(var(--uarr2-height) * 0.14);
+  padding-top: calc(var(--uarr2-height) * 0.035);
+
 }
 #this :global(p:nth-of-type(2)) {
   top: 61%;
+
 }
 </style>
