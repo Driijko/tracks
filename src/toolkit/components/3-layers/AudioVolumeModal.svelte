@@ -15,7 +15,7 @@
     in:fade="{{duration:200}}"
     out:fade="{{duration:200, delay:300}}"
   >
-    <button type="button" on:click={()=> modals.close("audioVolume")}>
+    <button type="button" autofocus on:click={()=> modals.close("audioVolume")}>
     </button>
   </div>
   <div class="uarr">

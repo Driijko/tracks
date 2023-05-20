@@ -10,7 +10,8 @@ export const audioBkgPlayAfterLoad = writable(false);
 export const audioBkgRestartCount = writable(0);
 export const audioBkgTotalTime = writable(0);
 export const audioBkgTrack = writable({name: "", path: ""});
-export const audioBkgVolume = writable(1);
+export const audioBkgVolume = writable(0);
+export const audioBkgLoading = writable(false);
 
 // FUNCTIONS ------------------------------------
 export function audioBkgAdjustVolume(volume) {
@@ -41,14 +42,20 @@ export function audioBkgFadeLoadPlay(trackName, trackPath, duration) {
   }, duration);
 };
 
+export function audioBkgFinishLoading() {
+  audioBkgLoading.set(false);
+}
+
 export function audioBkgLoad(name, path) {
   audioBkgTrack.set({name: name, path: path});
   audioBkgPlayAfterLoad.set(false);
+  audioBkgLoading.set(true);
 };
 
 export function audioBkgLoadPlay(name, path) {
   audioBkgTrack.set({name:name,path:path});
   audioBkgPlayAfterLoad.set(true);
+  audioBkgLoading.set(true);
 };
 
 export function audioBkgNewPlaylist(identifier, tracks) {

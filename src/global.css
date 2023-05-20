@@ -301,13 +301,3 @@ svg {
   color: black;
   font-weight: 600;
 }
-
-/* FOCUS HIGHLIGHTING /////////////////////////////////////////// */
-@media (hover: hover) {
-  a:focus-visible, input:focus-visible, button:focus-visible {
-    transform: scale(1.2);
-    outline: 10px solid hsla(0, 0%, 50%, 0.8);
-    outline-offset: 5px;
-    z-index: 1;
-  }
-}

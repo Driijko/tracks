@@ -3,7 +3,7 @@
   // IMPORTS ---------------------------
   import { gsap } from "gsap";
   import { onMount } from "svelte";
-  import { audioBkgPaused, audioBkgCurrentTime, audioBkgRestartCount }
+  import { audioBkgPaused, audioBkgCurrentTime, audioBkgRestartCount, audioBkgLoading }
   from "../../../../scripts/audioBkgStore";
   import channel1Animation from "./channel1Animation";
   import channel2AAnimation from "./channel2AAnimation";
@@ -18,7 +18,6 @@
   const stroke2= "hsl(180, 100%,50%)";
   const stroke3= "hsla(180, 100%, 50%)";
   const strokeWidth1 = 5;
-  const strokeWidth2 = 20;
 
   // ANIMATIONS ----------------------------
   const tl = gsap.timeline();
@@ -26,7 +25,7 @@
 
     tl.set("#svg4 .rect1", {transformOrigin: "50% 50%", rotate: 45, y: -900});
     tl.set("#svg4 .rect2", {transformOrigin: "50% 50%", rotate: 45, y: 900});
-    tl.add(channel1Animation());
+    tl.add(channel1Animation(), 0);
     tl.add(channel2AAnimation(), 16);
     tl.add(channel2BAnimation(), 32);
     tl.add(channel2AAnimation(), 48);
@@ -39,6 +38,14 @@
   });
 
   // REACTIVE -------------------------
+  $: if (tl.time() !== $audioBkgCurrentTime) {
+    if ($audioBkgLoading) {
+      tl.seek(0);
+    } else {
+      tl.seek($audioBkgCurrentTime);
+    }
+  }
+
   $: if ($audioBkgPaused) {
     tl.pause();
   } else {
@@ -49,9 +56,7 @@
     tl.restart();
   }
 
-  $: if (tl.time() !== $audioBkgCurrentTime) {
-    tl.seek($audioBkgCurrentTime);
-  }
+
 
 </script>
 

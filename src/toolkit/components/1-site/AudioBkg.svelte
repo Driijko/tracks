@@ -4,7 +4,7 @@
   import { onMount } from "svelte";
   import { audioBkgTrack, audioBkgPaused, audioBkgVolume, audioBkgLoadPlay,
     audioBkgUpdateTotalTime, audioBkgPlayAfterLoad, audioBkgLoop, audioBkgCurrentTime, audioBkgCurrentPlaylist, audioBkgCurrentPlaylistIndex,
-    audioBkgNextPlaylistTrack
+    audioBkgNextPlaylistTrack, audioBkgFinishLoading
   } from "../../scripts/audioBkgStore";
 
   // ELEMENT REFERENCE -----------------------------------
@@ -21,6 +21,7 @@
       e.target.play();
     };
     ended = false;
+    audioBkgFinishLoading();
   };
 
   function handleEnded(e) {

@@ -1,7 +1,7 @@
 <!-- SCRIPTS ///////////////////////////////////////// -->
 <script>
   // IMPORTS --------------------------------------------
-  import { audioBkgTrack } from "../../../scripts/audioBkgStore";
+  import { audioBkgTrack, audioBkgLoading } from "../../../scripts/audioBkgStore";
   import { animationsOff } from "../../../scripts/animationsStore";
   import viewportOrientationStore 
   from "../../../scripts/viewport/viewportOrientationStore";
@@ -41,7 +41,7 @@
       <SwimmingAnimation />
     {:else if $audioBkgTrack.name === "Fade"}
       <FadeAnimation />
-    {:else if $audioBkgTrack.name === "Prism"}
+    {:else if $audioBkgTrack.name === "Prism" && ($audioBkgLoading === false)}
       <PrismAnimation />
     {:else if $audioBkgTrack.name === "Frames"}
       <FramesAnimation />
@@ -49,6 +49,9 @@
       <VeilsAnimation />
     {/if}
   {/if}
+</div>
+<div id="test">
+  {$audioBkgLoading}
 </div>
 
 <!-- STYLES ////////////////////////////////////////// -->
