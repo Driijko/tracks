@@ -7,12 +7,7 @@
 <!-- MARKUP ////////////////////////////////////////////////// -->
 <div id="this" class="uarr2">
   <svg class="background" viewBox="0 0 1600 900">
-    <rect x="0" y="0" width="1600" height="900" fill="hsl(150, 100%, 80%)" />
-    <rect x="1200" y="390" width="400" height="80" fill="hsl(40, 100%, 50%)" />
-    <line x1="1132" y1="0" x2="1132" y2="900" />
-    <line x1="1132" y1="150" x2="1600" y2="150" />
-    <line x1="1132" y1="680" x2="1600" y2="680" />
-    <line x1="1200" y1="150" x2="1200" y2="680" />
+    <rect x="0" y="0" width="1600" height="900" fill="hsla(150, 100%, 70%, 0.7)" />
   </svg>
   <About5Content />
 </div>
@@ -23,12 +18,67 @@ svg {
   width: 100%;
   height: 100%;
 }
-#this :global(p) {
-  height: calc(var(--uarr2-height)* 0.34);
-  top: 30%;
-  left: 0%;
-  border-top-width: calc(var(--uarr2-width)/150);
-  border-bottom-width: calc(var(--uarr2-width)/150);
-  width: 70.31%;
+#this :global(section) {
+  position: absolute;
+  top: 0%;
+  width: 100%;
+  height: 100%;
+}
+#this :global(h3) {
+  font-size: calc(var(--uarr2-width)/20);
+  width: 100%;
+  text-align: center;
+  top: 5%;
+  padding: calc(var(--uarr2-height)/100);
+  border-color: hsl(40, 100%, 50%);
+  border-style: solid;
+  border-top-width: calc(var(--uarr2-height)/100);
+  border-bottom-width: calc(var(--uarr2-height)/100);
+}
+#this :global(ul) {
+  position: absolute;
+  top: 20%;
+  width: 100%;
+  height: 75%;
+  display: flex;
+  justify-content: center;
+  gap: 3%;
+}
+#this :global(li) {
+  width: 30%;
+  border: 1px solid black;
+  border-color: hsl(40, 100%, 50%);
+  border-style: solid;
+  border-width: calc(var(--uarr2-width)/200);
+  border-radius: calc(var(--uarr2-width)/100);
+  background-color: hsla(150, 100%, 50%, 0.3);
+}
+#this :global(h4) {
+  font-size: calc(var(--uarr2-width)/50);
+  background-color: hsl(150, 100%, 50%);
+  border-radius: calc(var(--uarr2-width)/100) calc(var(--uarr2-width)/100) 0 0;
+  height: 10%;
+  display: flex;
+  align-items: center;
+  padding-left: 2%;
+}
+#this :global(.artist-pic) {
+  height: 40%;
+  width: 100%;
+  object-fit: cover;
+  object-position: 100% 100%;
+}
+#this :global(.artist-link) {
+  font-size: calc(var(--uarr2-width)/70);
+  display: block;
+  text-decoration: underline;
+  width: 100%;
+  text-align: center;
+  padding-top: 4%;
+}
+#this :global(.painting) {
+  height: 40%;
+  width: 100%;
+  padding-top: 7%;
 }
 </style>

@@ -1,50 +1,13 @@
-<!-- MARKUP ///////////////////////////////////////////// -->
-<section class="technologies-section">
-  <h3>TECHNOLOGIES</h3>
+<section class="media-credits-section">
+  <h3>MEDIA CREDITS</h3>
   <p>
-    This site was built using the following technologies. Click a technology to learn more.
+    The bird song audio on the track "Fade" was taken from <a href="https://freesound.org/" rel="noopener noreferrer" target="_blank">freesound</a>, from the author <a href="https://freesound.org/people/urupin/sounds/122616/" target="_blank" rel="noopener noreferrer">urupin</a>.
   </p>
-  <ul>
-    <li>
-      <a href="https://html.com/#What_is_HTML" target="_blank" rel="noopener noreferrer">
-        HTML
-        <img src="./icons/html.svg" alt="HTML" />
-      </a>
-    </li>
-    <li>
-      <a href="https://www.w3.org/Style/CSS20/history.html" target="_blank" rel="noopener noreferrer">
-        CSS
-        <img src="./icons/css.svg" alt="CSS" />
-      </a>
-    </li>
-    <li>
-      <a href="https://www.coreldraw.com/en/learn/guide-to-vector-design/scalable-vector-graphics/" target="_blank" rel="noopener noreferrer">
-        SVG
-        <img src="./icons/svg.png" alt="SVG" />
-      </a>
-    </li>
-    <li>
-      <a href="https://www.springboard.com/blog/data-science/history-of-javascript/" target="_blank" rel="noopener noreferrer">
-        JavaScript
-        <img src="./icons/javascript.svg" alt="JavaScript" />
-      </a>
-    </li>
-    <li>
-      <a href="https://www.youtube.com/watch?v=kMlkCYL9qo0" target="_blank" rel="noopener noreferrer">
-        Svelte
-        <img src="./icons/svelte.svg" alt="Svelte" />
-      </a>
-    </li>
-    <li>
-      <a href="https://greensock.com/gsap/" target="_blank" rel="noopener noreferrer">
-        GSAP3
-        <img src="./logos/gsap.svg" alt="GSAP" />
-      </a>
-    </li>
-  </ul>
+  <p>
+    The background images used in the animations for the tracks "Prism" and "Veils",<br class="landscape"/> as well as the background image on this page,<br class="landscape"/> were all taken from <a href="https://unsplash.com/" rel="noopener noreferrer" target="_blank">Unsplash</a>,<br class="landscape"/> from the authors <a href="https://unsplash.com/photos/ZA6edJJA6gE" target="_blank" rel="noopener noreferrer">Ashkan Forouzani</a>, <a href="https://unsplash.com/photos/pKpipZVVEC0" target="_blank" rel="noopener noreferrer">Annie Spratt</a>, <a href="https://unsplash.com/photos/iCR53oVMqcs" target="_blank" rel="noopener noreferrer">Marcel Strauß</a>, and <a href="https://unsplash.com/photos/k3adQQFqpt0" target="_blank" rel="noopener noreferrer">Susan Wilkinson</a>.
+  </p>
 </section>
 
-<!-- STYLES ////////////////////////////////// -->
 <style>
 h3 {
   font-family: "Tenor Sans", sans-serif;

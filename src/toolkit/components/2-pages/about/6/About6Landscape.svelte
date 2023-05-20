@@ -7,14 +7,7 @@
 <!-- MARKUP ////////////////////////////////////////////////// -->
 <div id="this" class="uarr2">
   <svg class="background" viewBox="0 0 1600 900">
-    <rect x="0" y="0" width="1600" height="900" fill="hsl(150, 100%, 80%)" />
-    <rect x="1100" y="0" width="415" height="870" fill="hsl(40, 100%, 70%)" />
-    <line x1="61" y1="0" x2="61" y2="900" />
-    <line x1="90" y1="0" x2="90" y2="900" />
-    <line x1="1100" y1="0" x2="1100" y2="870" />
-    <line x1="1544" y1="0" x2="1544" y2="900" />
-    <line x1="1517" y1="0" x2="1517" y2="900" />
-    <line x1="90" y1="870" x2="1517" y2="870" />
+    <rect x="0" y="0" width="1600" height="900" fill="hsla(150, 100%, 70%, 0.7)" />
   </svg>
   <About6Content />
 </div>
@@ -25,12 +18,80 @@ svg {
   width: 100%;
   height: 100%;
 }
-#this :global(p) {
-  height: calc(var(--uarr2-height)* 0.24);
-  top: 30%;
-  left: 4%;
-  border-top-width: calc(var(--uarr2-width)/150);
-  border-bottom-width: calc(var(--uarr2-width)/150);
-  width: 92.1%;
+#this :global(.musical-influences-section) {
+  position: absolute;
+  top: 0%;
+  width: 100%;
+  height: 100%;
+}
+#this :global(h3) {
+  font-size: calc(var(--uarr2-width)/20);
+  width: 100%;
+  text-align: center;
+  top: 5%;
+  padding: calc(var(--uarr2-height)/100);
+  border-color: hsl(40, 100%, 50%);
+  border-style: solid;
+  border-top-width: calc(var(--uarr2-height)/100);
+  border-bottom-width: calc(var(--uarr2-height)/100);
+}
+#this :global(ul) {
+  position: absolute;
+  top: 20%;
+  width: 100%;
+  height: 75%;
+  display: flex;
+  justify-content: center;
+  gap: 3%;
+}
+#this :global(li) {
+  width: 30%;
+  border: 1px solid black;
+  border-color: hsl(40, 100%, 50%);
+  border-style: solid;
+  border-width: calc(var(--uarr2-width)/200);
+  border-radius: calc(var(--uarr2-width)/100);
+  background-color: hsla(150, 100%, 50%, 0.3);
+}
+#this :global(h4) {
+  font-size: calc(var(--uarr2-width)/50);
+  background-color: hsl(150, 100%, 50%);
+  border-radius: calc(var(--uarr2-width)/100) calc(var(--uarr2-width)/100) 0 0;
+  height: 10%;
+  display: flex;
+  align-items: center;
+  padding-left: 2%;
+}
+#this :global(.project-pic) {
+  height: 50%;
+  width: 100%;
+  object-fit: cover;
+  object-position: 50% 20%;
+}
+#this :global(.bottom) {
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10%;
+}
+#this :global(.project-description) {
+  position: initial;
+  background-color: transparent;
+  text-align: center;
+  padding: 0;
+}
+#this :global(.project-link) {
+  font-size: calc(var(--uarr2-width)/70);
+  display: block;
+  text-decoration: underline;
+  width: 100%;
+  text-align: center;
+  padding-top: 4%;
+}
+#this :global(.painting) {
+  height: 40%;
+  width: 100%;
+  padding-top: 7%;
 }
 </style>

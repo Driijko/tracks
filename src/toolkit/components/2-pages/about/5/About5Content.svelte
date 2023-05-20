@@ -1,3 +1,24 @@
-<p>
-  Another important musical influence comes from Chinese classical music,<br class="landscape"/> especially <a href="https://www.liufangmusic.net/English/" target="_blank" rel="noopener noreferrer">Liu Fang</a>, <a href="https://www.actaonline.org/profile/weishan-liu/" target="_blank" rel="noopener noreferrer">Weishan Liu</a>, <a href="http://www.silkqin.com/03qobj/zengchengwei.htm" target="_blank" rel="noopener noreferrer">Zeng Chenwei</a>, and <a href="https://www.auxsons.com/en/breves/sounds-of-the-world-guan-pinghu-the-spirit-of-chinese-guqin/" target="_blank" rel="noopener noreferrer">Guan Pinghu</a>.<br/><br class="portrait"/> Chinese traditional and classical music is very diverse,<br class="landscape"/> but there are certain specific aesthetic ideals I find especially compelling:<br class="landscape"/> simplicity, contrast of timbre, and the use of space/silence as a kind of musical texture of it's own.
-</p>
+<section>
+  <h3>VISUAL INFLUENCES</h3>
+  <ul>
+    <li>
+      <h4>Piet Mondrian</h4>
+      <img class="artist-pic" src="./images/pic12.webp" alt="Piet Mondrian" />
+      
+      <a class="artist-link" href="https://driijko.github.io/mondrian" target="_blank" rel="noopener noreferrer">A website I made about Piet Mondrian</a>
+      <img class="painting" src="./images/pic13.webp" alt="Painting by Piet Mondrian" />
+    </li>
+    <li>
+      <h4>Mark Rothko</h4>
+      <img class="artist-pic" src="./images/pic14.webp" alt="Mark Rothko" />
+      <a class="artist-link" href="https://www.biography.com/artists/mark-rothko" target="_blank" rel="noopener noreferrer">Learn More</a>
+      <img class="painting" src="./images/pic15.webp" alt="Painting by Mark Rothko" />
+    </li>
+    <li>
+      <h4>Agnes Martin</h4>
+      <img class="artist-pic" src="./images/pic16.webp" alt="Agnes Martin" />
+      <a class="artist-link" href="https://www.guggenheim.org/artwork/artist/agnes-martin" target="_blank" rel="noopener noreferrer">Learn More</a>
+      <img class="painting" src="./images/pic17.webp" alt="Painting by Agnes Martin" />
+    </li>
+  </ul>
+</section>

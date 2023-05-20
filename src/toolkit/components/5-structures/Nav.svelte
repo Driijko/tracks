@@ -1,7 +1,7 @@
 <!-- SCRIPTS ////////////////////////////////////////////// -->
 <script>
   // IMPORTS ------------------------------------------
-  import { newPage } from "../../scripts/currentPageStore";
+  import { newPage, currentPage } from "../../scripts/currentPageStore";
   import { modals, siteMenuModal } from "../../scripts/modalsStore";
   import viewportOrientationStore 
   from "../../scripts/viewport/viewportOrientationStore";
@@ -9,8 +9,10 @@
   // EVENT HANDLERS -----------------------------------
   function handleClick(page) {
     modals.close("siteMenu");
-    newPage(page);
-  }
+    if ($currentPage !== page) {
+      newPage(page);
+    };
+  };
 </script>
 
 <nav>

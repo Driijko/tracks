@@ -5,7 +5,6 @@
   import { animationsOff } from "../../../scripts/animationsStore";
   import viewportOrientationStore 
   from "../../../scripts/viewport/viewportOrientationStore";
-  import Animation2 from "../../6-elements/art/Animation2.svelte";
   import SwimmingAnimation from "../../6-elements/art/SwimmingAnimation.svelte";
   import FadeAnimation from "../../6-elements/art/FadeAnimation.svelte";
   import PrismAnimation from "../../6-elements/art/prism-animation/PrismAnimation.svelte";
@@ -49,9 +48,6 @@
       <VeilsAnimation />
     {/if}
   {/if}
-</div>
-<div id="test">
-  {$audioBkgLoading}
 </div>
 
 <!-- STYLES ////////////////////////////////////////// -->

@@ -7,7 +7,7 @@
 <!-- MARKUP ////////////////////////////////////////////////// -->
   <div id="this" class="uarr2">
     <svg class="background" viewBox="0 0 1600 900">
-      <rect x="0" y="0" width="1600" height="900" fill="hsl(150, 100%, 80%)" />
+      <rect x="0" y="0" width="1600" height="900" fill="hsla(150, 100%, 70%, 0.7)" />
       <line x1="109" y1="0" x2="109" y2="527" />
       <line x1="1494" y1="0" x2="1494" y2="527" />
       <line x1="0" y1="527" x2="1600" y2="527" />

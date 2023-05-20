@@ -13,7 +13,6 @@
   import About9 from "./9/About9.svelte";
   import About10 from "./10/About10.svelte";
   import About11 from "./11/About11.svelte";
-  import About12 from "./12/About12.svelte";
   import SnapScroll from "../../4-layouts/partial/SnapScroll.svelte";
 
   // PAGE EXIT ---------------------------------------
@@ -26,25 +25,34 @@
 
 <!-- MARKUP /////////////////////////////////// -->
 <div id="this" class:fade >
+  <div class="background"></div>
   <SnapScroll axis="vertical" handleScroll={null}>
-    <About1 />
-    <About2 />
-    <About3 />
-    <About4 />
-    <About5 />
-    <About6 />
-    <About7 />
-    <About8 />
-    <About9 />
-    <About10 />
-    <About11 />
-    <About12 />
+    <svelte:fragment slot="content">
+      <About1 />
+      <About2 />
+      <About3 />
+      <About4 />
+      <About5 />
+      <About6 />
+      <About7 />
+      <About8 />
+      <About9 />
+      <About10 />
+      <About11 />
+    </svelte:fragment>
   </SnapScroll>
 </div>
 <!-- STYLES /////////////////////////////////// -->
 <style>
+/* PAGE ENTRANCE/EXIT, BACKGROUND, LAYOUT --------------------------- */
 @keyframes fade-in {from{opacity:0;}to{opacity:1;}}
 @keyframes fade-out {from{opacity:1;}to{opacity:0;}}
+@keyframes shift {
+  0% {background-position: 0% 0%; opacity: 0;}
+  10% {background-position: 10% 10%; opacity: 1;}
+  90% {background-position: 90% 90%; opacity: 1;}
+  100% {background-position: 100% 100%; opacity: 0;}
+}
 #this {
   transition-property: opacity;
   transition-timing-function: ease-out;
@@ -60,6 +68,15 @@
 #this.fade {
   animation: fade-out 2s ease-out forwards;
 }
+/* PAGE BACKGROUND ------------------------- */
+.background {
+  background-image: url("./images/pic5.webp");
+  background-size: 150%;
+  opacity: 0;
+  animation: shift 60s linear infinite;
+  /* filter: brightness(0.9) contrast(0.6); */
+}
+/* PAGE STYLES ------------------------------- */
 #this :global(.uarr-container) {
   background-color: hsl(40, 100%, 70%);
 }
@@ -72,6 +89,12 @@
   background-color: hsl(150, 100%, 90%);
   border-color:hsl(40, 100%, 50%);
   border-style: solid;
+}
+#this :global(h3) {
+  font-family: "Tenor Sans", sans-serif;
+  font-weight: 400;
+  background-color: hsl(150, 100%, 50%);
+  position: absolute;
 }
 /* PORTRAIT --------------------------------------- */
 @media screen and (orientation: portrait) {
@@ -111,6 +134,7 @@
     transform: scale(0.7);
   }
 }
+/* HOVER/FOCUS TRANSITIONS ------------------------------------- */
 @media (hover:hover) {
   #this :global(p a:hover), #this :global(p a:focus-visible) {
     background-color: black;

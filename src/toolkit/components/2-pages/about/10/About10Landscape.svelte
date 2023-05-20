@@ -7,14 +7,10 @@
 <!-- MARKUP ////////////////////////////////////////////////// -->
 <div id="this" class="uarr2">
   <svg class="background" viewBox="0 0 1600 900">
-    <rect x="0" y="0" width="1600" height="900" fill="hsl(150, 100%, 80%)" />
-    <rect x="317" y="279" width="980" height="451" fill="hsl(150, 100%, 60%)" />
-    <line x1="640" y1="0" x2="640" y2="735" />
-    <line x1="980" y1="0" x2="980" y2="735" />
-    <line x1="317" y1="0" x2="317" y2="900" />
-    <line x1="1300" y1="0" x2="1300" y2="900" />
-    <line x1="0" y1="500" x2="1600" y2="500" />
-    <line x1="0" y1="735" x2="1600" y2="735" />
+    <rect x="0" y="0" width="1600" height="900" fill="hsla(150, 100%, 70%, 0.7)" />
+    <rect x="0" y="392" width="100" height="160" fill="hsl(40, 100%, 50%)" />
+    <rect x="1500" y="671" width="100" height="229" fill="hsl(40, 100%, 50%)" />
+    <line x1="1100" y1="145" x2="1100" y2="272" />
   </svg>
   <About10Content />
 </div>
@@ -46,36 +42,16 @@ svg {
 #this :global(p) {
   border-top-width: calc(var(--uarr2-width)/160);
   border-bottom-width: calc(var(--uarr2-width)/160);
-  top: 18%;
-  left: 20%;
-  width: 60.85%;
-}
-#this :global(ul) {
   width: 100%;
-  height: calc(var(--uarr2-height)* 0.5);
-  width: 60.8%;
-  left: 20%;
-  top: 31%;
-  display: flex;
-  flex-wrap: wrap;
 }
-#this :global(li) {
-  width: 33.33%;
-  height: 50%; 
+#this :global(p:nth-of-type(1)) {
+  top: 30%;
+  height: calc(var(--uarr2-height) * 0.14);
+  padding-top: calc(var(--uarr2-height) * 0.035);
+
 }
-#this :global(a) {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: calc(var(--uarr2-width)/50);
-  width: 100%;
-  height: 100%;
-  border-color: hsl(40, 100%, 50%);
-  border-style: solid;
-  font-size: calc(var(--uarr2-width)/50);
-}
-#this :global(a img) {
-  height: 30%;
+#this :global(p:nth-of-type(2)) {
+  top: 55%;
+
 }
 </style>

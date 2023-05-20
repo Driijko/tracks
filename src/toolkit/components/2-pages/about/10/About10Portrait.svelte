@@ -21,6 +21,9 @@ svg {
   width: 100%;
   height: 100%;
 }
+#this :global(section) {
+  width: 100%;
+}
 #this :global(section > *) {
   position: absolute;
 }
@@ -42,34 +45,12 @@ svg {
 #this :global(p) {
   border-top-width: calc(var(--uarr1-width)/80);
   border-bottom-width: calc(var(--uarr1-width)/80);
-  top: 18%;
-}
-#this :global(ul) {
-  top: 41%;
   width: 100%;
-  height: calc(var(--uarr1-height)* 0.52);
 }
-#this :global(li) {
-  width: 100%;
-  height: 16.67%; 
+#this :global(p:nth-of-type(1)) {
+  top: 24%;
 }
-#this :global(a) {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: calc(var(--uarr1-width)/20);
-  width: 100%;
-  height: 100%;
-  border-color: hsl(40, 100%, 50%);
-  border-style: solid;
-  border-top-width: calc(var(--uarr1-width)/100);
-  background-color: hsl(150, 100%, 70%);
-  font-size: calc(var(--uarr1-width)/17);
-}
-#this :global(ul li:nth-of-type(6) a) {
-  border-bottom-width: calc(var(--uarr1-width)/100);
-}
-#this :global(a img) {
-  height: 80%;
+#this :global(p:nth-of-type(2)) {
+  top: 57%;
 }
 </style>

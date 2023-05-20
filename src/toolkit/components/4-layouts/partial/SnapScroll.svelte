@@ -177,7 +177,8 @@
   class:vertical={axis === "vertical"} 
   class:horizontal={axis === "horizontal"}
 >
-  <slot />
+  <slot name="background"/>
+  <slot name="content" />
 </div>
 
 <!-- STYLES /////////////////////////////////// -->
