@@ -17,7 +17,7 @@
 <!-- MARKUP /////////////////////////////////////// -->
 <div id="id7" class="uarr1-pad">
   <svg id="svg7" class="background" viewBox="0 0 900 1472">
-    <rect x="0" y="0" width="900" height="1472" fill="hsl(150, 100%, 80%)" />
+    <rect x="0" y="0" width="900" height="1472" fill="hsla(150, 100%, 70%, 0.3)" />
     <line class="line1" x1="50" y1="0" x2="50" y2="1472"  />
     <line class="line1" x1="800" y1="0" x2="800" y2="1472"  />
     <line class="line1" x1="850" y1="0" x2="850" y2="1472"  />

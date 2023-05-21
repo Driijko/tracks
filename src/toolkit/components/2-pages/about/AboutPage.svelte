@@ -70,11 +70,9 @@
 }
 /* PAGE BACKGROUND ------------------------- */
 .background {
-  background-image: url("./images/pic5.webp");
   background-size: 150%;
   opacity: 0;
   animation: shift 60s linear infinite;
-  /* filter: brightness(0.9) contrast(0.6); */
 }
 /* PAGE STYLES ------------------------------- */
 #this :global(.uarr-container) {
@@ -98,6 +96,9 @@
 }
 /* PORTRAIT --------------------------------------- */
 @media screen and (orientation: portrait) {
+  .background {
+    background-image: url("./images/pic21.webp");
+  }
   #this :global(.snap-scroll) {
     width: var(--uarr1-width);
     height: calc(var(--uarr1-height) * 0.92);
@@ -112,6 +113,9 @@
 @media screen and (orientation: landscape) {
   #this {
     align-items: center;
+  }
+  .background {
+    background-image: url("./images/pic5.webp");
   }
   #this :global(.snap-scroll) {
     width: var(--uarr2-width);

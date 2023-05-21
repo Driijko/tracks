@@ -7,7 +7,7 @@
       <div class="artist-link-container">
         <a class="artist-link" href="https://driijko.github.io/mondrian" target="_blank" rel="noopener noreferrer">A website I made about Piet Mondrian</a>
       </div>
-      <img class="painting" src="./images/pic13.webp" alt="Painting by Piet Mondrian" />
+      <img class="painting landscape" src="./images/pic13.webp" alt="Painting by Piet Mondrian" />
     </li>
     <li>
       <h4>Mark Rothko</h4>
@@ -15,7 +15,7 @@
       <div class="artist-link-container">
         <a class="artist-link" href="https://www.biography.com/artists/mark-rothko" target="_blank" rel="noopener noreferrer">Learn More</a>
       </div>
-      <img class="painting" src="./images/pic15.webp" alt="Painting by Mark Rothko" />
+      <img class="painting landscape" src="./images/pic15.webp" alt="Painting by Mark Rothko" />
     </li>
     <li>
       <h4>Agnes Martin</h4>
@@ -23,7 +23,7 @@
       <div class="artist-link-container">
         <a class="artist-link" href="https://www.guggenheim.org/artwork/artist/agnes-martin" target="_blank" rel="noopener noreferrer">Learn More</a>
       </div>
-      <img class="painting" src="./images/pic17.webp" alt="Painting by Agnes Martin" />
+      <img class="painting landscape" src="./images/pic17.webp" alt="Painting by Agnes Martin" />
     </li>
   </ul>
 </section>

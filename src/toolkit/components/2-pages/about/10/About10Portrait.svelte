@@ -7,7 +7,7 @@
 <!-- MARKUP ////////////////////////////////////////////////// -->
 <div id="this" class="uarr1-pad">
   <svg class="background" viewBox="0 0 900 1472">
-    <rect x="0" y="0" width="900" height="1472" fill="hsl(150, 100%, 80%)" />
+    <rect x="0" y="0" width="900" height="1472" fill="hsla(150, 100%, 70%, 0.7)" />
   </svg>
   <About10Content />
 </div>
@@ -48,9 +48,9 @@ svg {
   width: 100%;
 }
 #this :global(p:nth-of-type(1)) {
-  top: 24%;
+  top: 22%;
 }
 #this :global(p:nth-of-type(2)) {
-  top: 57%;
+  top: 52%;
 }
 </style>
