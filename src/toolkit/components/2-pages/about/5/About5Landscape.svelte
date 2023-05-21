@@ -68,13 +68,16 @@ svg {
   object-fit: cover;
   object-position: 100% 100%;
 }
-#this :global(.artist-link) {
+#this :global(.artist-link-container) {
   font-size: calc(var(--uarr2-width)/70);
   display: block;
   text-decoration: underline;
   width: 100%;
   text-align: center;
   padding-top: 4%;
+}
+#this :global(.artist-link) {
+  padding: 2%;
 }
 #this :global(.painting) {
   height: 40%;

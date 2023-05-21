@@ -6,12 +6,12 @@
 <!-- MARKUP ///////////////////////////////////////////////// -->
 <ul>
   <li>
-    <a href="home" on:click|preventDefault={()=> newPage("music")}>
+    <a class="page-link" href="home" on:click|preventDefault={()=> newPage("music")}>
       MUSIC
     </a>
   </li>
   <li>
-    <a href="about" on:click|preventDefault={()=> newPage("contact")}>
+    <a class="page-link" href="about" on:click|preventDefault={()=> newPage("contact")}>
       CONTACT
     </a>
   </li>
@@ -19,8 +19,7 @@
 
 <!-- STYLES ///////////////////////////////////////////////// -->
 <style>
-h3 {
-  font-family: "Tenor Sans", sans-serif;
-  font-weight: 400;
+a {
+  padding: 5%;
 }
 </style>

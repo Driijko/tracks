@@ -18,7 +18,8 @@
     tl.from("#svg8 .line9", {duration: 3, ease: "power1.out", attr:{y2: 700}},4);
     tl.from("#svg8 .line10", {duration: 2, ease: "power1.out", attr:{y2: 700}},6);
     tl.from("#svg8 .line11", {duration: 2, ease: "power1.out", attr:{x1: 232}},6);
-    tl.from("#id8 span", {duration: 2, stagger: 1, opacity: 0}, 3)
+    tl.from("#id8 span", {duration: 2, stagger: 1, opacity: 0}, 3);
+    tl.from("#id8 .rect1",{duration: 4, attr:{width:0}},4);
   });
 </script>
 
@@ -26,6 +27,7 @@
 <div id="id8" class="uarr2">
   <svg id="svg8" class="background"  viewBox="0 0 1600 900">
     <rect x="0" y="0" width="1600" height="900" fill="hsla(150, 100%, 70%, 0.7)" />
+    <rect class="rect1" x="100" y="700" width="130" height="130" fill="hsl(150, 100%, 50%)" />
     <line class="line2" x1="1527" y1="0" x2="1527" y2="900" />
     <line class="line3" x1="0" y1="68" x2="1600" y2="68" />
     <line class="line4" x1="0" y1="832" x2="1600" y2="832" />

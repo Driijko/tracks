@@ -81,13 +81,16 @@ svg {
   text-align: center;
   padding: 0;
 }
-#this :global(.project-link) {
+#this :global(.project-link-container) {
   font-size: calc(var(--uarr2-width)/70);
   display: block;
   text-decoration: underline;
   width: 100%;
   text-align: center;
   padding-top: 4%;
+}
+#this :global(.project-link) {
+  padding: 3%;
 }
 #this :global(.painting) {
   height: 40%;

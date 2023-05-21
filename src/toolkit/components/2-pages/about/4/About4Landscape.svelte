@@ -68,24 +68,33 @@ svg {
   object-fit: cover;
   object-position: 100% 0%;
 }
+#this :global(.artist-link-container) {
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 30%;
+}
 #this :global(a) {
   text-decoration: underline;
   font-size: calc(var(--uarr2-width)/70);
-  display: block;
   text-align: center;
+  padding: 3%;
 }
 #this :global(.artist-link) {
   width: 100%;
   text-align: center;
-  padding-top: 4%;
 }
 #this :global(.album-section) {
-  height: 44%;
+  height: 37%;
   display: flex;
   padding: 5%;
   align-items: center;
 }
-#this :global(.album-pic), #this :global(.album-link) {
+#this :global(.album-pic), #this :global(.album-link-container) {
   width: 50%;
+}
+#this :global(.album-link-container) {
+  text-align: center;
 }
 </style>

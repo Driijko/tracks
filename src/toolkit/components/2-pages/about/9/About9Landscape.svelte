@@ -83,7 +83,7 @@ svg {
   border-color: hsl(40, 100%, 50%);
   border-style: solid;
   border-top-width: calc(var(--uarr2-width)/160);
-  background-color: hsl(150, 100%, 70%);
+  background-color: hsl(150, 100%, 50%);
   font-size: calc(var(--uarr1-width)/14);
 }
 #this :global(ul li:nth-of-type(3) a) {

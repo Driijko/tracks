@@ -136,7 +136,7 @@
 }
 /* HOVER/FOCUS TRANSITIONS ------------------------------------- */
 @media (hover:hover) {
-  #this :global(p a:hover), #this :global(p a:focus-visible) {
+  #this :global(a:hover), #this :global(a:focus-visible) {
     background-color: black;
     color: white;
     text-decoration: none;
@@ -149,6 +149,8 @@
   #this :global(.technologies-section a:hover), 
   #this :global(.technologies-section a:focus-visible) {
     transform: scale(1.4);
+    background-color: initial;
+    color: initial;
   }
   #this :global(.fonts-section ul a) {
     transition-property: background-color, color;
@@ -159,6 +161,11 @@
   #this :global(.fonts-section ul a:focus-visible) {
     color: white;
     background-color: hsl(40, 100%, 50%);
+  }
+  #this :global(.page-link:hover),
+  #this :global(.page-link:focus-visible) {
+    background-color: black;
+    color: hsl(40, 100%, 50%);
   }
 }
 @media (hover:hover) and (orientation: portrait) {
