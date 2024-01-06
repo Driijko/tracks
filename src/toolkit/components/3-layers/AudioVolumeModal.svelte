@@ -6,6 +6,7 @@
   import { modals } from "../../scripts/modalsStore";
   import AudioBkgVolumeSlider 
   from "../6-elements/interface/audio-bkg/AudioBkgVolumeSlider.svelte";
+  import XIcon from "../6-elements/icons/menu/XIcon.svelte";
 </script>
 
 <!-- MARKUP ////////////////////////////////// -->
@@ -15,7 +16,7 @@
     in:fade="{{duration:200}}"
     out:fade="{{duration:200, delay:300}}"
   >
-    <button type="button" autofocus on:click={()=> modals.close("audioVolume")}>
+    <button class="clickable-background" type="button" on:click={()=> modals.close("audioVolume")}>
     </button>
   </div>
   <div class="uarr">
@@ -23,6 +24,9 @@
       in:fade="{{duration:200, delay:300}}"
       out:fade="{{duration:200}}"
     >
+      <button class="closer-button" type="button" autofocus on:click={()=> modals.close("audioVolume")}>
+        <XIcon />
+      </button>
       <p>Adjust volume to your preference:</p>
       <AudioBkgVolumeSlider axis="vertical" />
     </div>
@@ -41,7 +45,7 @@ dialog {
 .background {
   background-color: hsla(150, 100%, 70%, 0.8);
 }
-button {
+.clickable-background {
   width: 100%;
   height: 100%;
 }
@@ -73,6 +77,10 @@ button {
   border-color: hsl(150, 50%, 90%);
   background-color: hsl(150, 30%, 30%);
 }
+.closer-button {
+  border-color: hsl(150, 100%, 100%);
+  border-style: solid;
+}
 @media screen and (orientation: portrait) {
   .container {
     left: 10%;
@@ -84,16 +92,26 @@ button {
   .container > :global(*) {
     position: absolute;
   }
+  .closer-button {
+    width: calc(var(--uarr1-width)/10);
+    height: calc(var(--uarr1-width)/10);
+    left: 80%;
+    top: 3%;
+  }
+  .closer-button :global(svg) {
+    width: 100%;
+    height: 100%;
+  }
   p {
     line-height: 1.3;
     text-align: center;
     width: 70%;
     left: 15%;
-    top: 12%;
+    top: 16%;
     font-size: calc(var(--uarr1-width)/15);
   }
   .container :global(.audio-bkg-volume-slider) {
-    top: 55%;
+    top: 59%;
     left: -1%;
     width: calc(var(--uarr1-width)/1.2);
     height: calc(var(--uarr1-width)/7);
@@ -144,6 +162,18 @@ button {
   p {
     font-size: calc(var(--uarr2-width)/60);
   }
+  .closer-button {
+    position: absolute;
+    top: 0%;
+    width: calc(var(--uarr2-width)/30);
+    height: calc(var(--uarr2-width)/30);
+    left: 93%;
+    top: 3%;
+  }
+  .closer-button :global(svg){
+    width: 100%;
+    height: 100%;
+  }
   .container :global(.audio-bkg-volume-slider) {
     top: 55%;
     left: -1%;
@@ -179,6 +209,18 @@ button {
     width: calc(var(--uarr2-width)/35);
     height: calc(var(--uarr2-width)/35);
     margin-top: calc(var(--uarr2-width)/-32); 
+  }
+}
+/* HOVER/FOCUS TRANSITIONS ---------------------------------- */
+@media (hover:hover) {
+  .closer-button:hover, .closer-button:focus-visible {
+    background-color: white;
+    color: black;
+    outline: 10px solid hsla(0, 0%, 100%, 0.5);
+    outline-offset: 10px;
+  }
+  .container :global(input:focus-visible) {
+    outline: 10px solid hsla(0, 0%, 100%, 0.5);
   }
 }
 </style>

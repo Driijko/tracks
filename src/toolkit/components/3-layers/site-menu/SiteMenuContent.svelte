@@ -149,5 +149,9 @@ h1 span:nth-of-type(2) {
   #this :global(.site-menu-tab-buttons button:not(.selected):focus-visible path) {
     fill: hsl(150, 40%, 70%);
   }
+  #this :global(.site-menu-tab-buttons button.selected:focus-visible) {
+    outline: 20px solid hsla(0, 0%, 100%, 0.5);
+  }
+
 }
 </style>

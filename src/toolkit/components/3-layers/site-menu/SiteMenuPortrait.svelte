@@ -275,12 +275,14 @@
     transition-timing-function: ease-in;
     transition-duration: 0.3s;
   }
-  #this :global(.site-menu-modal-button.open:hover svg) {
+  #this :global(.site-menu-modal-button.open:hover svg),
+  #this :global(.site-menu-modal-button.open:focus-visible svg) {
     outline-width: calc(var(--uarr1-height) * 1.1);
     background-color: hsl(40, 100%, 0%);
     border-color: white;
   }
-  #this :global(.site-menu-modal-button.open:hover line) {
+  #this :global(.site-menu-modal-button.open:hover line),
+  #this :global(.site-menu-modal-button.open:focus-visible line) {
     stroke: white;
   }
   /* NAV LINKS ------------------------------------------- */
@@ -295,6 +297,18 @@
     transform: scale(1.15);
     background-color: hsla(150, 100%, 70%, 0.5);
     color: hsl(150, 100%,10%);
+  }
+  /* INTERFACE TRAY ------------------------ */
+  #this :global(.interface-tray.closed button) {
+    transition-property: outline-width, color;
+    transition-timing-function: ease-in;
+    transition-duration: 0.3s;
+    outline-color: transparent;
+    outline-style: solid;
+    outline-width: calc(var(--uarr2-width)/100);
+  }
+  #this :global(.interface-tray.closed button:focus-visible) {
+    outline-color: hsla(0, 0%, 100%, 0.7);
   }
 }
 </style>

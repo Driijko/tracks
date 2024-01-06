@@ -280,7 +280,7 @@
     color: hsl(150, 100%,10%);
   }
   /* INTERFACE TRAY ------------------------------ */
-    #this :global(.interface-tray.closed button) {
+  #this :global(.interface-tray.closed button) {
     transition-property: outline-width, color;
     transition-timing-function: ease-in;
     transition-duration: 0.3s;
